@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 New log file opened at Wed Feb 24 02:54:54 CST 2016 by 3381@sharukh-MacBookPro
 Taking next connection to: 35769
 New client attempting to connect on port: 44357-35769
@@ -8,15 +9,34 @@ Taking next connection to: 35769
 New client attempting to connect on port: 44358-35769
   Address = /127.0.1.1:35769
 Handshake exception on socket: 44358
+=======
+New log file opened at Mon Feb 22 21:43:13 CST 2016 by 5812@DOPE
+Taking next connection to: 59019
+New client attempting to connect on port: 59020-59019
+  Address = /192.168.0.2:59019
+This client on port 59020 has uuid 250da676-2271-4bde-bc63-aa6e6099ce10 configName activator humanReadableName Activator protocolVersion 3 featureTags Vector()
+Connected Clients: activator-250da676-2271-4bde-bc63-aa6e6099ce10
+Taking next connection to: 59019
+New client attempting to connect on port: 59021-59019
+  Address = /192.168.0.2:59019
+Handshake exception on socket: 59021
+>>>>>>> ae3551a889cfdd05c73b41858718db54dc37d754
 sbt.impl.ipc.HandshakeException: Unable to perform handshake
 	at sbt.impl.ipc.Peer.handshake(IPC.scala:46)
 	at sbt.impl.ipc.MultiClientServer.<init>(IPC.scala:150)
 	at sbt.server.SbtServerSocketHandler$$anon$1.run(SbtServerSocketHandler.scala:43)
-Caused by: java.io.EOFException
-	at java.io.DataInputStream.readInt(DataInputStream.java:392)
+Caused by: java.net.SocketException: Software caused connection abort: recv failed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:170)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.io.BufferedInputStream.fill(BufferedInputStream.java:246)
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:265)
+	at java.io.DataInputStream.readInt(DataInputStream.java:387)
 	at sbt.impl.ipc.Peer.receive(IPC.scala:95)
 	at sbt.impl.ipc.Peer.handshake(IPC.scala:49)
 	... 2 more
+<<<<<<< HEAD
 Taking next connection to: 35769
 New client attempting to connect on port: 44359-35769
   Address = /127.0.1.1:35769
@@ -26,3 +46,35 @@ Taking next connection to: 35769
 Checking to see if clients are empty...
 We have 1 non-daemon clients, continuing serving connections.
 Taking next connection to: 35769
+=======
+Taking next connection to: 59019
+New client attempting to connect on port: 59022-59019
+  Address = /192.168.0.2:59019
+This client on port 59022 has uuid d3e065ea-ea78-4a80-aa6b-2641ac0edb1d configName activator humanReadableName Activator protocolVersion 3 featureTags Vector()
+Connected Clients: activator-250da676-2271-4bde-bc63-aa6e6099ce10, activator-d3e065ea-ea78-4a80-aa6b-2641ac0edb1d
+Taking next connection to: 59019
+New client attempting to connect on port: 59066-59019
+  Address = /192.168.0.2:59019
+Handshake exception on socket: 59066
+sbt.impl.ipc.HandshakeException: Unable to perform handshake
+	at sbt.impl.ipc.Peer.handshake(IPC.scala:46)
+	at sbt.impl.ipc.MultiClientServer.<init>(IPC.scala:150)
+	at sbt.server.SbtServerSocketHandler$$anon$1.run(SbtServerSocketHandler.scala:43)
+Caused by: java.net.SocketException: Software caused connection abort: recv failed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:170)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.io.BufferedInputStream.fill(BufferedInputStream.java:246)
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:265)
+	at java.io.DataInputStream.readInt(DataInputStream.java:387)
+	at sbt.impl.ipc.Peer.receive(IPC.scala:95)
+	at sbt.impl.ipc.Peer.handshake(IPC.scala:49)
+	... 2 more
+Taking next connection to: 59019
+New client attempting to connect on port: 59067-59019
+  Address = /192.168.0.2:59019
+This client on port 59067 has uuid 6e9ee695-7f69-4a4d-b591-b29b52f88fd2 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: activator-250da676-2271-4bde-bc63-aa6e6099ce10, play-fork-run-6e9ee695-7f69-4a4d-b591-b29b52f88fd2
+Taking next connection to: 59019
+>>>>>>> ae3551a889cfdd05c73b41858718db54dc37d754
