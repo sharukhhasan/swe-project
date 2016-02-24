@@ -6,7 +6,12 @@ import java.sql.*;
 
 public class DBConnect {
 
-	public static void main(String[] args) throws Exception {
+	public DBConnect()
+	{
+	
+	}
+	
+	public void startConnection() throws Exception {
         
         Connection connection = getConnection();
         
