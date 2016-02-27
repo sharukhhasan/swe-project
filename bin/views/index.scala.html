@@ -1,0 +1,12 @@
+@(myForm: play.data.Form[User])
+
+@main("Welcome to Play") {
+
+    <ul id="Users"></ul>
+
+    @helper.form(action = routes.Application.addUser) {
+        @helper.inputText(myForm("name"))
+        <input type="submit"/>
+    }
+
+}

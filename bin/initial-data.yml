@@ -1,0 +1,4 @@
+User(admin):
+        email: admin@uiowa.edu
+        firstName: admin
+        gender: male
