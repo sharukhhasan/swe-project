@@ -10,14 +10,13 @@ libraryDependencies ++= Seq(
   javaJdbc,
   cache,
   javaWs,
+  "org.postgresql" % "postgresql" % "9.4-1201-jdbc41",
   javaJpa,
-  "org.hibernate" % "hibernate-entitymanager" % "4.3.9.Final",
-  "postgresql" % "postgresql" % "9.1-901.jdbc4"
+  "org.hibernate" % "hibernate-entitymanager" % "4.3.9.Final"
   
 )
-
-lazy val myProject = (project in file("."))
-  .enablePlugins(PlayJava, PlayEbean)
+  
+PlayKeys.externalizeResources := false
 
 // Play provides two styles of routers, one expects its actions to be injected, the
 // other, legacy style, accesses its actions statically.
@@ -26,6 +25,8 @@ routesGenerator := InjectedRoutesGenerator
 
 fork in run := true
 
+
+fork in run := true
 
 fork in run := true
 
