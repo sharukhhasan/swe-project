@@ -1,7 +1,13 @@
-New log file opened at Sat Feb 27 12:24:10 CST 2016 by 4148@DOPE
-Taking next connection to: 49608
-New client attempting to connect on port: 49609-49608
-  Address = /192.168.0.2:49608
-This client on port 49609 has uuid ef24135a-7d89-4695-890b-538c1ea0b8b9 configName activator humanReadableName Activator protocolVersion 3 featureTags Vector()
-Connected Clients: activator-ef24135a-7d89-4695-890b-538c1ea0b8b9
-Taking next connection to: 49608
+New log file opened at Sat Feb 27 13:05:35 CST 2016 by 4200@DOPE
+Taking next connection to: 52275
+New client attempting to connect on port: 52276-52275
+  Address = /192.168.0.2:52275
+This client on port 52276 has uuid 09314dc8-83bd-4c2e-bdbd-d6de37414a82 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: play-fork-run-09314dc8-83bd-4c2e-bdbd-d6de37414a82
+Taking next connection to: 52275
+Checking to see if clients are empty...
+No non-daemon clients connected after 3 min. Shutting down.
+Server socket thread exiting.
+0 clients open, will close them...
+All client sockets have been closed.
+Closing the 4200@DOPE logs at Sat Feb 27 13:08:35 CST 2016, goodbye.

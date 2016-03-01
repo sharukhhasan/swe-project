@@ -7,7 +7,7 @@
 
     @helper.form(action = routes.Application.addUser) {
         @helper.inputText(myForm("email"))
-        @helper.inputText(myForm("password"))
+        @helper.inputPassword(myForm("password"))
         @helper.inputText(myForm("gender"))
         @helper.inputText(myForm("firstName"))
         <input type="submit"/>
