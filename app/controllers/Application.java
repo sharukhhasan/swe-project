@@ -1,9 +1,12 @@
 package controllers;
 
 import play.*;
+
 import java.util.*;
+
 import play.mvc.*;
 import models.User;
+
 import com.fasterxml.jackson.databind.JsonNode;
 
 import play.data.Form;
@@ -12,6 +15,7 @@ import play.mvc.Result;
 import play.db.jpa.JPA;
 import play.db.jpa.Transactional;
 
+import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
@@ -19,9 +23,7 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
 import Util.SessionHandling;
-
 import static play.libs.Json.toJson;
-
 import views.html.*;
 
 public class Application extends Controller {
@@ -29,7 +31,7 @@ public class Application extends Controller {
     public Result sessionRedirect() {
         if (SessionHandling.isLoggedIn()) {
             String user = SessionHandling.getUser();
-            return redirect(controllers.routes.Application.home(user));
+            return redirect(controllers.routes.Application.home());
         }
         else {
             return redirect(controllers.routes.Application.login());
@@ -47,13 +49,24 @@ public class Application extends Controller {
     public Result login() {
         return ok(login.render(Form.form(User.class)));
     }
-
-    public Result home(String user) {
-        return ok(home.render(user));
-    }
+    
+    public Result home() {
+   	 if (SessionHandling.isLoggedIn()) {
+            String user = SessionHandling.getUser();
+            return ok(home.render(user));
+        }
+        else {
+            return redirect(controllers.routes.Application.login());
+        }
+   }
 
     public Result error(String errorMsg) {
         return ok(error.render(errorMsg));
+    }
+    
+    public Result logout() {
+    	SessionHandling.logout();
+    	return redirect(controllers.routes.Application.login());
     }
 
     @Transactional(readOnly = true)
@@ -61,17 +74,18 @@ public class Application extends Controller {
         Form<User> form = Form.form(User.class).bindFromRequest();
         User user = form.get();
         List<User> userResult = JPA.em().createQuery(
-                "SELECT u FROM User u WHERE u.email LIKE :username and u.password LIKE :password")
+                "SELECT u FROM User u WHERE u.email = :username AND u.password = :password")
             .setParameter("username", user.email)
             .setParameter("password", user.password)
-            .setMaxResults(1)
             .getResultList();
         //User userResult = JPA.em().find(User.class, password)
         if (userResult.size() > 0) {
-            return redirect(controllers.routes.Application.home(userResult.get(0).firstName));
+        	String userLoggedIn = userResult.get(0).email;
+        	SessionHandling.login(userLoggedIn);
+            return redirect(controllers.routes.Application.home());
         }
         else {
-            return redirect(controllers.routes.Application.error("Not a valid user"));
+            return redirect(controllers.routes.Application.error("Not a valid user:" +user.email + user.password));
         }
 
 
