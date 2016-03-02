@@ -1,28 +1,14 @@
 @import models._
-@(myForm: Form[User])
 @import b3.vertical.fieldConstructor
+@(User: String)
 
 @main("Welcome to Play") {
 
 
 		<div class="row">
 			<div class="col-sm-12">
-			Please create a user account!
-			</div>
-			<div class="col-sm-12">
 				<div class="panel panel-default">
-  					<div class="panel-body">
-  						@b3.form(routes.Application.addUser) {
-  							@b3.email(myForm("email"), '_label -> "Email", 'placeholder -> "example@mail.com" )
-  							@b3.text(myForm("firstName"), '_label -> "First Name", 'placeholder -> "first name")
-  							@b3.text(myForm("lastName"), '_label -> "Last Name", 'placeholder -> "last name")
-  							@b3.radio(myForm("gender"), options = Seq("male"->"Male","female"->"Female"), '_label -> "Gender" )
-  							@b3.password(myForm("password"), '_label -> "Password", 'placeholder -> "password" )
-  							@b3.submit('class -> "btn btn-primary"){ Register }
-
-  						}
-  						
-					</div>
+  					Welcome
 				</div>
 			</div>
 	    </div>

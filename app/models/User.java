@@ -11,7 +11,7 @@ import javax.persistence.*;
 import play.db.jpa.*;
 
 @Entity
-@Table(name = "SiteUser")
+@Table(name = "users")
 public class User {
 
         @Id
@@ -23,6 +23,7 @@ public class User {
         public String lastName;
         public String gender;
         public String password;
+        public String role;
        
         public User(String firstName) {
                 this.firstName = firstName;

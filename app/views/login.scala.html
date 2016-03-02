@@ -2,8 +2,7 @@
 @(myForm: Form[User])
 @import b3.vertical.fieldConstructor
 
-@main("Welcome to Play") {
-
+@main("Login") {
 
 		<div class="row">
 			<div class="col-sm-12">
@@ -12,10 +11,11 @@
 			<div class="col-sm-12">
 				<div class="panel panel-default">
   					<div class="panel-body">
-  						@b3.form(routes.Application.addUser) {
+  						@b3.form(routes.Application.validateLogin) {
   							@b3.email(myForm("email"), '_label -> "Email", 'placeholder -> "example@mail.com" )
   							@b3.password(myForm("password"), '_label -> "Password", 'placeholder -> "password" )
   							@b3.submit('class -> "btn btn-primary"){ Login }
+  							<a class="btn btn-primary" href="/register" role="button">Register</a>
 
   						}
   						

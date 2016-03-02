@@ -1,16 +1,14 @@
 @import models._
 @import b3.vertical.fieldConstructor
+@(error: String)
 
-
-@main("Home") {
+@main("Welcome to Play") {
 
 
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="panel panel-default">
-  					<div class="panel-body">
-  						Hello
-					</div>
+  					@error
 				</div>
 			</div>
 	    </div>
