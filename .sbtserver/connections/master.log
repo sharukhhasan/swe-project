@@ -1,7 +1,7 @@
-New log file opened at Wed Mar 02 17:39:14 CST 2016 by 13272@DOPE
-Taking next connection to: 60777
-New client attempting to connect on port: 60778-60777
-  Address = /192.168.0.2:60777
-This client on port 60778 has uuid edc77c81-15e6-4249-85c5-3c7b27b9bbcd configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
-Connected Clients: play-fork-run-edc77c81-15e6-4249-85c5-3c7b27b9bbcd
-Taking next connection to: 60777
+New log file opened at Wed Mar 02 17:42:23 CST 2016 by 3776@DOPE
+Taking next connection to: 61008
+New client attempting to connect on port: 61009-61008
+  Address = /192.168.0.2:61008
+This client on port 61009 has uuid cbd6fcd5-120c-4056-bc46-0a8551b20640 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: play-fork-run-cbd6fcd5-120c-4056-bc46-0a8551b20640
+Taking next connection to: 61008
