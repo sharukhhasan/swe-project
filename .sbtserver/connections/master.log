@@ -1,13 +1,13 @@
-New log file opened at Tue Mar 01 19:05:14 CST 2016 by 1284@DOPE
-Taking next connection to: 58853
-New client attempting to connect on port: 58854-58853
-  Address = /192.168.0.2:58853
-This client on port 58854 has uuid 32762774-6cd8-4df5-a190-c1a8907b1872 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
-Connected Clients: play-fork-run-32762774-6cd8-4df5-a190-c1a8907b1872
-Taking next connection to: 58853
-New client attempting to connect on port: 58919-58853
-  Address = /192.168.0.2:58853
-Handshake exception on socket: 58919
+New log file opened at Wed Mar 02 15:30:43 CST 2016 by 1804@DOPE
+Taking next connection to: 53032
+New client attempting to connect on port: 53033-53032
+  Address = /192.168.0.2:53032
+This client on port 53033 has uuid cc0565a2-3005-4b37-a915-237d779b6123 configName activator humanReadableName Activator protocolVersion 3 featureTags Vector()
+Connected Clients: activator-cc0565a2-3005-4b37-a915-237d779b6123
+Taking next connection to: 53032
+New client attempting to connect on port: 53087-53032
+  Address = /192.168.0.2:53032
+Handshake exception on socket: 53087
 sbt.impl.ipc.HandshakeException: Unable to perform handshake
 	at sbt.impl.ipc.Peer.handshake(IPC.scala:46)
 	at sbt.impl.ipc.MultiClientServer.<init>(IPC.scala:150)
@@ -23,9 +23,21 @@ Caused by: java.net.SocketException: Software caused connection abort: recv fail
 	at sbt.impl.ipc.Peer.receive(IPC.scala:95)
 	at sbt.impl.ipc.Peer.handshake(IPC.scala:49)
 	... 2 more
-Taking next connection to: 58853
-New client attempting to connect on port: 58920-58853
-  Address = /192.168.0.2:58853
-This client on port 58920 has uuid 53bfe1e7-94c8-4af9-87e8-05e3ad55b62c configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
-Connected Clients: play-fork-run-53bfe1e7-94c8-4af9-87e8-05e3ad55b62c
-Taking next connection to: 58853
+Taking next connection to: 53032
+New client attempting to connect on port: 53088-53032
+  Address = /192.168.0.2:53032
+This client on port 53088 has uuid 44c4eb12-f6c6-45d2-8bd8-4d6f474bf62b configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: activator-cc0565a2-3005-4b37-a915-237d779b6123, play-fork-run-44c4eb12-f6c6-45d2-8bd8-4d6f474bf62b
+Taking next connection to: 53032
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 53032
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 53032
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 53032
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 53032
