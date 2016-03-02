@@ -6,13 +6,16 @@ lazy val root = (project in file(".")).enablePlugins(PlayJava)
 
 scalaVersion := "2.11.6"
 
+resolvers += "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots/"
+
 libraryDependencies ++= Seq(
   javaJdbc,
   cache,
   javaWs,
   "org.postgresql" % "postgresql" % "9.4-1201-jdbc41",
   javaJpa,
-  "org.hibernate" % "hibernate-entitymanager" % "4.3.9.Final"
+  "org.hibernate" % "hibernate-entitymanager" % "4.3.9.Final",
+  "com.adrianhurt" %% "play-bootstrap" % "1.0-P24-B3-SNAPSHOT" exclude("org.webjars", "jquery") exclude("org.webjars" , "bootstrap")
   
 )
   
@@ -23,11 +26,4 @@ PlayKeys.externalizeResources := false
 routesGenerator := InjectedRoutesGenerator
 
 
-fork in run := true
-
-
-fork in run := true
-
-fork in run := true
-
-fork in run := true
+//fork in run := true

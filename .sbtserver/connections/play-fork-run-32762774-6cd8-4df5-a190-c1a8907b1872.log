@@ -1,0 +1,58 @@
+New log file opened at Tue Mar 01 19:05:14 CST 2016 by 1284@DOPE
+Sending msg to client play-fork-run-32762774-6cd8-4df5-a190-c1a8907b1872: DetachedLogEvent(LogMessage(debug,sbt server socket logs are in: C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\.sbtserver\connections\master.log))
+Sending msg to client play-fork-run-32762774-6cd8-4df5-a190-c1a8907b1872: DetachedLogEvent(LogMessage(debug,sbt client logs are in: C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\.sbtserver\connections\play-fork-run-32762774-6cd8-4df5-a190-c1a8907b1872.log))
+Reading next message from client.
+Sending msg to client play-fork-run-32762774-6cd8-4df5-a190-c1a8907b1872: DetachedLogEvent(LogMessage(debug,sbt general server logs are in: C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\.sbtserver\master.log))
+Got request: ListenToEvents()
+Reading next message from client.
+Sending msg to client play-fork-run-32762774-6cd8-4df5-a190-c1a8907b1872: DetachedLogEvent(LogMessage(debug,> --initialize))
+Sending msg to client play-fork-run-32762774-6cd8-4df5-a190-c1a8907b1872: (3,ReceivedResponse())
+Sending msg to client play-fork-run-32762774-6cd8-4df5-a190-c1a8907b1872: DetachedLogEvent(LogMessage(debug,> initialize))
+Sending msg to client play-fork-run-32762774-6cd8-4df5-a190-c1a8907b1872: DetachedLogEvent(LogMessage(debug,> onFailure load-failed))
+Sending msg to client play-fork-run-32762774-6cd8-4df5-a190-c1a8907b1872: DetachedLogEvent(LogMessage(debug,> boot))
+Sending msg to client play-fork-run-32762774-6cd8-4df5-a190-c1a8907b1872: DetachedLogEvent(LogMessage(debug,> reload))
+Sending msg to client play-fork-run-32762774-6cd8-4df5-a190-c1a8907b1872: DetachedLogEvent(LogMessage(debug,[Loading] Scanning directory C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\project))
+Sending msg to client play-fork-run-32762774-6cd8-4df5-a190-c1a8907b1872: DetachedLogEvent(LogMessage(debug,[Loading] Found non-root projects ))
+Sending msg to client play-fork-run-32762774-6cd8-4df5-a190-c1a8907b1872: DetachedLogEvent(LogMessage(debug,[Loading] Done in C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\project, returning: ()))
+Sending msg to client play-fork-run-32762774-6cd8-4df5-a190-c1a8907b1872: DetachedLogEvent(LogMessage(debug,deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(List(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin))), Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin))), Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin)))))))
+Sending msg to client play-fork-run-32762774-6cd8-4df5-a190-c1a8907b1872: DetachedLogEvent(LogMessage(debug,  :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.JUnitXmlReportPlugin)))
+Sending msg to client play-fork-run-32762774-6cd8-4df5-a190-c1a8907b1872: DetachedLogEvent(LogMessage(debug,sorting: ns: List(sbt.plugins.CorePlugin, sbt.plugins.IvyPlugin, sbt.plugins.JvmPlugin, sbt.plugins.JUnitXmlReportPlugin)))
+Sending msg to client play-fork-run-32762774-6cd8-4df5-a190-c1a8907b1872: DetachedLogEvent(LogMessage(debug,  :: sorting:: found: List(sbt.plugins.CorePlugin) not found List(sbt.plugins.IvyPlugin, sbt.plugins.JvmPlugin, sbt.plugins.JUnitXmlReportPlugin)))
+Sending msg to client play-fork-run-32762774-6cd8-4df5-a190-c1a8907b1872: DetachedLogEvent(LogMessage(debug,  :: sorting:: found: List(sbt.plugins.CorePlugin, sbt.plugins.IvyPlugin) not found List(sbt.plugins.JvmPlugin, sbt.plugins.JUnitXmlReportPlugin)))
+Sending msg to client play-fork-run-32762774-6cd8-4df5-a190-c1a8907b1872: DetachedLogEvent(LogMessage(debug,  :: sorting:: found: List(sbt.plugins.CorePlugin, sbt.plugins.IvyPlugin, sbt.plugins.JvmPlugin) not found List(sbt.plugins.JUnitXmlReportPlugin)))
+Sending msg to client play-fork-run-32762774-6cd8-4df5-a190-c1a8907b1872: DetachedLogEvent(LogMessage(debug,  :: sorting:: found: List(sbt.plugins.CorePlugin, sbt.plugins.IvyPlugin, sbt.plugins.JvmPlugin, sbt.plugins.JUnitXmlReportPlugin) not found List()))
+Sending msg to client play-fork-run-32762774-6cd8-4df5-a190-c1a8907b1872: DetachedLogEvent(LogMessage(debug,  :: sorted deduced result: List(sbt.plugins.CorePlugin, sbt.plugins.IvyPlugin, sbt.plugins.JvmPlugin, sbt.plugins.JUnitXmlReportPlugin)))
+Sending msg to client play-fork-run-32762774-6cd8-4df5-a190-c1a8907b1872: DetachedLogEvent(LogMessage(debug,[Loading] Done in C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\project, returning: (protected-harbor-17312-build)))
+Sending msg to client play-fork-run-32762774-6cd8-4df5-a190-c1a8907b1872: DetachedLogEvent(LogMessage(info,Loading project definition from C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\project))
+Sending msg to client play-fork-run-32762774-6cd8-4df5-a190-c1a8907b1872: DetachedLogEvent(LogMessage(debug,Running task... Cancel: sbt.TaskCancellationStrategy$Null$@1c1ccb94, check cycles: false))
+Sending msg to client play-fork-run-32762774-6cd8-4df5-a190-c1a8907b1872: DetachedLogEvent(LogMessage(debug,
+Initial source changes: 
+	removed:Set()
+	added: Set()
+	modified: Set()
+Removed products: Set()
+External API changes: API Changes: Set()
+Modified binary dependencies: Set()
+Initial directly invalidated sources: Set()
+
+Sources indirectly invalidated by:
+	product: Set()
+	binary dep: Set()
+	external source: Set()))
+Sending msg to client play-fork-run-32762774-6cd8-4df5-a190-c1a8907b1872: DetachedLogEvent(LogMessage(debug,All initially invalidated sources: Set()
+))
+Sending msg to client play-fork-run-32762774-6cd8-4df5-a190-c1a8907b1872: DetachedLogEvent(LogMessage(debug,Copy resource mappings: 
+	))
+Sending msg to client play-fork-run-32762774-6cd8-4df5-a190-c1a8907b1872: DetachedLogEvent(LogMessage(debug,[Loading] Scanning directory C:\Users\Andrew.DOPE\Documents\protected-harbor-17312))
+Sending msg to client play-fork-run-32762774-6cd8-4df5-a190-c1a8907b1872: DetachedLogEvent(LogStdErr(C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\build.sbt:16: error: too many arguments for method exclude: (org: String, name: String)sbt.ModuleID))
+Sending msg to client play-fork-run-32762774-6cd8-4df5-a190-c1a8907b1872: DetachedLogEvent(LogStdErr(  "com.adrianhurt" %% "play-bootstrap" % "1.0-P24-B3-SNAPSHOT" exclude("org.webjars", "jquery", "bootstrap")))
+Sending msg to client play-fork-run-32762774-6cd8-4df5-a190-c1a8907b1872: DetachedLogEvent(LogStdErr(                                                               ^))
+Sending msg to client play-fork-run-32762774-6cd8-4df5-a190-c1a8907b1872: DetachedLogEvent(LogMessage(error,Type error in expression))
+Sending msg to client play-fork-run-32762774-6cd8-4df5-a190-c1a8907b1872: DetachedLogEvent(LogMessage(debug,> load-failed))
+Sending msg to client play-fork-run-32762774-6cd8-4df5-a190-c1a8907b1872: DetachedLogEvent(LogMessage(error,Failed to load project.))
+Sending msg to client play-fork-run-32762774-6cd8-4df5-a190-c1a8907b1872: BuildFailedToLoad()
+Sending msg to client play-fork-run-32762774-6cd8-4df5-a190-c1a8907b1872: DetachedLogEvent(LogMessage(debug,> server-wait-for-reboot))
+Client play-fork-run-32762774-6cd8-4df5-a190-c1a8907b1872 closed, java.net.SocketException: Connection reset, shutting down
+Stopping client.
+Dropping message (0,ReceivedResponse()) to dead client play-fork-run-32762774-6cd8-4df5-a190-c1a8907b1872
+Client play-fork-run-32762774-6cd8-4df5-a190-c1a8907b1872 thread exiting.

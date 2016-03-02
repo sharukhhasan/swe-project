@@ -1,0 +1,20 @@
+New log file opened at Tue Mar 01 19:06:31 CST 2016 by 1284@DOPE
+Sending msg to client play-fork-run-53bfe1e7-94c8-4af9-87e8-05e3ad55b62c: DetachedLogEvent(LogMessage(debug,sbt server socket logs are in: C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\.sbtserver\connections\master.log))
+Sending msg to client play-fork-run-53bfe1e7-94c8-4af9-87e8-05e3ad55b62c: DetachedLogEvent(LogMessage(debug,sbt client logs are in: C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\.sbtserver\connections\play-fork-run-53bfe1e7-94c8-4af9-87e8-05e3ad55b62c.log))
+Sending msg to client play-fork-run-53bfe1e7-94c8-4af9-87e8-05e3ad55b62c: DetachedLogEvent(LogMessage(debug,sbt general server logs are in: C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\.sbtserver\master.log))
+Reading next message from client.
+Got request: DaemonRequest(true)
+Reading next message from client.
+Sending msg to client play-fork-run-53bfe1e7-94c8-4af9-87e8-05e3ad55b62c: (3,ReceivedResponse())
+Got request: ListenToEvents()
+Reading next message from client.
+Sending msg to client play-fork-run-53bfe1e7-94c8-4af9-87e8-05e3ad55b62c: (4,ReceivedResponse())
+Got request: KeyLookupRequest(root/playForkConfig)
+Reading next message from client.
+Got request: UnlistenToEvents()
+Reading next message from client.
+Client play-fork-run-53bfe1e7-94c8-4af9-87e8-05e3ad55b62c EOF, shutting down.
+Stopping client.
+Dropping message (6,ReceivedResponse()) to dead client play-fork-run-53bfe1e7-94c8-4af9-87e8-05e3ad55b62c
+Client play-fork-run-53bfe1e7-94c8-4af9-87e8-05e3ad55b62c thread exiting.
+Dropping message (0,ReceivedResponse()) to dead client play-fork-run-53bfe1e7-94c8-4af9-87e8-05e3ad55b62c
