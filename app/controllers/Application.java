@@ -1,6 +1,7 @@
 package controllers;
 
 import play.*;
+import java.util.*;
 import play.mvc.*;
 import models.User;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -59,14 +60,18 @@ public class Application extends Controller {
     public Result validateLogin() {
         Form<User> form = Form.form(User.class).bindFromRequest();
         User user = form.get();
-        
+        List<User> userResult = JPA.em().createQuery(
+                "SELECT u FROM User u WHERE u.email LIKE :username and u.password LIKE :password")
+            .setParameter("username", user.email)
+            .setParameter("password", user.password)
+            .setMaxResults(1)
+            .getResultList();
         //User userResult = JPA.em().find(User.class, password)
-        User userResult = null;
-        if (userResult != null) {
-            return redirect(controllers.routes.Application.home(userResult.firstName));
+        if (userResult.size() > 0) {
+            return redirect(controllers.routes.Application.home(userResult.get(0).firstName));
         }
         else {
-            return redirect(controllers.routes.Application.home("Not a valid user"));
+            return redirect(controllers.routes.Application.error("Not a valid user"));
         }
 
 
