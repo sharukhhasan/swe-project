@@ -1,5 +1,6 @@
 logs
 target
+/conf/application.conf
 /.sbtserver
 /.idea
 /.idea_modules
