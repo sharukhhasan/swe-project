@@ -31,42 +31,22 @@ public class Application extends Controller {
     public Result sessionRedirect() {
         if (SessionHandling.isLoggedIn()) {
             String user = SessionHandling.getUser();
-            return redirect(controllers.routes.Application.home());
+            return redirect(controllers.routes.Home.home());
         }
         else {
-            return redirect(controllers.routes.Application.login());
+            return redirect(controllers.routes.Login.login());
         }
     }
 
-    public Result register() {
-        return ok(register.render(Form.form(User.class)));
-    }
 
     public Result index() {
         return ok(index.render());
     }
-
-    public Result login() {
-        return ok(login.render(Form.form(User.class)));
-    }
     
-    public Result home() {
-   	 if (SessionHandling.isLoggedIn()) {
-            String user = SessionHandling.getUser();
-            return ok(home.render(user));
-        }
-        else {
-            return redirect(controllers.routes.Application.login());
-        }
-   }
-
-    public Result error(String errorMsg) {
-        return ok(error.render(errorMsg));
-    }
     
     public Result logout() {
     	SessionHandling.logout();
-    	return redirect(controllers.routes.Application.login());
+    	return redirect(controllers.routes.Login.login());
     }
 
     @Transactional(readOnly = true)
@@ -82,10 +62,10 @@ public class Application extends Controller {
         if (userResult.size() > 0) {
         	String userLoggedIn = userResult.get(0).email;
         	SessionHandling.login(userLoggedIn);
-            return redirect(controllers.routes.Application.home());
+            return redirect(controllers.routes.Home.home());
         }
         else {
-            return redirect(controllers.routes.Application.error("Not a valid user:" +user.email + user.password));
+            return redirect(controllers.routes.Error.error("Not a valid user:" +user.email + user.password));
         }
 
 
