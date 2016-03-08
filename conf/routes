@@ -4,7 +4,6 @@
 
 # Home page
 GET     /                           controllers.Application.sessionRedirect()
-GET		/listUser					controllers.Application.listUser()
 GET		/index						controllers.Application.index()
 GET		/register					controllers.Registration.register()
 GET		/login						controllers.Login.login()

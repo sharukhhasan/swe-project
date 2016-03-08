@@ -2,7 +2,7 @@ name := """SWE Project"""
 
 version := "1.0"
 
-lazy val root = (project in file(".")).enablePlugins(PlayJava)
+lazy val root = (project in file(".")).enablePlugins(PlayJava, PlayEbean)
 
 scalaVersion := "2.11.6"
 
@@ -14,11 +14,13 @@ libraryDependencies ++= Seq(
   javaWs,
   "org.postgresql" % "postgresql" % "9.4-1201-jdbc41",
   javaJpa,
-  "org.hibernate" % "hibernate-entitymanager" % "4.3.9.Final",
-  "com.adrianhurt" %% "play-bootstrap" % "1.0-P24-B3-SNAPSHOT" exclude("org.webjars", "jquery") exclude("org.webjars" , "bootstrap")
+  "com.adrianhurt" %% "play-bootstrap" % "1.0-P24-B3-SNAPSHOT" exclude("org.webjars", "jquery") exclude("org.webjars" , "bootstrap"
+  )
   
 )
-  
+
+routesGenerator := InjectedRoutesGenerator  
+
 PlayKeys.externalizeResources := false
 
 // Play provides two styles of routers, one expects its actions to be injected, the
