@@ -38,3 +38,9 @@ New client attempting to connect on port: 60843-59842
 This client on port 60843 has uuid b88a0f11-8c94-4901-b06b-f99230c3de05 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
 Connected Clients: play-fork-run-b88a0f11-8c94-4901-b06b-f99230c3de05
 Taking next connection to: 59842
+Checking to see if clients are empty...
+No non-daemon clients connected after 3 min. Shutting down.
+Server socket thread exiting.
+0 clients open, will close them...
+All client sockets have been closed.
+Closing the 9428@DOPE logs at Tue Mar 08 06:40:08 CST 2016, goodbye.
