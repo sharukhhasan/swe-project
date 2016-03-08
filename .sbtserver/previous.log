@@ -1,5 +1,5 @@
-New log file opened at Tue Mar 08 06:18:47 CST 2016 by 6700@DOPE
-jvm 6700@DOPE
+New log file opened at Tue Mar 08 17:17:08 CST 2016 by 8920@DOPE
+jvm 8920@DOPE
 jvm vmName=Java HotSpot(TM) 64-Bit Server VM vmVendor=Oracle Corporation vmVersion=25.73-b02
 jvm specName=Java Virtual Machine Specification specVendor=Oracle Corporation specVersion=1.8
 jvm arguments: [-Xms256m, -Xmx1024m, -XX:MetaspaceSize=64m, -XX:MaxMetaspaceSize=256m]
@@ -27,7 +27,7 @@ sorting: ns: List(sbt.plugins.CorePlugin, sbt.plugins.IvyPlugin, sbt.plugins.Jvm
   :: sorted deduced result: List(sbt.plugins.CorePlugin, sbt.plugins.IvyPlugin, sbt.plugins.JvmPlugin, sbt.plugins.JUnitXmlReportPlugin)
 [Loading] Done in C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\project, returning: (protected-harbor-17312-build)
 Loading project definition from C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\project
-Running task... Cancel: sbt.TaskCancellationStrategy$Null$@3c566af3, check cycles: false
+Running task... Cancel: sbt.TaskCancellationStrategy$Null$@2911e289, check cycles: false
 
 Initial source changes: 
 	removed:Set()
@@ -69,7 +69,7 @@ Set current project to SWE Project (in build file:/C:/Users/Andrew.DOPE/Document
 > server-handle-next-server-request
 > {file:/C:/Users/Andrew.DOPE/Documents/protected-harbor-17312/}root/*:playForkConfig
 Evaluating tasks: *:playForkConfig
-Running task... Cancel: sbt.server.ServerTaskCancellation@2b87d3a1, check cycles: false
+Running task... Cancel: sbt.server.ServerTaskCancellation@19813964, check cycles: false
 Read from stdout: Updating {file:/C:/Users/Andrew.DOPE/Documents/protected-harbor-17312/}root...
 Updating {file:/C:/Users/Andrew.DOPE/Documents/protected-harbor-17312/}root...
 Other repositories:
@@ -84,7 +84,7 @@ resolving dependencies for configuration 'compile'
 == resolving dependencies swe-project#swe-project_2.11;1.0->org.scala-lang#scala-library;2.11.6 [compile->default(compile)]
 Read from stdout: Resolving org.scala-lang#scala-library;2.11.6 ...
 Resolving org.scala-lang#scala-library;2.11.6 ...
-sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@1bca6c5e
+sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@42cda62c
 sbt-chain: module revision found in cache: org.scala-lang#scala-library;2.11.6
 	found org.scala-lang#scala-library;2.11.6 in sbt-chain
 	[2.11.6] org.scala-lang#scala-library;2.11.6
@@ -1996,6 +1996,26 @@ excluding dependency: org.webjars#jquery;2.1.4 {compile=[compile(*), master(comp
 == resolving dependencies com.adrianhurt#play-bootstrap_2.11;1.0-P24-B3-SNAPSHOT->com.adrianhurt#play-bootstrap-core_2.11;1.0-P24-SNAPSHOT [runtime->runtime(*)]
 == resolving dependencies com.adrianhurt#play-bootstrap_2.11;1.0-P24-B3-SNAPSHOT->com.adrianhurt#play-bootstrap-core_2.11;1.0-P24-SNAPSHOT [runtime->compile]
 == resolving dependencies swe-project#swe-project_2.11;1.0->com.adrianhurt#play-bootstrap_2.11;1.0-P24-B3-SNAPSHOT [compile->master]
+== resolving dependencies swe-project#swe-project_2.11;1.0->javax.mail#mail;1.4.1 [compile->default(compile)]
+Read from stdout: Resolving javax.mail#mail;1.4.1 ...
+Resolving javax.mail#mail;1.4.1 ...
+sbt-chain: Checking cache for: dependency: javax.mail#mail;1.4.1 {compile=[default(compile)]}
+sbt-chain: module revision found in cache: javax.mail#mail;1.4.1
+	found javax.mail#mail;1.4.1 in sbt-chain
+== resolving dependencies swe-project#swe-project_2.11;1.0->javax.mail#mail;1.4.1 [compile->runtime]
+== resolving dependencies swe-project#swe-project_2.11;1.0->javax.mail#mail;1.4.1 [compile->compile]
+== resolving dependencies javax.mail#mail;1.4.1->javax.activation#activation;1.1 [compile->master(compile)]
+Read from stdout: Resolving javax.activation#activation;1.1 ...
+Resolving javax.activation#activation;1.1 ...
+sbt-chain: Checking cache for: dependency: javax.activation#activation;1.1 {compile=[compile(*), master(compile)], runtime=[runtime(*)]}
+sbt-chain: module revision found in cache: javax.activation#activation;1.1
+	found javax.activation#activation;1.1 in sbt-chain
+== resolving dependencies javax.mail#mail;1.4.1->javax.activation#activation;1.1 [compile->compile(*)]
+== resolving dependencies javax.mail#mail;1.4.1->javax.activation#activation;1.1 [compile->runtime(*)]
+== resolving dependencies javax.mail#mail;1.4.1->javax.activation#activation;1.1 [compile->compile]
+== resolving dependencies javax.mail#mail;1.4.1->javax.activation#activation;1.1 [runtime->runtime(*)]
+== resolving dependencies javax.mail#mail;1.4.1->javax.activation#activation;1.1 [runtime->compile]
+== resolving dependencies swe-project#swe-project_2.11;1.0->javax.mail#mail;1.4.1 [compile->master]
 resolving dependencies for configuration 'runtime'
 == resolving dependencies for swe-project#swe-project_2.11;1.0 [runtime]
 == resolving dependencies for swe-project#swe-project_2.11;1.0 [compile]
@@ -2931,6 +2951,14 @@ excluding dependency: org.webjars#jquery;2.1.4 {compile=[compile(*), master(comp
 == resolving dependencies com.adrianhurt#play-bootstrap-core_2.11;1.0-P24-SNAPSHOT->com.typesafe.play#play-netty-server_2.11;2.4.6 [runtime->runtime(*)]
 == resolving dependencies com.adrianhurt#play-bootstrap-core_2.11;1.0-P24-SNAPSHOT->com.typesafe.play#play-netty-server_2.11;2.4.6 [runtime->compile]
 == resolving dependencies swe-project#swe-project_2.11;1.0->com.adrianhurt#play-bootstrap_2.11;1.0-P24-B3-SNAPSHOT [compile->master]
+== resolving dependencies swe-project#swe-project_2.11;1.0->javax.mail#mail;1.4.1 [compile->default(compile)]
+== resolving dependencies swe-project#swe-project_2.11;1.0->javax.mail#mail;1.4.1 [compile->runtime]
+== resolving dependencies swe-project#swe-project_2.11;1.0->javax.mail#mail;1.4.1 [compile->compile]
+== resolving dependencies javax.mail#mail;1.4.1->javax.activation#activation;1.1 [compile->master(compile)]
+== resolving dependencies javax.mail#mail;1.4.1->javax.activation#activation;1.1 [compile->compile(*)]
+== resolving dependencies javax.mail#mail;1.4.1->javax.activation#activation;1.1 [runtime->runtime(*)]
+== resolving dependencies javax.mail#mail;1.4.1->javax.activation#activation;1.1 [runtime->compile]
+== resolving dependencies swe-project#swe-project_2.11;1.0->javax.mail#mail;1.4.1 [compile->master]
 resolving dependencies for configuration 'test'
 == resolving dependencies for swe-project#swe-project_2.11;1.0 [test]
 == resolving dependencies for swe-project#swe-project_2.11;1.0 [runtime]
@@ -3867,6 +3895,14 @@ excluding dependency: org.webjars#jquery;2.1.4 {compile=[compile(*), master(comp
 == resolving dependencies com.adrianhurt#play-bootstrap-core_2.11;1.0-P24-SNAPSHOT->com.typesafe.play#play-netty-server_2.11;2.4.6 [runtime->runtime(*)]
 == resolving dependencies com.adrianhurt#play-bootstrap-core_2.11;1.0-P24-SNAPSHOT->com.typesafe.play#play-netty-server_2.11;2.4.6 [runtime->compile]
 == resolving dependencies swe-project#swe-project_2.11;1.0->com.adrianhurt#play-bootstrap_2.11;1.0-P24-B3-SNAPSHOT [compile->master]
+== resolving dependencies swe-project#swe-project_2.11;1.0->javax.mail#mail;1.4.1 [compile->default(compile)]
+== resolving dependencies swe-project#swe-project_2.11;1.0->javax.mail#mail;1.4.1 [compile->runtime]
+== resolving dependencies swe-project#swe-project_2.11;1.0->javax.mail#mail;1.4.1 [compile->compile]
+== resolving dependencies javax.mail#mail;1.4.1->javax.activation#activation;1.1 [compile->master(compile)]
+== resolving dependencies javax.mail#mail;1.4.1->javax.activation#activation;1.1 [compile->compile(*)]
+== resolving dependencies javax.mail#mail;1.4.1->javax.activation#activation;1.1 [runtime->runtime(*)]
+== resolving dependencies javax.mail#mail;1.4.1->javax.activation#activation;1.1 [runtime->compile]
+== resolving dependencies swe-project#swe-project_2.11;1.0->javax.mail#mail;1.4.1 [compile->master]
 == resolving dependencies swe-project#swe-project_2.11;1.0->com.typesafe.play#play-test_2.11;2.4.6 [test->default(compile)]
 Read from stdout: Resolving com.typesafe.play#play-test_2.11;2.4.6 ...
 Resolving com.typesafe.play#play-test_2.11;2.4.6 ...
@@ -5309,6 +5345,14 @@ excluding dependency: org.webjars#jquery;2.1.4 {compile=[compile(*), master(comp
 == resolving dependencies com.adrianhurt#play-bootstrap-core_2.11;1.0-P24-SNAPSHOT->com.typesafe.play#play-netty-server_2.11;2.4.6 [runtime->runtime(*)]
 == resolving dependencies com.adrianhurt#play-bootstrap-core_2.11;1.0-P24-SNAPSHOT->com.typesafe.play#play-netty-server_2.11;2.4.6 [runtime->compile]
 == resolving dependencies swe-project#swe-project_2.11;1.0->com.adrianhurt#play-bootstrap_2.11;1.0-P24-B3-SNAPSHOT [compile->master]
+== resolving dependencies swe-project#swe-project_2.11;1.0->javax.mail#mail;1.4.1 [compile->default(compile)]
+== resolving dependencies swe-project#swe-project_2.11;1.0->javax.mail#mail;1.4.1 [compile->runtime]
+== resolving dependencies swe-project#swe-project_2.11;1.0->javax.mail#mail;1.4.1 [compile->compile]
+== resolving dependencies javax.mail#mail;1.4.1->javax.activation#activation;1.1 [compile->master(compile)]
+== resolving dependencies javax.mail#mail;1.4.1->javax.activation#activation;1.1 [compile->compile(*)]
+== resolving dependencies javax.mail#mail;1.4.1->javax.activation#activation;1.1 [runtime->runtime(*)]
+== resolving dependencies javax.mail#mail;1.4.1->javax.activation#activation;1.1 [runtime->compile]
+== resolving dependencies swe-project#swe-project_2.11;1.0->javax.mail#mail;1.4.1 [compile->master]
 == resolving dependencies for swe-project#swe-project_2.11;1.0 [optional]
 == resolving dependencies for swe-project#swe-project_2.11;1.0 [provided]
 resolving dependencies for configuration 'runtime-internal'
@@ -6247,6 +6291,14 @@ excluding dependency: org.webjars#jquery;2.1.4 {compile=[compile(*), master(comp
 == resolving dependencies com.adrianhurt#play-bootstrap-core_2.11;1.0-P24-SNAPSHOT->com.typesafe.play#play-netty-server_2.11;2.4.6 [runtime->runtime(*)]
 == resolving dependencies com.adrianhurt#play-bootstrap-core_2.11;1.0-P24-SNAPSHOT->com.typesafe.play#play-netty-server_2.11;2.4.6 [runtime->compile]
 == resolving dependencies swe-project#swe-project_2.11;1.0->com.adrianhurt#play-bootstrap_2.11;1.0-P24-B3-SNAPSHOT [compile->master]
+== resolving dependencies swe-project#swe-project_2.11;1.0->javax.mail#mail;1.4.1 [compile->default(compile)]
+== resolving dependencies swe-project#swe-project_2.11;1.0->javax.mail#mail;1.4.1 [compile->runtime]
+== resolving dependencies swe-project#swe-project_2.11;1.0->javax.mail#mail;1.4.1 [compile->compile]
+== resolving dependencies javax.mail#mail;1.4.1->javax.activation#activation;1.1 [compile->master(compile)]
+== resolving dependencies javax.mail#mail;1.4.1->javax.activation#activation;1.1 [compile->compile(*)]
+== resolving dependencies javax.mail#mail;1.4.1->javax.activation#activation;1.1 [runtime->runtime(*)]
+== resolving dependencies javax.mail#mail;1.4.1->javax.activation#activation;1.1 [runtime->compile]
+== resolving dependencies swe-project#swe-project_2.11;1.0->javax.mail#mail;1.4.1 [compile->master]
 == resolving dependencies for swe-project#swe-project_2.11;1.0 [optional]
 resolving dependencies for configuration 'test-internal'
 == resolving dependencies for swe-project#swe-project_2.11;1.0 [test-internal]
@@ -7185,6 +7237,14 @@ excluding dependency: org.webjars#jquery;2.1.4 {compile=[compile(*), master(comp
 == resolving dependencies com.adrianhurt#play-bootstrap-core_2.11;1.0-P24-SNAPSHOT->com.typesafe.play#play-netty-server_2.11;2.4.6 [runtime->runtime(*)]
 == resolving dependencies com.adrianhurt#play-bootstrap-core_2.11;1.0-P24-SNAPSHOT->com.typesafe.play#play-netty-server_2.11;2.4.6 [runtime->compile]
 == resolving dependencies swe-project#swe-project_2.11;1.0->com.adrianhurt#play-bootstrap_2.11;1.0-P24-B3-SNAPSHOT [compile->master]
+== resolving dependencies swe-project#swe-project_2.11;1.0->javax.mail#mail;1.4.1 [compile->default(compile)]
+== resolving dependencies swe-project#swe-project_2.11;1.0->javax.mail#mail;1.4.1 [compile->runtime]
+== resolving dependencies swe-project#swe-project_2.11;1.0->javax.mail#mail;1.4.1 [compile->compile]
+== resolving dependencies javax.mail#mail;1.4.1->javax.activation#activation;1.1 [compile->master(compile)]
+== resolving dependencies javax.mail#mail;1.4.1->javax.activation#activation;1.1 [compile->compile(*)]
+== resolving dependencies javax.mail#mail;1.4.1->javax.activation#activation;1.1 [runtime->runtime(*)]
+== resolving dependencies javax.mail#mail;1.4.1->javax.activation#activation;1.1 [runtime->compile]
+== resolving dependencies swe-project#swe-project_2.11;1.0->javax.mail#mail;1.4.1 [compile->master]
 == resolving dependencies swe-project#swe-project_2.11;1.0->com.typesafe.play#play-test_2.11;2.4.6 [test->default(compile)]
 == resolving dependencies swe-project#swe-project_2.11;1.0->com.typesafe.play#play-test_2.11;2.4.6 [test->runtime]
 == resolving dependencies swe-project#swe-project_2.11;1.0->com.typesafe.play#play-test_2.11;2.4.6 [test->compile]
@@ -8507,6 +8567,7 @@ all callers are evicted for commons-logging#commons-logging;1.1.1: evicting too
 	[NOT REQUIRED] org.postgresql#postgresql;9.4-1201-jdbc41!postgresql.jar
 	[NOT REQUIRED] com.typesafe.play#play-java-jpa_2.11;2.4.6!play-java-jpa_2.11.jar
 	[NOT REQUIRED] com.adrianhurt#play-bootstrap_2.11;1.0-P24-B3-SNAPSHOT!play-bootstrap_2.11.jar
+	[NOT REQUIRED] javax.mail#mail;1.4.1!mail.jar
 	[NOT REQUIRED] org.apache.commons#commons-lang3;3.4!commons-lang3.jar
 	[NOT REQUIRED] org.scala-lang.modules#scala-xml_2.11;1.0.1!scala-xml_2.11.jar(bundle)
 	[NOT REQUIRED] com.typesafe.play#play-jdbc-evolutions_2.11;2.4.0!play-jdbc-evolutions_2.11.jar
@@ -8584,6 +8645,7 @@ all callers are evicted for commons-logging#commons-logging;1.1.1: evicting too
 	[NOT REQUIRED] org.scala-lang#scala-library;2.11.7!scala-library.jar
 	[NOT REQUIRED] com.typesafe.play#filters-helpers_2.11;2.4.4!filters-helpers_2.11.jar
 	[NOT REQUIRED] com.adrianhurt#play-bootstrap-core_2.11;1.0-P24-SNAPSHOT!play-bootstrap-core_2.11.jar
+	[NOT REQUIRED] javax.activation#activation;1.1!activation.jar
 	[NOT REQUIRED] com.typesafe.play#play-test_2.11;2.4.6!play-test_2.11.jar
 	[NOT REQUIRED] junit#junit;4.12!junit.jar
 	[NOT REQUIRED] com.novocode#junit-interface;0.11!junit-interface.jar
@@ -8660,7 +8722,7 @@ all callers are evicted for commons-logging#commons-logging;1.1.1: evicting too
 	[NOT REQUIRED] org.scala-sbt#control_2.11;0.13.8-M3!control_2.11.jar
 	[NOT REQUIRED] com.typesafe.akka#akka-actor_2.11;2.3.8!akka-actor_2.11.jar
 	[NOT REQUIRED] com.typesafe.akka#akka-testkit_2.11;2.3.8!akka-testkit_2.11.jar
-:: resolution report :: resolve 8026ms :: artifacts dl 168ms
+:: resolution report :: resolve 9718ms :: artifacts dl 155ms
 	report for swe-project#swe-project_2.11;1.0 compile produced in C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\target\resolution-cache\reports\swe-project-swe-project_2.11-compile.xml
 	report for swe-project#swe-project_2.11;1.0 runtime produced in C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\target\resolution-cache\reports\swe-project-swe-project_2.11-runtime.xml
 	report for swe-project#swe-project_2.11;1.0 test produced in C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\target\resolution-cache\reports\swe-project-swe-project_2.11-test.xml
@@ -8675,7 +8737,7 @@ all callers are evicted for commons-logging#commons-logging;1.1.1: evicting too
 	report for swe-project#swe-project_2.11;1.0 pom produced in C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\target\resolution-cache\reports\swe-project-swe-project_2.11-pom.xml
 	report for swe-project#swe-project_2.11;1.0 scala-tool produced in C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\target\resolution-cache\reports\swe-project-swe-project_2.11-scala-tool.xml
 	report for swe-project#swe-project_2.11;1.0 fork-run produced in C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\target\resolution-cache\reports\swe-project-swe-project_2.11-fork-run.xml
-	resolve done (8026ms resolve - 168ms download)
+	resolve done (9718ms resolve - 155ms download)
 Read from stdout: Done updating.
 Done updating.
 Read from stdout: Scala version was updated by one of library dependencies:
@@ -8688,76 +8750,88 @@ Read from stdout: 	ivyScala := ivyScala.value map { _.copy(overrideScalaVersion 
 	ivyScala := ivyScala.value map { _.copy(overrideScalaVersion = true) }
 Read from stdout: Run 'evicted' to see detailed eviction warnings
 Run 'evicted' to see detailed eviction warnings
-Total time: 9 s, completed Mar 8, 2016 6:24:14 AM
+Total time: 11 s, completed Mar 8, 2016 5:18:43 PM
 > server-post-command-cleanup
 > server-handle-next-server-request
 > root/playForkNotifyStart http://localhost:9000
 Evaluating tasks: *:playForkNotifyStart
-Running task... Cancel: sbt.server.ServerTaskCancellation@386d38c, check cycles: false
-Total time: 0 s, completed Mar 8, 2016 6:24:15 AM
+Running task... Cancel: sbt.server.ServerTaskCancellation@7b4139be, check cycles: false
+Total time: 0 s, completed Mar 8, 2016 5:18:44 PM
 > server-post-command-cleanup
 > server-handle-next-server-request
 > {file:/C:/Users/Andrew.DOPE/Documents/protected-harbor-17312/}root/*:playForkReload
 Evaluating tasks: *:playForkReload
-Running task... Cancel: sbt.server.ServerTaskCancellation@3f1fe45f, check cycles: false
+Running task... Cancel: sbt.server.ServerTaskCancellation@5b9fb017, check cycles: false
 
 Initial source changes: 
 	removed:Set()
 	added: Set()
-	modified: Set()
+	modified: Set(C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\app\models\User.java, C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\app\models\EmailActivation.java)
 Removed products: Set()
 External API changes: API Changes: Set()
 Modified binary dependencies: Set()
-Initial directly invalidated sources: Set()
+Initial directly invalidated sources: Set(C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\app\models\User.java, C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\app\models\EmailActivation.java)
 
 Sources indirectly invalidated by:
 	product: Set()
 	binary dep: Set()
 	external source: Set()
-All initially invalidated sources: Set()
+All initially invalidated sources: Set(C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\app\models\User.java, C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\app\models\EmailActivation.java)
 
-Copy resource mappings: 
-	(C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\conf\application.conf,C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\target\scala-2.11\classes\application.conf)
-	(C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\conf\evolutions,C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\target\scala-2.11\classes\evolutions)
-	(C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\conf\initial-data.yml,C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\target\scala-2.11\classes\initial-data.yml)
-	(C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\conf\logback.xml,C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\target\scala-2.11\classes\logback.xml)
-	(C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\conf\prod.conf,C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\target\scala-2.11\classes\prod.conf)
-	(C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\conf\routes,C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\target\scala-2.11\classes\routes)
-	(C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\conf\evolutions\default,C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\target\scala-2.11\classes\evolutions\default)
-	(C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\conf\evolutions\default\1.sql,C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\target\scala-2.11\classes\evolutions\default\1.sql)
+Read from stdout: Compiling 2 Java sources to C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\target\scala-2.11\classes...
+Compiling 2 Java sources to C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@58a27c66 directly...
 Warning: node.js detection failed, sbt will use the Rhino based Trireme JavaScript engine instead to run JavaScript assets compilation, which in some cases may be orders of magnitude slower than using node.js.
-Total time: 1 s, completed Mar 8, 2016 6:24:20 AM
+Read from stdout: C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\app\models\EmailActivation.java:16: illegal start of type
+C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\app\models\EmailActivation.java:16: illegal start of type
+Read from stdout: C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\app\models\EmailActivation.java:16: ';' expected
+C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\app\models\EmailActivation.java:16: ';' expected
+Read from stdout: C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\app\models\User.java:23: illegal start of type
+C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\app\models\User.java:23: illegal start of type
+Read from stdout: C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\app\models\User.java:23: ';' expected
+C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\app\models\User.java:23: ';' expected
+Total time: 2 s, completed Mar 8, 2016 5:18:51 PM
 > server-post-command-cleanup
 > server-handle-next-server-request
 > {file:/C:/Users/Andrew.DOPE/Documents/protected-harbor-17312/}root/*:playForkReload
 Evaluating tasks: *:playForkReload
-Running task... Cancel: sbt.server.ServerTaskCancellation@7731e639, check cycles: false
+Running task... Cancel: sbt.server.ServerTaskCancellation@49f47d0c, check cycles: false
 
 Initial source changes: 
 	removed:Set()
 	added: Set()
-	modified: Set()
+	modified: Set(C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\app\models\User.java, C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\app\models\EmailActivation.java)
 Removed products: Set()
 External API changes: API Changes: Set()
 Modified binary dependencies: Set()
-Initial directly invalidated sources: Set()
+Initial directly invalidated sources: Set(C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\app\models\User.java, C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\app\models\EmailActivation.java)
 
 Sources indirectly invalidated by:
 	product: Set()
 	binary dep: Set()
 	external source: Set()
-All initially invalidated sources: Set()
+All initially invalidated sources: Set(C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\app\models\User.java, C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\app\models\EmailActivation.java)
 
-Copy resource mappings: 
-	(C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\conf\application.conf,C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\target\scala-2.11\classes\application.conf)
-	(C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\conf\evolutions,C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\target\scala-2.11\classes\evolutions)
-	(C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\conf\initial-data.yml,C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\target\scala-2.11\classes\initial-data.yml)
-	(C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\conf\logback.xml,C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\target\scala-2.11\classes\logback.xml)
-	(C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\conf\prod.conf,C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\target\scala-2.11\classes\prod.conf)
-	(C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\conf\routes,C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\target\scala-2.11\classes\routes)
-	(C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\conf\evolutions\default,C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\target\scala-2.11\classes\evolutions\default)
-	(C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\conf\evolutions\default\1.sql,C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\target\scala-2.11\classes\evolutions\default\1.sql)
-Total time: 1 s, completed Mar 8, 2016 6:25:18 AM
+Read from stdout: Compiling 2 Java sources to C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\target\scala-2.11\classes...
+Compiling 2 Java sources to C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\target\scala-2.11\classes...
+Attempting to call com.sun.tools.javac.api.JavacTool@69615782 directly...
+Read from stdout: C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\app\models\EmailActivation.java:16: illegal start of expression
+C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\app\models\EmailActivation.java:16: illegal start of expression
+Read from stdout: C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\app\models\EmailActivation.java:16: illegal start of type
+C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\app\models\EmailActivation.java:16: illegal start of type
+Read from stdout: C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\app\models\EmailActivation.java:16: <identifier> expected
+C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\app\models\EmailActivation.java:16: <identifier> expected
+Read from stdout: C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\app\models\EmailActivation.java:16: ';' expected
+C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\app\models\EmailActivation.java:16: ';' expected
+Read from stdout: C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\app\models\User.java:23: illegal start of expression
+C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\app\models\User.java:23: illegal start of expression
+Read from stdout: C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\app\models\User.java:23: illegal start of type
+C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\app\models\User.java:23: illegal start of type
+Read from stdout: C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\app\models\User.java:23: <identifier> expected
+C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\app\models\User.java:23: <identifier> expected
+Read from stdout: C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\app\models\User.java:23: ';' expected
+C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\app\models\User.java:23: ';' expected
+Total time: 1 s, completed Mar 8, 2016 5:19:48 PM
 > server-post-command-cleanup
 > server-handle-next-server-request
 Done executing sbt server engine, result Right(Exit(0))
@@ -8766,4 +8840,4 @@ Waiting for socket thread
 Waiting for request processor thread
 Waiting for command engine result
 Returning control to sbt launcher with result Exit(0)
-Closing the 6700@DOPE logs at Tue Mar 08 06:27:04 CST 2016, goodbye.
+Closing the 8920@DOPE logs at Tue Mar 08 17:21:32 CST 2016, goodbye.

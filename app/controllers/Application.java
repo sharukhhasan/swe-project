@@ -59,13 +59,6 @@ public class Application extends Controller {
 
     }
 
-    public Result addUser() {
-    	Form<User> form = Form.form(User.class).bindFromRequest();
-    	User user = form.get();
-        Ebean.save(user);
-    	
-    	return redirect(controllers.routes.Application.index());
-    }
     
     
 

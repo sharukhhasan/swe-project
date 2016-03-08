@@ -14,10 +14,9 @@ libraryDependencies ++= Seq(
   javaWs,
   "org.postgresql" % "postgresql" % "9.4-1201-jdbc41",
   javaJpa,
-  "com.adrianhurt" %% "play-bootstrap" % "1.0-P24-B3-SNAPSHOT" exclude("org.webjars", "jquery") exclude("org.webjars" , "bootstrap"
+  "com.adrianhurt" %% "play-bootstrap" % "1.0-P24-B3-SNAPSHOT" exclude("org.webjars", "jquery") exclude("org.webjars" , "bootstrap"),
+  "javax.mail" % "mail" % "1.4.1"
   )
-  
-)
 
 routesGenerator := InjectedRoutesGenerator  
 

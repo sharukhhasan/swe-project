@@ -20,5 +20,6 @@ public class User extends Model {
         public String gender;
         public String password;
         public String role;
+        public Boolean activated = false;
 
 }

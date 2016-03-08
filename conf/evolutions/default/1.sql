@@ -3,6 +3,14 @@
 
 # --- !Ups
 
+create table email_activation (
+  id                        bigserial not null,
+  email                     varchar(255),
+  token                     varchar(255),
+  used                      boolean,
+  constraint pk_email_activation primary key (id))
+;
+
 create table users (
   id                        bigserial not null,
   email                     varchar(255),
@@ -11,6 +19,7 @@ create table users (
   gender                    varchar(255),
   password                  varchar(255),
   role                      varchar(255),
+  activated                 boolean,
   constraint pk_users primary key (id))
 ;
 
@@ -18,6 +27,8 @@ create table users (
 
 
 # --- !Downs
+
+drop table if exists email_activation cascade;
 
 drop table if exists users cascade;
 
