@@ -1,16 +1,22 @@
-New log file opened at Tue Mar 08 06:18:47 CST 2016 by 6700@DOPE
-Taking next connection to: 59241
-New client attempting to connect on port: 59242-59241
-  Address = /192.168.0.2:59241
-This client on port 59242 has uuid 8ca11527-c799-47d8-8e39-e1e393368d0e configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
-Connected Clients: play-fork-run-8ca11527-c799-47d8-8e39-e1e393368d0e
-Taking next connection to: 59241
+New log file opened at Tue Mar 08 06:27:11 CST 2016 by 9428@DOPE
+Taking next connection to: 59842
+New client attempting to connect on port: 59843-59842
+  Address = /192.168.0.2:59842
+This client on port 59843 has uuid 64c560ac-0cce-4118-89c7-aec8c8c4661a configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: play-fork-run-64c560ac-0cce-4118-89c7-aec8c8c4661a
+Taking next connection to: 59842
 Checking to see if clients are empty...
 We have 1 non-daemon clients, continuing serving connections.
-Taking next connection to: 59241
-New client attempting to connect on port: 59487-59241
-  Address = /192.168.0.2:59241
-Handshake exception on socket: 59487
+Taking next connection to: 59842
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 59842
+Checking to see if clients are empty...
+We have 1 non-daemon clients, continuing serving connections.
+Taking next connection to: 59842
+New client attempting to connect on port: 60842-59842
+  Address = /192.168.0.2:59842
+Handshake exception on socket: 60842
 sbt.impl.ipc.HandshakeException: Unable to perform handshake
 	at sbt.impl.ipc.Peer.handshake(IPC.scala:46)
 	at sbt.impl.ipc.MultiClientServer.<init>(IPC.scala:150)
@@ -26,9 +32,9 @@ Caused by: java.net.SocketException: Software caused connection abort: recv fail
 	at sbt.impl.ipc.Peer.receive(IPC.scala:95)
 	at sbt.impl.ipc.Peer.handshake(IPC.scala:49)
 	... 2 more
-Taking next connection to: 59241
-New client attempting to connect on port: 59488-59241
-  Address = /192.168.0.2:59241
-This client on port 59488 has uuid 181531c8-c107-4af4-bbb1-87f9fdfa6207 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
-Connected Clients: play-fork-run-181531c8-c107-4af4-bbb1-87f9fdfa6207
-Taking next connection to: 59241
+Taking next connection to: 59842
+New client attempting to connect on port: 60843-59842
+  Address = /192.168.0.2:59842
+This client on port 60843 has uuid b88a0f11-8c94-4901-b06b-f99230c3de05 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: play-fork-run-b88a0f11-8c94-4901-b06b-f99230c3de05
+Taking next connection to: 59842

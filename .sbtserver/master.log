@@ -1,5 +1,5 @@
-New log file opened at Tue Mar 08 06:18:47 CST 2016 by 6700@DOPE
-jvm 6700@DOPE
+New log file opened at Tue Mar 08 06:27:11 CST 2016 by 9428@DOPE
+jvm 9428@DOPE
 jvm vmName=Java HotSpot(TM) 64-Bit Server VM vmVendor=Oracle Corporation vmVersion=25.73-b02
 jvm specName=Java Virtual Machine Specification specVendor=Oracle Corporation specVersion=1.8
 jvm arguments: [-Xms256m, -Xmx1024m, -XX:MetaspaceSize=64m, -XX:MaxMetaspaceSize=256m]
@@ -27,7 +27,7 @@ sorting: ns: List(sbt.plugins.CorePlugin, sbt.plugins.IvyPlugin, sbt.plugins.Jvm
   :: sorted deduced result: List(sbt.plugins.CorePlugin, sbt.plugins.IvyPlugin, sbt.plugins.JvmPlugin, sbt.plugins.JUnitXmlReportPlugin)
 [Loading] Done in C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\project, returning: (protected-harbor-17312-build)
 Loading project definition from C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\project
-Running task... Cancel: sbt.TaskCancellationStrategy$Null$@3c566af3, check cycles: false
+Running task... Cancel: sbt.TaskCancellationStrategy$Null$@32535291, check cycles: false
 
 Initial source changes: 
 	removed:Set()
@@ -69,7 +69,7 @@ Set current project to SWE Project (in build file:/C:/Users/Andrew.DOPE/Document
 > server-handle-next-server-request
 > {file:/C:/Users/Andrew.DOPE/Documents/protected-harbor-17312/}root/*:playForkConfig
 Evaluating tasks: *:playForkConfig
-Running task... Cancel: sbt.server.ServerTaskCancellation@2b87d3a1, check cycles: false
+Running task... Cancel: sbt.server.ServerTaskCancellation@177eedb8, check cycles: false
 Read from stdout: Updating {file:/C:/Users/Andrew.DOPE/Documents/protected-harbor-17312/}root...
 Updating {file:/C:/Users/Andrew.DOPE/Documents/protected-harbor-17312/}root...
 Other repositories:
@@ -84,7 +84,7 @@ resolving dependencies for configuration 'compile'
 == resolving dependencies swe-project#swe-project_2.11;1.0->org.scala-lang#scala-library;2.11.6 [compile->default(compile)]
 Read from stdout: Resolving org.scala-lang#scala-library;2.11.6 ...
 Resolving org.scala-lang#scala-library;2.11.6 ...
-sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@1bca6c5e
+sbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@4aa77e3c
 sbt-chain: module revision found in cache: org.scala-lang#scala-library;2.11.6
 	found org.scala-lang#scala-library;2.11.6 in sbt-chain
 	[2.11.6] org.scala-lang#scala-library;2.11.6
@@ -8660,7 +8660,7 @@ all callers are evicted for commons-logging#commons-logging;1.1.1: evicting too
 	[NOT REQUIRED] org.scala-sbt#control_2.11;0.13.8-M3!control_2.11.jar
 	[NOT REQUIRED] com.typesafe.akka#akka-actor_2.11;2.3.8!akka-actor_2.11.jar
 	[NOT REQUIRED] com.typesafe.akka#akka-testkit_2.11;2.3.8!akka-testkit_2.11.jar
-:: resolution report :: resolve 8026ms :: artifacts dl 168ms
+:: resolution report :: resolve 8565ms :: artifacts dl 171ms
 	report for swe-project#swe-project_2.11;1.0 compile produced in C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\target\resolution-cache\reports\swe-project-swe-project_2.11-compile.xml
 	report for swe-project#swe-project_2.11;1.0 runtime produced in C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\target\resolution-cache\reports\swe-project-swe-project_2.11-runtime.xml
 	report for swe-project#swe-project_2.11;1.0 test produced in C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\target\resolution-cache\reports\swe-project-swe-project_2.11-test.xml
@@ -8675,7 +8675,7 @@ all callers are evicted for commons-logging#commons-logging;1.1.1: evicting too
 	report for swe-project#swe-project_2.11;1.0 pom produced in C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\target\resolution-cache\reports\swe-project-swe-project_2.11-pom.xml
 	report for swe-project#swe-project_2.11;1.0 scala-tool produced in C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\target\resolution-cache\reports\swe-project-swe-project_2.11-scala-tool.xml
 	report for swe-project#swe-project_2.11;1.0 fork-run produced in C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\target\resolution-cache\reports\swe-project-swe-project_2.11-fork-run.xml
-	resolve done (8026ms resolve - 168ms download)
+	resolve done (8565ms resolve - 171ms download)
 Read from stdout: Done updating.
 Done updating.
 Read from stdout: Scala version was updated by one of library dependencies:
@@ -8688,18 +8688,18 @@ Read from stdout: 	ivyScala := ivyScala.value map { _.copy(overrideScalaVersion 
 	ivyScala := ivyScala.value map { _.copy(overrideScalaVersion = true) }
 Read from stdout: Run 'evicted' to see detailed eviction warnings
 Run 'evicted' to see detailed eviction warnings
-Total time: 9 s, completed Mar 8, 2016 6:24:14 AM
+Total time: 10 s, completed Mar 8, 2016 6:37:18 AM
 > server-post-command-cleanup
 > server-handle-next-server-request
 > root/playForkNotifyStart http://localhost:9000
 Evaluating tasks: *:playForkNotifyStart
-Running task... Cancel: sbt.server.ServerTaskCancellation@386d38c, check cycles: false
-Total time: 0 s, completed Mar 8, 2016 6:24:15 AM
+Running task... Cancel: sbt.server.ServerTaskCancellation@1e7c3a02, check cycles: false
+Total time: 0 s, completed Mar 8, 2016 6:37:20 AM
 > server-post-command-cleanup
 > server-handle-next-server-request
 > {file:/C:/Users/Andrew.DOPE/Documents/protected-harbor-17312/}root/*:playForkReload
 Evaluating tasks: *:playForkReload
-Running task... Cancel: sbt.server.ServerTaskCancellation@3f1fe45f, check cycles: false
+Running task... Cancel: sbt.server.ServerTaskCancellation@4f863390, check cycles: false
 
 Initial source changes: 
 	removed:Set()
@@ -8726,37 +8726,6 @@ Copy resource mappings:
 	(C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\conf\evolutions\default,C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\target\scala-2.11\classes\evolutions\default)
 	(C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\conf\evolutions\default\1.sql,C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\target\scala-2.11\classes\evolutions\default\1.sql)
 Warning: node.js detection failed, sbt will use the Rhino based Trireme JavaScript engine instead to run JavaScript assets compilation, which in some cases may be orders of magnitude slower than using node.js.
-Total time: 1 s, completed Mar 8, 2016 6:24:20 AM
-> server-post-command-cleanup
-> server-handle-next-server-request
-> {file:/C:/Users/Andrew.DOPE/Documents/protected-harbor-17312/}root/*:playForkReload
-Evaluating tasks: *:playForkReload
-Running task... Cancel: sbt.server.ServerTaskCancellation@7731e639, check cycles: false
-
-Initial source changes: 
-	removed:Set()
-	added: Set()
-	modified: Set()
-Removed products: Set()
-External API changes: API Changes: Set()
-Modified binary dependencies: Set()
-Initial directly invalidated sources: Set()
-
-Sources indirectly invalidated by:
-	product: Set()
-	binary dep: Set()
-	external source: Set()
-All initially invalidated sources: Set()
-
-Copy resource mappings: 
-	(C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\conf\application.conf,C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\target\scala-2.11\classes\application.conf)
-	(C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\conf\evolutions,C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\target\scala-2.11\classes\evolutions)
-	(C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\conf\initial-data.yml,C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\target\scala-2.11\classes\initial-data.yml)
-	(C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\conf\logback.xml,C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\target\scala-2.11\classes\logback.xml)
-	(C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\conf\prod.conf,C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\target\scala-2.11\classes\prod.conf)
-	(C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\conf\routes,C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\target\scala-2.11\classes\routes)
-	(C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\conf\evolutions\default,C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\target\scala-2.11\classes\evolutions\default)
-	(C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\conf\evolutions\default\1.sql,C:\Users\Andrew.DOPE\Documents\protected-harbor-17312\target\scala-2.11\classes\evolutions\default\1.sql)
-Total time: 1 s, completed Mar 8, 2016 6:25:18 AM
+Total time: 2 s, completed Mar 8, 2016 6:37:22 AM
 > server-post-command-cleanup
 > server-handle-next-server-request
