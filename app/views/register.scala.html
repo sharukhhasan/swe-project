@@ -12,15 +12,49 @@
 			<div class="col-sm-12">
 				<div class="panel panel-default">
   					<div class="panel-body">
-  						@b3.form(routes.Registration.addUser) {
-  							@b3.email(myForm("email"), '_label -> "Email", 'placeholder -> "example@mail.com" )
-  							@b3.text(myForm("firstName"), '_label -> "First Name", 'placeholder -> "first name")
-  							@b3.text(myForm("lastName"), '_label -> "Last Name", 'placeholder -> "last name")
-  							@b3.radio(myForm("gender"), options = Seq("male"->"Male","female"->"Female"), '_label -> "Gender" )
-  							@b3.password(myForm("password"), '_label -> "Password", 'placeholder -> "password" )
-  							@b3.submit('class -> "btn btn-primary"){ Register }
-
-  						}
+					@b3.form(routes.Registration.addUser()) {
+						@b3.email(
+							myForm("email"),
+							'_label -> "Email",
+							'placeholder -> "example@mail.com"
+						)
+						@b3.text(
+							myForm("firstName"),
+							'_label -> "First Name",
+							'placeholder -> "first name"
+						)
+						@b3.text(
+							myForm("lastName"),
+							'_label -> "Last Name",
+							'placeholder -> "last name"
+						)
+						@b3.radio(
+							myForm("gender"),
+							options = Seq("male"->"Male","female"->"Female"),
+							'_label -> "Gender"
+						)
+						@b3.radio(
+							myForm("role"),
+							options = Seq("admin"->"Admin","manager"->"Manager","user"->"Normal"),
+							'_label -> "Role"
+						)
+						@b3.date(
+							myForm("birthDate"),
+							'_label -> "Birthdate",
+							'placeholder -> "birth date"
+						)
+						@b3.password(
+							myForm("password"),
+							'_label -> "Password",
+							'placeholder -> "password"
+						)
+						@b3.password(
+							myForm("confirmPassword"),
+							'_label -> "Confirm Password",
+							'placeholder -> "confirm password"
+						)
+						@b3.submit('class -> "btn btn-primary"){ Register }
+					}
   						
 					</div>
 				</div>

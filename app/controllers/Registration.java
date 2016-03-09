@@ -42,7 +42,7 @@ public class Registration extends Controller {
             .where().like("email", user.email)
             .findList();
         if(userResult.size() > 0) {
-        	return redirect(controllers.routes.Error.error("User exists for: " +user.email));
+        	return redirect(controllers.routes.Error.error("User exists for: " + user.email));
         }
 
         EmailActivation token = new EmailActivation();
@@ -65,7 +65,7 @@ public class Registration extends Controller {
         try {
         	SendEmail.SendMail(user.email, messageTitle, messageBody);
         } catch(Exception e) {
-        	return redirect(controllers.routes.Error.error("Could not send email: " +user.email + " error" + e));
+        	return redirect(controllers.routes.Error.error("Could not send email: " + user.email + " error" + e));
         }
         
     	
