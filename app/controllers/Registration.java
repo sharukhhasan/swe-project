@@ -30,18 +30,22 @@ public class Registration extends Controller {
 	}
 
 
-	public Result register() {
+	public Result register()
+    {
         return ok(register.render(Form.form(User.class)));
     }
 
-    public Result addUser() {
+    public Result addUser()
+    {
     	Form<User> form = Form.form(User.class).bindFromRequest();
     	User user = form.get();
 
     	List<User> userResult = Ebean.find(User.class)
             .where().like("email", user.email)
             .findList();
-        if(userResult.size() > 0) {
+
+        if(userResult.size() > 0)
+        {
         	return redirect(controllers.routes.Error.error("User exists for: " + user.email));
         }
 
@@ -55,9 +59,12 @@ public class Registration extends Controller {
 
         String messageBody = "default";
 
-        if (play.Play.isProd()) {
+        if(play.Play.isProd())
+        {
         	messageBody = "Hi " + user.firstName + "please activate your account at: swe-project.herokuapp.com/activateaccount/" + token.token;
-        } else {
+        }
+        else
+        {
         	messageBody = "Hi " + user.firstName + "please activate your account at: localhost:9000/activateaccount/" + token.token;
         }
         
@@ -67,8 +74,7 @@ public class Registration extends Controller {
         } catch(Exception e) {
         	return redirect(controllers.routes.Error.error("Could not send email: " + user.email + " error" + e));
         }
-        
-    	
+
     	return redirect(controllers.routes.Application.index());
     }
 

@@ -1,9 +1,8 @@
 package controllers;
 
-import play.*;
-
 import java.util.*;
 import play.data.Form;
+import play.data.validation.Constraints;
 
 import play.mvc.*;
 import models.*;
@@ -14,6 +13,10 @@ import views.html.*;
 import com.avaje.ebean.*;
 
 public class Login extends Controller {
+    @Constraints.Required
+    public String email;
+    @Constraints.Required
+    public String password;
 
     public Result login() {
         return ok(login.render(Form.form(User.class)));
@@ -37,6 +40,23 @@ public class Login extends Controller {
 
 
 	}
+
+    public Result authenticate()
+    {
+        Form<Login> loginForm = Form.form(Login.class).bindFromRequest();
+
+        Form<Registration> registerForm = Form.form(Registration.class);
+
+        if(loginForm.hasErrors())
+        {
+            return badRequest(index.render(registerForm, loginForm));
+        }
+        else
+        {
+            session("email", loginForm.get().email);
+            return redirect(controllers.routes.Home.home());
+        }
+    }
     
 
 }

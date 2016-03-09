@@ -5,13 +5,19 @@
 # Home page
 GET     /                           controllers.Application.sessionRedirect()
 GET		/index						controllers.Application.index()
+
+#Login
+GET		/login						controllers.Login.login()
+GET		/logout						controllers.Application.logout()
+
 #Registration
 GET		/register					controllers.Registration.register()
-GET		/login						controllers.Login.login()
+
+#Home
 GET		/home/						controllers.Home.home()
+
 # Error page
 GET		/error/:error				controllers.Error.error(error: String)
-GET		/logout						controllers.Application.logout()
 GET		/activateaccount/:token		controllers.ActivateAccount.ActivateAccount(token: String)
 GET		/passwordreset				controllers.PasswordReset.Lander
 GET		/passwordreset/:token		controllers.PasswordReset.PasswordResetRedirect(token: String)

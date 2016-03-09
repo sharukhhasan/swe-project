@@ -67,3 +67,10 @@ Set current project to SWE Project (in build file:/Users/Sharukh/andrewsDev/swe-
 > iflast shell
 > server-send-ready-for-request
 > server-handle-next-server-request
+Done executing sbt server engine, result Right(Exit(0))
+Closing listening server socket
+Waiting for socket thread
+Waiting for request processor thread
+Waiting for command engine result
+Returning control to sbt launcher with result Exit(0)
+Closing the 5592@macbook-pro.local logs at Wed Mar 09 02:20:34 CST 2016, goodbye.

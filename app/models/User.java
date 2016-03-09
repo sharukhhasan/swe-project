@@ -41,6 +41,8 @@ public class User extends Model{
     public String password;
 
     @Constraints.Required
+    public String encryptedPassword;
+
     public String confirmPassword;
 
     public Boolean activated = false;
@@ -59,6 +61,20 @@ public class User extends Model{
         this.gender = gender;
         this.role = role;
         this.birthDate = birthDate;
-        this.password = Encryption.createPassword(_password);
+        this.encryptedPassword = Encryption.createPassword(_password);
+    }
+
+    public static User authenticate(String email, String clearPassword)
+    {
+        User user = userQuery.where().eq("email", email).findUnique();
+
+        if(user != null)
+        {
+            if(Encryption.checkPassword(clearPassword, user.encryptedPassword))
+            {
+                return user;
+            }
+        }
+        return null;
     }
 }
