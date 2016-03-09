@@ -40,7 +40,7 @@ public class User extends Model{
     @Constraints.Required
     public String password;
 
-    @Constraints.Required
+    
     public String encryptedPassword;
 
     public String confirmPassword;

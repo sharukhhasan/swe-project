@@ -41,22 +41,6 @@ public class Login extends Controller {
 
 	}
 
-    public Result authenticate()
-    {
-        Form<Login> loginForm = Form.form(Login.class).bindFromRequest();
-
-        Form<Registration> registerForm = Form.form(Registration.class);
-
-        if(loginForm.hasErrors())
-        {
-            return badRequest(index.render(registerForm, loginForm));
-        }
-        else
-        {
-            session("email", loginForm.get().email);
-            return redirect(controllers.routes.Home.home());
-        }
-    }
     
 
 }
