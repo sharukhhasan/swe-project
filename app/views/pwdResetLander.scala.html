@@ -1,0 +1,24 @@
+@import models._
+@(myForm: Form[User])
+@import b3.vertical.fieldConstructor
+
+@main("Password Reset") {
+
+		<div class="row">
+			<div class="col-sm-12">
+			Please enter email to be reset.
+			</div>
+			<div class="col-sm-12">
+				<div class="panel panel-default">
+  					<div class="panel-body">
+  						@b3.form(routes.PasswordReset.SendPasswordEmail) {
+  							@b3.submit('class -> "btn btn-primary"){ Submit }
+
+  						}
+  						
+					</div>
+				</div>
+			</div>
+	    </div>
+
+}

@@ -5,15 +5,23 @@
 # Home page
 GET     /                           controllers.Application.sessionRedirect()
 GET		/index						controllers.Application.index()
+#Registration
 GET		/register					controllers.Registration.register()
 GET		/login						controllers.Login.login()
 GET		/home/						controllers.Home.home()
+# Error page
 GET		/error/:error				controllers.Error.error(error: String)
 GET		/logout						controllers.Application.logout()
 GET		/activateaccount/:token		controllers.ActivateAccount.ActivateAccount(token: String)
+GET		/passwordreset				controllers.PasswordReset.Lander
+
+POST	/sendpasswordemail			controllers.PasswordReset.SendPasswordEmail
+POST	/passwordreset/				controllers.PasswordReset.PasswordReset
+POST	/passwordreset/:token		controllers.PasswordReset.PasswordResetRedirect(token: String)
+
 
 POST	/users						controllers.Registration.addUser()
-POST	/validateLogin				controllers.Application.validateLogin()
+POST	/validateLogin				controllers.Login.validateLogin()
 
 # Map static resources from the /public folder to the /assets URL path
 #GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

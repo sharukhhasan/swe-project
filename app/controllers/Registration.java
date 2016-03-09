@@ -53,7 +53,14 @@ public class Registration extends Controller {
         Ebean.save(token);
         Ebean.save(user);
 
-        String messageBody = "Hi " + user.firstName + "please activate your account at: localhost:9000/activateaccount/" + token.token;
+        String messageBody = "default";
+
+        if (play.Play.isProd()) {
+        	messageBody = "Hi " + user.firstName + "please activate your account at: swe-project.herokuapp.com/activateaccount/" + token.token;
+        } else {
+        	messageBody = "Hi " + user.firstName + "please activate your account at: localhost:9000/activateaccount/" + token.token;
+        }
+        
         String messageTitle = "Please activate your account";
         try {
         	SendEmail.SendMail(user.email, messageTitle, messageBody);

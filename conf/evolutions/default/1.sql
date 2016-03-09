@@ -11,6 +11,14 @@ create table email_activation (
   constraint pk_email_activation primary key (id))
 ;
 
+create table password_resets (
+  id                        bigserial not null,
+  email                     varchar(255),
+  token                     varchar(255),
+  used                      boolean,
+  constraint pk_password_resets primary key (id))
+;
+
 create table users (
   id                        bigserial not null,
   email                     varchar(255),
@@ -29,6 +37,8 @@ create table users (
 # --- !Downs
 
 drop table if exists email_activation cascade;
+
+drop table if exists password_resets cascade;
 
 drop table if exists users cascade;
 

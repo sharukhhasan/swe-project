@@ -23,8 +23,8 @@ public class ActivateAccount extends Controller {
         	User user = Ebean.find(User.class)
             .where().like("email", emailRecord.email)
             .findUnique();
-            user.setActivated(true);
-            emailRecord.setUsed(true);
+            user.activated = true;
+            emailRecord.used = true;
             Ebean.save(user);
             Ebean.save(emailRecord);
             return ok(activation.render("The account for " + user.firstName + " " + user.lastName + " is activated!"));
