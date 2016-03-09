@@ -1,7 +1,31 @@
-New log file opened at Tue Mar 08 19:43:23 CST 2016 by 15044@DOPE
-Taking next connection to: 63559
-New client attempting to connect on port: 63560-63559
-  Address = /192.168.0.2:63559
-This client on port 63560 has uuid 69a634d1-373c-4f29-9307-3b2a0ab27846 configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
-Connected Clients: play-fork-run-69a634d1-373c-4f29-9307-3b2a0ab27846
-Taking next connection to: 63559
+New log file opened at Tue Mar 08 20:56:11 CST 2016 by 11968@DOPE
+Taking next connection to: 52542
+New client attempting to connect on port: 52543-52542
+  Address = /192.168.0.2:52542
+This client on port 52543 has uuid e44b0ee9-0bc7-4552-a95d-29c4526cc6dc configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: play-fork-run-e44b0ee9-0bc7-4552-a95d-29c4526cc6dc
+Taking next connection to: 52542
+New client attempting to connect on port: 52969-52542
+  Address = /192.168.0.2:52542
+Handshake exception on socket: 52969
+sbt.impl.ipc.HandshakeException: Unable to perform handshake
+	at sbt.impl.ipc.Peer.handshake(IPC.scala:46)
+	at sbt.impl.ipc.MultiClientServer.<init>(IPC.scala:150)
+	at sbt.server.SbtServerSocketHandler$$anon$1.run(SbtServerSocketHandler.scala:43)
+Caused by: java.net.SocketException: Software caused connection abort: recv failed
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116)
+	at java.net.SocketInputStream.read(SocketInputStream.java:170)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.io.BufferedInputStream.fill(BufferedInputStream.java:246)
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:265)
+	at java.io.DataInputStream.readInt(DataInputStream.java:387)
+	at sbt.impl.ipc.Peer.receive(IPC.scala:95)
+	at sbt.impl.ipc.Peer.handshake(IPC.scala:49)
+	... 2 more
+Taking next connection to: 52542
+New client attempting to connect on port: 52970-52542
+  Address = /192.168.0.2:52542
+This client on port 52970 has uuid 3af26ac1-23e3-40e9-8b48-b612249d344d configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
+Connected Clients: play-fork-run-3af26ac1-23e3-40e9-8b48-b612249d344d
+Taking next connection to: 52542

@@ -14,10 +14,11 @@ GET		/error/:error				controllers.Error.error(error: String)
 GET		/logout						controllers.Application.logout()
 GET		/activateaccount/:token		controllers.ActivateAccount.ActivateAccount(token: String)
 GET		/passwordreset				controllers.PasswordReset.Lander
+GET		/passwordreset/:token		controllers.PasswordReset.PasswordResetRedirect(token: String)
 
 POST	/sendpasswordemail			controllers.PasswordReset.SendPasswordEmail
-POST	/passwordreset/				controllers.PasswordReset.PasswordReset
-POST	/passwordreset/:token		controllers.PasswordReset.PasswordResetRedirect(token: String)
+POST	/passwordreset/				controllers.PasswordReset.PasswordReset(email: String)
+
 
 
 POST	/users						controllers.Registration.addUser()

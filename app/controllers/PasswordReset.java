@@ -38,20 +38,26 @@ private String nextToken() {
         }
     }
     
-    public Result PasswordReset() {
+    public Result PasswordReset(String email) {
         Form<User> form = Form.form(User.class).bindFromRequest();
-        User userNew = form.get();
+        User userForm = form.get();
         User user = Ebean.find(User.class)
-            .where().like("email", userNew.email)
+            .where().like("email", email)
             .findUnique();
-        user.password = userNew.password;
+        if(user == null) {
+            return redirect(controllers.routes.Error.error("could not find user for email from form " + userForm.email + " Old user: "));
+        }
+        user.password = userForm.password;
         Ebean.save(user);
         return ok(genericLander.render("Your password has been reset", "Password reset for user " + user.email));
     }
 
     public Result SendPasswordEmail() {
         Form<User> form = Form.form(User.class).bindFromRequest();
-        User user = form.get();
+        User formUser = form.get();
+        User user = Ebean.find(User.class)
+            .where().like("email", formUser.email)
+            .findUnique();
         PasswordResets token = new PasswordResets();
         token.token = nextToken();
         token.email = user.email;
@@ -61,9 +67,9 @@ private String nextToken() {
         String messageBody = "default";
 
         if (play.Play.isProd()) {
-            messageBody = "Hi " + user.firstName + "please reset your password at: swe-project.herokuapp.com/passwordreset/" + token.token;
+            messageBody = "Hi " + user.firstName + " please reset your password at: swe-project.herokuapp.com/passwordreset/" + token.token;
         } else {
-            messageBody = "Hi " + user.firstName + "please reset your password at: swe-project.herokuapp.com/passwordreset/" + token.token;
+            messageBody = "Hi " + user.firstName + " please reset your password at: localhost:9000/passwordreset/" + token.token;
         }
 
         String messageTitle = "SWEPROJECT Password reset";

@@ -2,7 +2,7 @@ name := """SWE Project"""
 
 version := "1.0"
 
-val root = (project in file(".")).enablePlugins(PlayJava, PlayEbean)
+lazy val root = (project in file(".")).enablePlugins(PlayJava, PlayEbean)
 
 scalaVersion := "2.11.6"
 
@@ -17,8 +17,6 @@ libraryDependencies ++= Seq(
   "com.adrianhurt" %% "play-bootstrap" % "1.0-P24-B3-SNAPSHOT" exclude("org.webjars", "jquery") exclude("org.webjars" , "bootstrap"),
   "javax.mail" % "mail" % "1.4.1"
   )
-
-routesGenerator := InjectedRoutesGenerator  
 
 PlayKeys.externalizeResources := false
 

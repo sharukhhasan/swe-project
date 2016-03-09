@@ -11,8 +11,8 @@
 			<div class="col-sm-12">
 				<div class="panel panel-default">
   					<div class="panel-body">
-  						@b3.form(routes.PasswordReset.PasswordReset) {
-  							@b3.hidden(user.email, '_label -> "Email", 'placeholder -> "example@mail.com" )
+  						@b3.form(routes.PasswordReset.PasswordReset(user.email)) {
+  							@b3.hidden(myForm("email"), '_label -> "Email", 'text -> user.email )
   							@b3.password(myForm("password"), '_label -> "New Password", 'placeholder -> "password" )
   							@b3.submit('class -> "btn btn-primary"){ Submit }
 

@@ -12,6 +12,7 @@
 				<div class="panel panel-default">
   					<div class="panel-body">
   						@b3.form(routes.PasswordReset.SendPasswordEmail) {
+  							@b3.email(myForm("email"), '_label -> "Email", 'placeholder -> "example@mail.com" )
   							@b3.submit('class -> "btn btn-primary"){ Submit }
 
   						}
