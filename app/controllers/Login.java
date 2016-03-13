@@ -7,6 +7,8 @@ import play.data.validation.Constraints;
 import play.mvc.*;
 import models.*;
 
+import Util.Encryption;
+
 import Util.SessionHandling;
 import views.html.*;
 
@@ -27,12 +29,16 @@ public class Login extends Controller {
 	    User user = form.get();
 	    List<User> userResult = Ebean.find(User.class)
 	        .where().like("email", user.email)
-	        .where().like("password", user.password)
 	        .findList();
 	    if (userResult.size() > 0) {
-	    	String userLoggedIn = userResult.get(0).email;
-	    	SessionHandling.login(userLoggedIn);
-	        return redirect(controllers.routes.Home.home());
+	    	if (Encryption.checkPassword(user.password, userResult.get(0).password)) {
+		    	String userLoggedIn = userResult.get(0).email;
+		    	SessionHandling.login(userLoggedIn);
+		        return redirect(controllers.routes.Home.home());
+	    	}
+	    	else {
+	    		return redirect(controllers.routes.Error.error("Incorrect account or password"));
+	    	}
 	    }
 	    else {
 	        return redirect(controllers.routes.Error.error("Not a valid user:" +user.email + user.password));

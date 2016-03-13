@@ -1,7 +1,0 @@
-New log file opened at Wed Mar 09 03:44:23 CST 2016 by 9699@macbook-pro.local
-Taking next connection to: 56400
-New client attempting to connect on port: 56401-56400
-  Address = /192.168.1.109:56400
-This client on port 56401 has uuid 9bf92d49-eb46-476f-a05c-c1adb3d83d5e configName play-fork-run humanReadableName Play Fork Run protocolVersion 1 featureTags Vector()
-Connected Clients: play-fork-run-9bf92d49-eb46-476f-a05c-c1adb3d83d5e
-Taking next connection to: 56400

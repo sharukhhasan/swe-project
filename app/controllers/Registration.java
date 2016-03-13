@@ -4,6 +4,8 @@ import play.*;
 
 import java.util.*;
 
+import Util.Encryption;
+
 import play.mvc.*;
 import models.User;
 import models.EmailActivation;
@@ -48,6 +50,8 @@ public class Registration extends Controller {
         {
         	return redirect(controllers.routes.Error.error("User exists for: " + user.email));
         }
+
+        user.password = Encryption.createPassword(user.password);
 
         EmailActivation token = new EmailActivation();
 

@@ -28,10 +28,7 @@ create table users (
   role                      varchar(255),
   birth_date                timestamp,
   password                  varchar(255),
-  encrypted_password        varchar(255),
-  confirm_password          varchar(255),
   activated                 boolean,
-  user_token                varchar(255),
   constraint pk_users primary key (id))
 ;
 
