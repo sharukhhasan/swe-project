@@ -9,6 +9,8 @@ import Util.Encryption;
 import play.mvc.*;
 import models.User;
 import models.EmailActivation;
+import models.forms.UserForm;
+import play.data.validation.Constraints;
 
 import play.data.Form;
 import play.mvc.Controller;
@@ -34,13 +36,18 @@ public class Registration extends Controller {
 
 	public Result register()
     {
-        return ok(register.render(Form.form(User.class)));
+        return ok(register.render(Form.form(UserForm.class)));
     }
 
     public Result addUser()
     {
-    	Form<User> form = Form.form(User.class).bindFromRequest();
-    	User user = form.get();
+    	Form<UserForm> form = Form.form(UserForm.class).bindFromRequest();
+    	UserForm userForm = form.get();
+    	User user = userForm.formToUser(userForm);
+    	
+    	if (!userForm.password.equals(userForm.confirmPassword)) {
+    		return redirect(controllers.routes.Error.error(userForm.password + " Does not match " + userForm.confirmPassword));
+    	}
 
     	List<User> userResult = Ebean.find(User.class)
             .where().like("email", user.email)

@@ -1,32 +1,27 @@
 package controllers;
 
 import java.util.*;
+
 import play.data.Form;
 import play.data.validation.Constraints;
-
 import play.mvc.*;
 import models.*;
-
+import models.forms.*;
 import Util.Encryption;
-
 import Util.SessionHandling;
 import views.html.*;
 
 import com.avaje.ebean.*;
 
 public class Login extends Controller {
-    @Constraints.Required
-    public String email;
-    @Constraints.Required
-    public String password;
 
     public Result login() {
-        return ok(login.render(Form.form(User.class)));
+        return ok(login.render(Form.form(models.forms.LoginForm.class)));
     }
 
     public Result validateLogin() {
-	    Form<User> form = Form.form(User.class).bindFromRequest();
-	    User user = form.get();
+    	Form<models.forms.LoginForm> form = Form.form(models.forms.LoginForm.class).bindFromRequest();
+    	models.forms.LoginForm user = form.get();
 	    List<User> userResult = Ebean.find(User.class)
 	        .where().like("email", user.email)
 	        .findList();
@@ -41,7 +36,7 @@ public class Login extends Controller {
 	    	}
 	    }
 	    else {
-	        return redirect(controllers.routes.Error.error("Not a valid user:" +user.email + user.password));
+	        return redirect(controllers.routes.Error.error("Not a valid user:" + user.email));
 	    }
 
 
