@@ -28,7 +28,8 @@ import java.math.BigInteger;
 
 public class Registration extends Controller {
 
-	private String nextToken() {
+	private String nextToken()
+    {
 	  	SecureRandom random = new SecureRandom();
 	    return new BigInteger(130, random).toString(16);
 	}
@@ -45,7 +46,8 @@ public class Registration extends Controller {
     	UserForm userForm = form.get();
     	User user = userForm.formToUser(userForm);
     	
-    	if (!userForm.password.equals(userForm.confirmPassword)) {
+    	if(!userForm.password.equals(userForm.confirmPassword))
+        {
     		return redirect(controllers.routes.Error.error(userForm.password + " Does not match " + userForm.confirmPassword));
     	}
 
