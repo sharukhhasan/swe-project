@@ -12,7 +12,7 @@ GET		/logout						controllers.Application.logout()
 
 #Registration
 GET		/register					controllers.Registration.register()
-POST    /register                   controllers.Registration.addUser()
+GET     /register                   controllers.VerifyManager.managerId()
 
 #Home
 GET		/home/						controllers.Home.home()
