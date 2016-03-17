@@ -16,7 +16,7 @@ public class UserForm {
     public String gender;
     @Constraints.Required
     public String role;
-    public Integer managerid;
+    public String managerid;
     @Constraints.Required
     public Date birthDate;
     @Constraints.Required
@@ -33,10 +33,6 @@ public class UserForm {
         user.lastName = userForm.lastName;
         user.gender = userForm.gender;
         user.role = userForm.role;
-        if(user.role.equals("manager"))
-        {
-            user.managerid = userForm.managerid;
-        }
         user.birthDate = userForm.birthDate;
         user.password = userForm.password;
         return user;

@@ -28,7 +28,7 @@ public class User extends Model{
 
     public String role;
 
-    public Integer managerid;
+    public String managerid;
     
     @Formats.DateTime(pattern = "yyyy-MM-dd hh:mm:ss")
     public Date birthDate;
@@ -36,5 +36,9 @@ public class User extends Model{
     public String password;
 
     public Boolean activated = false;
+
+    public static class Manager{
+        public int managerid;
+    }
 
 }
