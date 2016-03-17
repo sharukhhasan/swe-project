@@ -1,15 +1,13 @@
 package models;
 
-import Util.Encryption;
 import com.avaje.ebean.Model;
-import play.data.validation.Constraints;
+import play.data.format.Formats;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.util.Date;
-import play.data.format.*;
 
 
 @Entity
@@ -29,6 +27,8 @@ public class User extends Model{
     public String gender;
 
     public String role;
+
+    public Integer managerid;
     
     @Formats.DateTime(pattern = "yyyy-MM-dd hh:mm:ss")
     public Date birthDate;
