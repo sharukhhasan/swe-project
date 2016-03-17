@@ -22,7 +22,8 @@ public class VerifyManager extends Controller {
 
         if(m_id.equals(testID))
         {
-            return redirect(controllers.routes.Application.index());
+            user.managerid = userForm.managerid;
+            return redirect(routes.Home.home());
         }
 
         return redirect(controllers.routes.Application.index());
