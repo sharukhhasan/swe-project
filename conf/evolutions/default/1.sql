@@ -26,7 +26,7 @@ create table users (
   last_name                 varchar(255),
   gender                    varchar(255),
   role                      varchar(255),
-  managerid                 integer,
+  managerid                 varchar(255),
   birth_date                timestamp,
   password                  varchar(255),
   activated                 boolean,
