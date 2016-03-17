@@ -1,52 +1,67 @@
 @import models.forms.UserForm
 @(signupForm: Form[UserForm])
-    @import b3.vertical.fieldConstructor
+    @import helper._
+    @implicitField = @{ FieldConstructor }
 
     <h3>@Messages("signup.new")</h3>
 
-    @b3.form(routes.Registration.addUser()) {
+    @form(routes.Registration.addUser()) {
 
         <fieldset>
-            @b3.text(
+            @inputText(
+                signupForm("email"),
+                '_label -> "Email",
+                'placeholder -> "example@email.com"
+            )
+            @inputText(
                 signupForm("firstName"),
                 '_label -> "First Name",
                 'placeholder -> "first name"
             )
-            @b3.text(
+            @inputText(
                 signupForm("lastName"),
                 '_label -> "Last Name",
                 'placeholder -> "last name"
             )
-            @b3.radio(
+            @inputRadioGroup(
                 signupForm("gender"),
                 options = Seq("male"->"Male","female"->"Female"),
                 '_label -> "Gender"
             )
-            @b3.radioWithOptions(
+            @inputRadioGroup(
                 signupForm("role"),
                 options = Seq("admin"->"Admin","manager"->"Manager","user"->"Normal"),
                 '_label -> "Role"
-                @if(signupForm("role").value == "manager"){
-                    
-        }
+            )
+            @textarea(
+                field = signupForm("managerid"),
+                args = 'rows -> 2,
+                'cols -> 20
             )
 
-            @b3.date(
+            @if(signupForm("role").value == "manager"){
+                @textarea(field = signupForm("managerid"), args = 'rows -> 2, 'cols -> 20)
+            }
+
+            @inputDate(
                 signupForm("birthDate"),
                 '_label -> "Birthdate",
                 'placeholder -> "birth date"
             )
-            @b3.password(
+            @inputPassword(
                 signupForm("password"),
                 '_label -> "Password",
                 'placeholder -> "password"
             )
-            @b3.password(
+            @inputPassword(
                 signupForm("confirmPassword"),
                 '_label -> "Confirm Password",
                 'placeholder -> "confirm password"
             )
-            @b3.submit('class -> "btn btn-primary"){ Register }
         </fieldset>
+
+        <div class="form-actions">
+            <input type="submit" class="btn btn-primary" value="@Messages("signup.signup")">
+        </div>
     }
 
