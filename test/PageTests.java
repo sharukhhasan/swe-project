@@ -6,6 +6,9 @@ import java.util.Map;
 import com.fasterxml.jackson.databind.JsonNode;
 import org.junit.*;
 
+import models.forms.*;
+import play.data.Form;
+
 import play.mvc.*;
 import play.test.*;
 import play.data.DynamicForm;
@@ -26,7 +29,7 @@ import static org.junit.Assert.*;
 * If you are interested in mocking a whole application, see the wiki for more details.
 *
 */
-public class ApplicationTest {
+public class PageTests {
 
     @Test
     public void simpleCheck() {
@@ -35,11 +38,31 @@ public class ApplicationTest {
     }
 
     @Test
-    public void renderTemplate() {
+    public void errorTest() {
         Content html = views.html.error.render("This is an error");
         assertEquals("text/html", contentType(html));
         assertTrue(contentAsString(html).contains("This is an error"));
     }
 
+    @Test
+    public void activationTest() {
+        Content html = views.html.activation.render("Generic Message Test");
+        assertEquals("text/html", contentType(html));
+        assertTrue(contentAsString(html).contains("Generic Message Test"));
+    }
+
+    @Test
+    public void genericLanderTest() {
+        Content html = views.html.genericLander.render("This is the title", "Generic Message Test");
+        assertEquals("text/html", contentType(html));
+        assertTrue(contentAsString(html).contains("Generic Message Test"));
+    }
+
+    @Test
+    public void homePageTest() {
+        Content html = views.html.home.render("First Name");
+        assertEquals("text/html", contentType(html));
+        assertTrue(contentAsString(html).contains("First Name"));
+    }
 
 }
