@@ -1,18 +1,9 @@
-@import models._
-@import b3.vertical.fieldConstructor
-@(User: String)
+@(products: java.util.List[Product], productForm: play.data.Form[Product])
+@import helper._
 
 @main("Welcome to Play") {
 
     <html lang="en">
-		<div class="row">
-			<div class="col-sm-12">
-				<div class="panel panel-default">
-  					Welcome @User
-				</div>
-			</div>
-	    </div>
-
         <head>
             <meta charset="utf-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -53,7 +44,7 @@
                             <li><a href="#">Dashboard</a></li>
                             <li><a href="#">Settings</a></li>
                             <li><a href="#">Profile</a></li>
-                            <li><a href="#">Logout</a></li>
+                            <li><a href="/logout">Logout</a></li>
                         </ul>
                         <form class="navbar-form navbar-right">
                             <input type="text" class="form-control" placeholder="Search...">
@@ -67,7 +58,7 @@
                     <div class="col-sm-3 col-md-2 sidebar">
                         <ul class="nav nav-sidebar">
                             <li class="active"><a href="#">My Products <span class="sr-only">(current)</span></a></li>
-                            <li><a href="#">Add Product</a></li>
+                            <li><a href="/addproduct">Add Product</a></li>
                             <li><a href="#">Analytics</a></li>
                             <li><a href="#">Export</a></li>
                         </ul>
@@ -75,117 +66,16 @@
                     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
                         <h1 class="sub-header">List view of products</h1>
                         <div class="table-responsive">
-                            <table class="table table-striped">
-                                <thead>
-                                    <tr>
-                                        <th>Product</th>
-                                        <th>Price</th>
-                                        <th>Quantity in stock</th>
-                                        <th>Time posted</th>
-                                        <th>Posted by</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>iPhone 6</td>
-                                        <td>$400</td>
-                                        <td>5</td>
-                                        <td>03/16/16</td>
-                                        <td>Sharukh</td>
-                                    </tr>
-                                    <tr>
-                                        <td>LCD TV</td>
-                                        <td>$300</td>
-                                        <td>5</td>
-                                        <td>03/16/16</td>
-                                        <td>Sharukh</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Gameboy</td>
-                                        <td>$4000</td>
-                                        <td>5</td>
-                                        <td>03/16/16</td>
-                                        <td>Sharukh</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Macbook Pro</td>
-                                        <td>$1500</td>
-                                        <td>5</td>
-                                        <td>03/16/16</td>
-                                        <td>Sharukh</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Crocs</td>
-                                        <td>$400000</td>
-                                        <td>5000</td>
-                                        <td>03/16/16</td>
-                                        <td>Sharukh</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Cool Textbook</td>
-                                        <td>$2</td>
-                                        <td>5</td>
-                                        <td>03/16/16</td>
-                                        <td>Sharukh</td>
-                                    </tr>
-                                    <tr>
-                                        <td>iPod</td>
-                                        <td>$200</td>
-                                        <td>5</td>
-                                        <td>03/16/16</td>
-                                        <td>Sharukh</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Android Phone</td>
-                                        <td>$400</td>
-                                        <td>5</td>
-                                        <td>03/16/16</td>
-                                        <td>Sharukh</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Surface Pro</td>
-                                        <td>$1100</td>
-                                        <td>5</td>
-                                        <td>03/16/16</td>
-                                        <td>Sharukh</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Motorcycle</td>
-                                        <td>$5200</td>
-                                        <td>5</td>
-                                        <td>03/16/16</td>
-                                        <td>Sharukh</td>
-                                    </tr>
-                                    <tr>
-                                        <td>ice cream</td>
-                                        <td>$5</td>
-                                        <td>5</td>
-                                        <td>03/16/16</td>
-                                        <td>Sharukh</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Burge shitty meal swipe</td>
-                                        <td>$10</td>
-                                        <td>5</td>
-                                        <td>03/16/16</td>
-                                        <td>Sharukh</td>
-                                    </tr>
-                                    <tr>
-                                        <td>idk</td>
-                                        <td>$400</td>
-                                        <td>5</td>
-                                        <td>03/16/16</td>
-                                        <td>Sharukh</td>
-                                    </tr>
-                                    <tr>
-                                        <td>whatever</td>
-                                        <td>$400</td>
-                                        <td>5</td>
-                                        <td>03/16/16</td>
-                                        <td>Sharukh</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                           <ul>
+                               @for(product <- products){
+                                   <li>
+                                       @product.productName
+                                       @product.productPrice
+                                       @product.productDescription
+                                       @product.productQuantity
+                                   </li>
+                               }
+                           </ul>
                         </div>
                     </div>
                 </div>

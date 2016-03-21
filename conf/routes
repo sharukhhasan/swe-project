@@ -17,6 +17,10 @@ GET     /register                   controllers.VerifyManager.managerId()
 #Home
 GET		/home/						controllers.Home.home()
 
+#Add Product
+GET     /addproduct                 controllers.AddProduct.product()
+POST    /products                   controllers.AddProduct.addProduct()
+
 # Error page
 GET		/error/:error				controllers.Error.error(error: String)
 GET		/activateaccount/:token		controllers.ActivateAccount.ActivateAccount(token: String)
