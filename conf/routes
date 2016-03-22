@@ -16,6 +16,9 @@ GET		/register					controllers.Registration.register()
 #Home
 GET		/home/						controllers.Home.home()
 
+#Test page
+GET		/test						controllers.Test.test()
+
 # Error page
 GET		/error/:error				controllers.Error.error(error: String)
 GET		/activateaccount/:token		controllers.ActivateAccount.ActivateAccount(token: String)
