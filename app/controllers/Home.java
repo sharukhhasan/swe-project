@@ -1,7 +1,6 @@
 package controllers;
 
 import Util.SessionHandling;
-import db.DatabaseHelper;
 import models.Product;
 import play.data.Form;
 import play.mvc.Controller;
@@ -21,11 +20,6 @@ public class Home extends Controller {
             return redirect(controllers.routes.Login.login());
         }
    }
-
-    public Result products()
-    {
-        return ok(views.html.viewproducts.render(DatabaseHelper.getProductsFromDB(), productForm));
-    }
     
 
 }
