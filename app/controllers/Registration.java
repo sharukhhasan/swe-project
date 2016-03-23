@@ -96,11 +96,8 @@ public class Registration extends Controller {
 
         SessionHandling.login(user.email);
 
-<<<<<<< HEAD
     	return redirect(controllers.routes.Home.home());
-=======
-        return redirect(controllers.routes.Home.home());
->>>>>>> sharukhDev
+
     }
 
 }

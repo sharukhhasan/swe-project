@@ -23,7 +23,7 @@ public class Product extends Model {
     public String productDescription;
     public int productQuantity;
     public String productManufacturer;
-    public int productPrice;
+    public String productPrice;
     public String datePosted;
 
     public static Finder<Long,Product> find = new Finder(Long.class, Product.class);

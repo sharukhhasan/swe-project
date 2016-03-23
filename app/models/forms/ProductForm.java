@@ -24,7 +24,7 @@ public class ProductForm {
     @Constraints.Required
     public String productManufacturer;
     @Constraints.Required
-    public int productPrice;
+    public String productPrice;
     public String datePosted;
 
     public Product formToProduct(ProductForm productForm)
