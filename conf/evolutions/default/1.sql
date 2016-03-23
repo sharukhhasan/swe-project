@@ -32,7 +32,7 @@ create table products (
   product_description       varchar(255),
   product_quantity          integer,
   product_manufacturer      varchar(255),
-  product_price             integer,
+  product_price             varchar(255),
   date_posted               varchar(255),
   constraint pk_products primary key (id))
 ;
