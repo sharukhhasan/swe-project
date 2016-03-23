@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+package Util;
+
+>>>>>>> sharukhDev
 import play.*;
 import models.*;
 import com.avaje.ebean.*;
@@ -16,6 +21,7 @@ public class Global extends GlobalSettings {
         List<Long> managerCodes = Arrays.asList(1111L, 2222L, 3333L, 4444L, 5555L);
 
         for (Long l : adminCodes) {
+<<<<<<< HEAD
 	        AccessCodes code = AccessCodes.find.byId(l);
 	        if (code != null) {
 	        	System.out.println(l + " exists in db");
@@ -43,6 +49,35 @@ public class Global extends GlobalSettings {
 		    	System.out.println("Saved " + l);
 	    	}
 	    }
+=======
+            AccessCodes code = AccessCodes.find.byId(l);
+            if (code != null) {
+                System.out.println(l + " exists in db");
+            } else {
+                System.out.println(l + "is null");
+                code = new AccessCodes();
+                code.id = l;
+                code.used = false;
+                code.role = "admin";
+                Ebean.save(code);
+                System.out.println("Saved " + l);
+            }
+        }
+        for (Long l : managerCodes) {
+            AccessCodes code = AccessCodes.find.byId(l);
+            if (code != null) {
+                System.out.println(l + "exists in db");
+            } else {
+                System.out.println(l + " is null");
+                code = new AccessCodes();
+                code.id = l;
+                code.used = false;
+                code.role = "manager";
+                Ebean.save(code);
+                System.out.println("Saved " + l);
+            }
+        }
+>>>>>>> sharukhDev
 
     }
 

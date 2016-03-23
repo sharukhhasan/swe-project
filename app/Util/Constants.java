@@ -19,4 +19,7 @@ public class Constants {
     public static final String PASSWORD_INCORRECT = "Password is not correct";
     public static final String DOB_REQUIRED = "Date of birth is required";
     public static final String GENDER_REQUIRED = "Gender is required";
+
+    // manager ids
+    public static final int[] manager_ids = {12345678, 87654321, 8009580, 3849586, 9380495};
 }

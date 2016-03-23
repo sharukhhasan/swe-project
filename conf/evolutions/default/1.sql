@@ -3,6 +3,13 @@
 
 # --- !Ups
 
+create table access_codes (
+  id                        bigserial not null,
+  used                      boolean,
+  role                      varchar(255),
+  constraint pk_access_codes primary key (id))
+;
+
 create table email_activation (
   id                        bigserial not null,
   email                     varchar(255),
@@ -19,6 +26,17 @@ create table password_resets (
   constraint pk_password_resets primary key (id))
 ;
 
+create table products (
+  id                        bigserial not null,
+  product_name              varchar(255),
+  product_description       varchar(255),
+  product_quantity          integer,
+  product_manufacturer      varchar(255),
+  product_price             integer,
+  date_posted               varchar(255),
+  constraint pk_products primary key (id))
+;
+
 create table users (
   id                        bigserial not null,
   email                     varchar(255),
@@ -26,6 +44,7 @@ create table users (
   last_name                 varchar(255),
   gender                    varchar(255),
   role                      varchar(255),
+  managerid                 varchar(255),
   birth_date                timestamp,
   password                  varchar(255),
   activated                 boolean,
@@ -37,9 +56,13 @@ create table users (
 
 # --- !Downs
 
+drop table if exists access_codes cascade;
+
 drop table if exists email_activation cascade;
 
 drop table if exists password_resets cascade;
+
+drop table if exists products cascade;
 
 drop table if exists users cascade;
 

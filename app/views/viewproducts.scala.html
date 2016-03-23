@@ -1,0 +1,30 @@
+@(products: List[Product])
+@import b3.vertical.fieldConstructor
+
+@main("Products"){
+
+    <div class="modal-body">
+        <table class="table table-striped">
+            <tbody>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Product Description</th>
+                    <th>Product Quantity</th>
+                    <th>Product Manufacturer</th>
+                    <th>Product Price</th>
+                    <th>Date Posted</th>
+                </tr>
+                @for(product <- products) {
+                    <tr>
+                        <td>@product.productName</td>
+                        <td>@product.productDescription</td>
+                        <td>@product.productQuantity</td>
+                        <td>@product.productManufacturer</td>
+                        <td>@product.productPrice</td>
+                        <td>@product.datePosted</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}

@@ -10,6 +10,7 @@ import play.mvc.*;
 import models.User;
 import models.EmailActivation;
 import models.forms.UserForm;
+import models.forms.ManagerForm;
 import play.data.validation.Constraints;
 
 import play.data.Form;
@@ -27,12 +28,13 @@ import java.math.BigInteger;
 
 
 public class Registration extends Controller {
+    public boolean isManager = false;
 
-	private String nextToken() {
+	private String nextToken()
+    {
 	  	SecureRandom random = new SecureRandom();
 	    return new BigInteger(130, random).toString(16);
 	}
-
 
 	public Result register()
     {
@@ -45,7 +47,8 @@ public class Registration extends Controller {
     	UserForm userForm = form.get();
     	User user = userForm.formToUser(userForm);
     	
-    	if (!userForm.password.equals(userForm.confirmPassword)) {
+    	if(!userForm.password.equals(userForm.confirmPassword))
+        {
     		return redirect(controllers.routes.Error.error(userForm.password + " Does not match " + userForm.confirmPassword));
     	}
 
@@ -68,6 +71,11 @@ public class Registration extends Controller {
         Ebean.save(token);
         Ebean.save(user);
 
+        if(userForm.role.equals("manager"))
+        {
+            return ok(verifymanager.render(Form.form(UserForm.class)));
+        }
+
         String messageBody = "default";
 
         if(play.Play.isProd())
@@ -88,7 +96,11 @@ public class Registration extends Controller {
 
         SessionHandling.login(user.email);
 
+<<<<<<< HEAD
     	return redirect(controllers.routes.Home.home());
+=======
+        return redirect(controllers.routes.Home.home());
+>>>>>>> sharukhDev
     }
 
 }

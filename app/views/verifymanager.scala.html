@@ -1,0 +1,33 @@
+@import models._
+@import models.forms.UserForm
+@import models.forms.ManagerForm
+@(myForm: Form[UserForm])
+@import b3.vertical.fieldConstructor
+
+@main("Manager Verification Screen") {
+
+  <script
+    type="text/javascript" src="@routes.Assets.at("javascripts/requiredAsterisk.js")">
+  </script>
+
+  <div class="row">
+      <div class="col-sm-12">
+        Please verify manager account!
+      </div>
+      <div class="col-sm-12">
+          <div class="panel panel-default">
+              <div class="panel-body">
+              @b3.form(routes.VerifyManager.managerId()) {
+                  @b3.text(
+                      myForm("managerid"),
+                      '_label -> "Manager ID",
+                      'placeholder -> "manager id"
+                  )
+                  @b3.submit('class -> "btn btn-primary"){ Verify }
+              }
+              </div>
+          </div>
+      </div>
+  </div>
+
+}
