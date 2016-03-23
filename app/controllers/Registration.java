@@ -86,7 +86,9 @@ public class Registration extends Controller {
         	return redirect(controllers.routes.Error.error("Could not send email: " + user.email + " error" + e));
         }
 
-    	return redirect(controllers.routes.Application.index());
+        SessionHandling.login(user.email);
+
+    	return redirect(controllers.routes.Home.home());
     }
 
 }
