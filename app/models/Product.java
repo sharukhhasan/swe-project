@@ -1,13 +1,13 @@
 package models;
 
 import com.avaje.ebean.Model;
-import play.data.format.Formats;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.util.Date;
+
+import java.util.List;
 
 /**
  * Created by Sharukh on 3/21/16.
@@ -21,9 +21,15 @@ public class Product extends Model {
 
     public String productName;
     public String productDescription;
-    public int quantity;
-    public String manufacturer;
-    public int price;
-    @Formats.DateTime(pattern = "yyyy-MM-dd hh:mm:ss")
-    public Date datePosted;
+    public int productQuantity;
+    public String productManufacturer;
+    public int productPrice;
+    public String datePosted;
+
+    public static Finder<Long,Product> findProduct = new Finder(Long.class, Product.class);
+
+    public static List<Product> all()
+    {
+        return findProduct.all();
+    }
 }

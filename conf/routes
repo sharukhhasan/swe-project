@@ -17,8 +17,14 @@ GET     /register                   controllers.VerifyManager.managerId()
 #Home
 GET		/home/						controllers.Home.home()
 
+<<<<<<< 45871432b14431ae50680a879a0e2fe69363ae84
 #Test page
 GET		/test						controllers.Test.test()
+=======
+#Add Product
+GET     /addproduct                 controllers.AddProduct.product()
+POST    /products                   controllers.AddProduct.addProduct()
+>>>>>>> corrected product form & attempted query
 
 # Error page
 GET		/error/:error				controllers.Error.error(error: String)
