@@ -19,4 +19,6 @@ public class AccessCodes extends Model {
 	public Long id;
 	public Boolean used;
 	public String role;
+
+	  public static Finder<Long,AccessCodes> find = new Finder<Long,AccessCodes>(Long.class, AccessCodes.class); 
 }
