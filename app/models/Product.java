@@ -6,7 +6,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
 import java.util.List;
 
 /**
@@ -31,4 +30,9 @@ public class Product extends Model {
     public static List<Product> all() {
         return find.all();
     }
+
+    /*public static List<Product> searchProducts()
+    {
+        return DatabaseHelper.getSearchResults(search);
+    }*/
 }

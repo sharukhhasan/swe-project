@@ -15,4 +15,9 @@ public class ProductList extends Controller {
     {
         return ok(views.html.viewproducts.render(Product.all()));
     }
+
+    /*public Result searchProducts()
+    {
+        return ok(views.html.searchproducts.render(Product.searchProducts());
+    }*/
 }
