@@ -12,10 +12,11 @@ GET		/logout						controllers.Application.logout()
 
 #Registration
 GET		/register					controllers.Registration.register()
-GET     /register                   controllers.VerifyManager.managerId()
+GET     /register/verifymanager     controllers.VerifyManager.managerId()
 
 #Home
 GET		/home/						controllers.Home.home()
+GET     /viewproducts               controllers.Home.products()
 
 #Add Product
 GET     /addproduct                 controllers.AddProduct.product()

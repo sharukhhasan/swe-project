@@ -16,7 +16,8 @@ libraryDependencies ++= Seq(
   javaJpa,
   "org.mindrot" % "jbcrypt" % "0.3m",
   "com.adrianhurt" %% "play-bootstrap" % "1.0-P24-B3-SNAPSHOT" exclude("org.webjars", "jquery") exclude("org.webjars" , "bootstrap"),
-  "javax.mail" % "mail" % "1.4.1"
+  "javax.mail" % "mail" % "1.4.1",
+  "com.cloudinary" % "cloudinary" % "1.0.14"
 )
 
 PlayKeys.externalizeResources := false

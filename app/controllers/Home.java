@@ -1,6 +1,7 @@
 package controllers;
 
 import Util.SessionHandling;
+import db.DatabaseHelper;
 import models.Product;
 import models.forms.ProductForm;
 import play.data.Form;
@@ -20,8 +21,9 @@ public class Home extends Controller {
         }
    }
 
-    public static Result products() {
-        return ok(views.html.home.render(ProductForm.all(), productForm));
+    public Result products()
+    {
+        return ok(views.html.home.render(DatabaseHelper.getProductsFromDB(), productForm));
     }
     
 

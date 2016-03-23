@@ -7,8 +7,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import java.util.List;
-
 /**
  * Created by Sharukh on 3/21/16.
  */
@@ -25,11 +23,4 @@ public class Product extends Model {
     public String productManufacturer;
     public int productPrice;
     public String datePosted;
-
-    public static Finder<Long,Product> findProduct = new Finder(Long.class, Product.class);
-
-    public static List<Product> all()
-    {
-        return findProduct.all();
-    }
 }
