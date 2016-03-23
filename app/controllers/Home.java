@@ -3,10 +3,10 @@ package controllers;
 import Util.SessionHandling;
 import db.DatabaseHelper;
 import models.Product;
-import models.forms.ProductForm;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
+import views.html.home;
 
 public class Home extends Controller {
 
@@ -14,7 +14,8 @@ public class Home extends Controller {
 
     public Result home() {
    	 if (SessionHandling.isLoggedIn()) {
-         return ok(views.html.home.render(ProductForm.all(), productForm));
+         String user = SessionHandling.getUser();
+         return ok(home.render(user));
         }
         else {
             return redirect(controllers.routes.Login.login());
@@ -23,7 +24,7 @@ public class Home extends Controller {
 
     public Result products()
     {
-        return ok(views.html.home.render(DatabaseHelper.getProductsFromDB(), productForm));
+        return ok(views.html.viewproducts.render(DatabaseHelper.getProductsFromDB(), productForm));
     }
     
 

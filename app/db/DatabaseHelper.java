@@ -6,7 +6,6 @@ import java.sql.*;
 import java.util.List;
 import java.util.ArrayList;
 
-
 /**
  * Created by Sharukh on 3/22/16.
  */
@@ -16,9 +15,9 @@ public class DatabaseHelper {
     public static ResultSet rs = null;
     public static Statement statement = null;
     public static Connection connection = null;
-    public static List<Product> productList = new ArrayList<>();
+    public static final List<Product> productList = new ArrayList<>();
 
-    public static List<Product> getProductsFromDB()
+    public static final List<Product> getProductsFromDB()
     {
         try {
             Class.forName("org.postgresql.Driver");
@@ -26,7 +25,7 @@ public class DatabaseHelper {
             if(connection != null)
             {
                 statement = connection.createStatement();
-                ResultSet rs = statement.executeQuery(query);
+                rs = statement.executeQuery(query);
                 while(rs.next())
                 {
                     Product product = new Product();

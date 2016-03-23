@@ -16,7 +16,7 @@ GET     /register/verifymanager     controllers.VerifyManager.managerId()
 
 #Home
 GET		/home/						controllers.Home.home()
-GET     /viewproducts               controllers.Home.products()
+GET     /viewproducts               controllers.ProductList.products()
 
 #Add Product
 GET     /addproduct                 controllers.AddProduct.product()

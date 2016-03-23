@@ -8,12 +8,12 @@
         <div class="table-responsive">
             <ul class="list-group">
             @for(product <- products){
-                <li class="list-group-item">
+                <button type="button" class="list-group-item">
                     @product.productName
                     @product.productPrice
                     @product.productDescription
                     @product.productQuantity
-                </li>
+                </button>
             }
             </ul>
         </div>
