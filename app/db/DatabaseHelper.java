@@ -33,7 +33,7 @@ public class DatabaseHelper {
                     product.productDescription = rs.getString("product_description");
                     product.productQuantity = rs.getInt("product_quantity");
                     product.productManufacturer = rs.getString("product_manufacturer");
-                    product.productPrice = rs.getInt("product_price");
+                    product.productPrice = rs.getString("product_price");
                     productList.add(product);
                 }
             }
