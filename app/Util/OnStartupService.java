@@ -5,11 +5,16 @@ import models.*;
 import com.avaje.ebean.*;
 import java.util.List;
 import java.util.Arrays;
+import com.google.inject.Singleton;
+import com.google.inject.*;
+import akka.actor.ActorSystem;
 
 
-public class Global extends GlobalSettings {
+@Singleton
+public class OnStartupService {
 
-    public void onStart(Application app) {
+    @Inject
+    private OnStartupService(ActorSystem system) {
         Logger.info("Application has started");
 
         Logger.info("Adding access codes to db");
