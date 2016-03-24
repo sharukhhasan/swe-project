@@ -25,13 +25,15 @@
                     <th>Date Posted</th>
                 </tr>
                 @for(product <- products) {
-                    <tr>
-                        <td>@product.productName</td>
-                        <td>@product.productDescription</td>
-                        <td>@product.productQuantity</td>
-                        <td>@product.productManufacturer</td>
-                        <td>@product.productPrice</td>
-                        <td>@product.datePosted</td>
+                    <tr class="clickable-row">
+                        <a href="routes.ProductList.singleproduct(@product.id)">
+                            <td>@product.productName</td>
+                            <td>@product.productDescription</td>
+                            <td>@product.productQuantity</td>
+                            <td>@product.productManufacturer</td>
+                            <td>@product.productPrice</td>
+                            <td>@product.datePosted</td>
+                        </a>
                     </tr>
                 }
             </tbody>

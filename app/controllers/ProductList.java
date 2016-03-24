@@ -16,6 +16,11 @@ public class ProductList extends Controller {
         return ok(views.html.viewproducts.render(Product.all()));
     }
 
+    public Result singleproduct(Long id)
+    {
+        return ok(views.html.singleproduct.render((Product.single(id))));
+    }
+
     /*public Result searchProducts()
     {
         return ok(views.html.searchproducts.render(Product.searchProducts());

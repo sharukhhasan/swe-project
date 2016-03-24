@@ -17,6 +17,7 @@ GET     /register/verifymanager     controllers.VerifyManager.managerId()
 #Home
 GET		/home/						controllers.Home.home()
 GET     /viewproducts               controllers.ProductList.products()
+GET     /singleproduct              controllers.ProductList.singleproduct(java.lang.Long id)
 
 #Add Product
 GET     /addproduct                 controllers.AddProduct.product()

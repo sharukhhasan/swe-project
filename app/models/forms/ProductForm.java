@@ -15,6 +15,7 @@ import java.util.ArrayList;
 public class ProductForm {
     public static List<Product> allProducts = new ArrayList<Product>();
 
+    public byte[] productImage;
     @Constraints.Required
     public String productName;
     @Constraints.Required
@@ -25,6 +26,16 @@ public class ProductForm {
     public String productManufacturer;
     @Constraints.Required
     public String productPrice;
+    @Constraints.Required
+    public int productWidth;
+    @Constraints.Required
+    public int productHeight;
+    @Constraints.Required
+    public int productLength;
+    @Constraints.Required
+    public int productWeight;
+    @Constraints.Required
+    public String productColor;
     public String datePosted;
 
     public Product formToProduct(ProductForm productForm)
@@ -40,6 +51,11 @@ public class ProductForm {
         product.productManufacturer = productForm.productManufacturer;
         product.productPrice = productForm.productPrice;
         product.datePosted = dateFormat.format(date);
+        product.productWidth = productForm.productWidth;
+        product.productHeight = productForm.productHeight;
+        product.productLength = productForm.productLength;
+        product.productWeight = productForm.productWeight;
+        product.productColor = productForm.productColor;
         return product;
     }
 
