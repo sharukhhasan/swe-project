@@ -27,8 +27,6 @@ public class User extends Model{
     public String gender;
 
     public String role;
-
-    public String managerid;
     
     @Formats.DateTime(pattern = "yyyy-MM-dd hh:mm:ss")
     public Date birthDate;

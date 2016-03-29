@@ -5,16 +5,10 @@ import models.*;
 import com.avaje.ebean.*;
 import java.util.List;
 import java.util.Arrays;
-import com.google.inject.Singleton;
-import com.google.inject.*;
-import akka.actor.ActorSystem;
 
+public class GenerateAccessCodes {
 
-@Singleton
-public class OnStartupService {
-
-    @Inject
-    private OnStartupService(ActorSystem system) {
+    public static void generateAccessCodes() {
         Logger.info("Application has started");
 
         Logger.info("Adding access codes to db");
