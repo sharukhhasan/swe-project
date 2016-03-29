@@ -11,7 +11,6 @@ import models.User;
 import models.EmailActivation;
 import models.AccessCodes;
 import models.forms.UserForm;
-import models.forms.ManagerForm;
 import play.data.validation.Constraints;
 
 import play.data.Form;

@@ -16,10 +16,9 @@ GET		/register					controllers.Registration.register()
 #Home
 GET		/home/						controllers.Home.home()
 GET     /viewproducts               controllers.ProductList.products()
-<<<<<<< HEAD
-=======
+
 GET     /singleproduct/:id              controllers.ProductList.singleproduct(id: Long)
->>>>>>> andrew-dev
+
 
 #Add Product
 GET     /addproduct                 controllers.AddProduct.product()
