@@ -9,6 +9,7 @@ import Util.Encryption;
 import play.mvc.*;
 import models.User;
 import models.EmailActivation;
+import models.AccessCodes;
 import models.forms.UserForm;
 import models.forms.ManagerForm;
 import play.data.validation.Constraints;
@@ -68,14 +69,6 @@ public class Registration extends Controller {
         token.email = user.email;
         token.token = nextToken();
 
-        Ebean.save(token);
-        Ebean.save(user);
-
-        if(userForm.role.equals("manager"))
-        {
-            return ok(verifymanager.render(Form.form(UserForm.class)));
-        }
-
         String messageBody = "default";
 
         if(play.Play.isProd())
@@ -95,6 +88,33 @@ public class Registration extends Controller {
         }
 
         SessionHandling.login(user.email);
+        
+        if(userForm.role.equals("manager") || userForm.role.equals("admin"))
+        {
+            if(userForm.managerid == null) {
+                return redirect(controllers.routes.Error.error("Must validate privileged access with code. managerid: " + userForm.managerid));
+            }
+
+            Long managerId = null;
+
+            try {
+                managerId = Long.valueOf(userForm.managerid).longValue();
+            } catch (NumberFormatException e) {
+                return redirect(controllers.routes.Error.error("Not a valid manager code"));
+            }
+
+            AccessCodes code = AccessCodes.find.byId(managerId);
+            
+            if(code == null) {
+                return redirect(controllers.routes.Error.error("Invalid manager code"));
+            }
+
+            code.used = true;
+            Ebean.save(code);
+        }
+
+        Ebean.save(token);
+        Ebean.save(user);
 
     	return redirect(controllers.routes.Home.home());
 

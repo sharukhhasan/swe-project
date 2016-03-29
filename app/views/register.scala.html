@@ -7,8 +7,7 @@
     @main("Registration Screen") {
 
         <script type="text/javascript" src="@routes.Assets.at("javascripts/requiredAsterisk.js")"></script>
-        <script>
-        </script>
+        <script type="text/javascript" src="@routes.Assets.at("javascripts/managercodes.js")"></script>
 
         <div class="row">
             <div class="col-sm-12">
@@ -43,6 +42,11 @@
                             options = Seq("admin"->"Admin","manager"->"Manager","user"->"Normal"),
                             '_label -> "Role"
                         )
+                        @b3.text(
+                            myForm("managerid"),
+                            '_label -> "Privileged access code",
+                            'placeholder -> "code"
+                        )                        
                         @b3.date(
                             myForm("birthDate"),
                             '_label -> "Birthdate",

@@ -13,6 +13,7 @@ import play.mvc.Result;
 
 import com.avaje.ebean.*;
 
+import Util.GenerateAccessCodes;
 import Util.SessionHandling;
 import views.html.*;
 
@@ -20,6 +21,8 @@ import views.html.*;
 public class Application extends Controller {
 
     public Result sessionRedirect() {
+
+        GenerateAccessCodes.generateAccessCodes();
         if (SessionHandling.isLoggedIn()) {
             String user = SessionHandling.getUser();
             return redirect(controllers.routes.Home.home());
