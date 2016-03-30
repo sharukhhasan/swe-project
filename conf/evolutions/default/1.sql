@@ -22,6 +22,7 @@ create table cart (
 create table cart_item (
   id                        bigserial not null,
   cart_id                   bigint,
+  product_id                bigint,
   quantity                  integer,
   constraint pk_cart_item primary key (id))
 ;
@@ -73,6 +74,8 @@ create table users (
 
 alter table cart_item add constraint fk_cart_item_cart_1 foreign key (cart_id) references cart (id);
 create index ix_cart_item_cart_1 on cart_item (cart_id);
+alter table cart_item add constraint fk_cart_item_product_2 foreign key (product_id) references products (id);
+create index ix_cart_item_product_2 on cart_item (product_id);
 
 
 
