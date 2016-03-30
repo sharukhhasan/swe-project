@@ -22,7 +22,7 @@ public class Product extends Model {
     public String productDescription;
     public int productQuantity;
     public String productManufacturer;
-    public String productPrice;
+    public Double productPrice;
     public int productWidth;
     public int productHeight;
     public int productLength;

@@ -19,7 +19,7 @@ public class AddProduct extends Controller {
 
     public Result product()
     {
-        String userEmail = SessionHandling.getUser();
+        String userEmail = SessionHandling.getUserEmail();
 
        User user = Ebean.find(User.class)
                .where().like("email", userEmail)

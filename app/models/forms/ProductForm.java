@@ -25,7 +25,7 @@ public class ProductForm {
     @Constraints.Required
     public String productManufacturer;
     @Constraints.Required
-    public String productPrice;
+    public Double productPrice;
     @Constraints.Required
     public int productWidth;
     @Constraints.Required

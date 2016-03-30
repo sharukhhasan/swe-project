@@ -13,7 +13,7 @@ public class Home extends Controller {
 
     public Result home() {
    	 if (SessionHandling.isLoggedIn()) {
-         String user = SessionHandling.getUser();
+         String user = SessionHandling.getUserEmail();
          return ok(home.render(user));
         }
         else {

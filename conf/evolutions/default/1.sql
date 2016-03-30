@@ -10,6 +10,22 @@ create table access_codes (
   constraint pk_access_codes primary key (id))
 ;
 
+create table cart (
+  id                        bigserial not null,
+  user_id                   bigint,
+  purchase_date             timestamp,
+  total                     float,
+  purchased                 boolean,
+  constraint pk_cart primary key (id))
+;
+
+create table cart_item (
+  id                        bigserial not null,
+  cart_id                   bigint,
+  quantity                  integer,
+  constraint pk_cart_item primary key (id))
+;
+
 create table email_activation (
   id                        bigserial not null,
   email                     varchar(255),
@@ -32,7 +48,7 @@ create table products (
   product_description       varchar(255),
   product_quantity          integer,
   product_manufacturer      varchar(255),
-  product_price             varchar(255),
+  product_price             float,
   product_width             integer,
   product_height            integer,
   product_length            integer,
@@ -55,12 +71,18 @@ create table users (
   constraint pk_users primary key (id))
 ;
 
+alter table cart_item add constraint fk_cart_item_cart_1 foreign key (cart_id) references cart (id);
+create index ix_cart_item_cart_1 on cart_item (cart_id);
 
 
 
 # --- !Downs
 
 drop table if exists access_codes cascade;
+
+drop table if exists cart cascade;
+
+drop table if exists cart_item cascade;
 
 drop table if exists email_activation cascade;
 

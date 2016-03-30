@@ -24,7 +24,7 @@ public class Application extends Controller {
 
         GenerateAccessCodes.generateAccessCodes();
         if (SessionHandling.isLoggedIn()) {
-            String user = SessionHandling.getUser();
+            String user = SessionHandling.getUserEmail();
             return redirect(controllers.routes.Home.home());
         }
         else {

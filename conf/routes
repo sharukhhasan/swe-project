@@ -10,6 +10,9 @@ GET		/index						controllers.Application.index()
 GET		/login						controllers.Login.login()
 GET		/logout						controllers.Application.logout()
 
+GET 	/cart						controllers.ShoppingCart.shoppingCart()
+POST	/cart						controllers.ShoppingCart.addItems()
+
 #Registration
 GET		/register					controllers.Registration.register()
 
