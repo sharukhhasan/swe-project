@@ -99,11 +99,20 @@ public class ShoppingCart extends Controller {
     		String productQuantity = entry.getValue();
     		CartItem cartItem = new CartItem();
     		cartItem.product = Product.find.byId(Long.valueOf(productId).longValue());
-    		cartItem.quantity = Integer.valueOf(productQuantity);
-    		cart.items.add(cartItem);
-    		cartItem.cart = cart;
-    		Ebean.save(cartItem);
-    		System.out.println("adding item # " + productId + " to cart, quantity: " + productQuantity);
+    		if(!productQuantity.equals("")) {
+    			try {
+    				cartItem.quantity = Integer.valueOf(productQuantity);
+    				cart.items.add(cartItem);
+    				cartItem.cart = cart;
+    				Ebean.save(cartItem);
+    				System.out.println("adding item # " + productId + " to cart, quantity: " + productQuantity);
+    			}
+    			catch (NumberFormatException e) {
+    				System.out.println("Not a valid quantity!");
+    			}   			
+    			
+    		}
+    		
 		}
 	
 		Ebean.save(cart);
