@@ -42,7 +42,10 @@ public class ProductList extends Controller {
     public Result searchByCategory()
     {
         DynamicForm searchForm = DynamicForm.form().bindFromRequest();
-        String searchBy = searchForm.get("category-term");
+        String searchBy = searchForm.get("categoryDropDown");
+        String searchItem = searchForm.get("category-item");
+        System.out.println(searchBy);
+        System.out.println(searchItem);
         List<Product> queryList = Ebean.find(Product.class)
                 .select("*")
                 .where()
