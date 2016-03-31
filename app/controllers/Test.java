@@ -72,10 +72,7 @@ public class Test extends Controller {
 			.where().like("email", "test@test1234.com")
 			.findList();
 		System.out.println("Return query size: " + deletedUser.size());
-		if(deletedUser.size() != 0) {
-			return false;
-		}
-		return true;
+		return deletedUser.size() == 0;
 	}
 
 }

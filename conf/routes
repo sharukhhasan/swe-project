@@ -19,13 +19,16 @@ GET		/register					controllers.Registration.register()
 #Home
 GET		/home/						controllers.Home.home()
 GET     /viewproducts               controllers.ProductList.products()
+GET     /searchproducts             controllers.ProductList.searchProducts()
+GET     /searchbycategory           controllers.ProductList.searchByCategory()
 
-GET     /singleproduct/:id              controllers.ProductList.singleproduct(id: Long)
+GET     /singleproduct/:id          controllers.ProductList.singleproduct(id: Long)
 
 
 #Add Product
 GET     /addproduct                 controllers.AddProduct.product()
 POST    /products                   controllers.AddProduct.addProduct()
+
 
 #Test page
 GET		/test						controllers.Test.test()

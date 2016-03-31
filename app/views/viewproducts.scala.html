@@ -1,12 +1,28 @@
-@(products: List[Product])
+@(products: List[Product], categories: Map[String, List[String]])
 
 @main("Products"){
 
     <div class="modal-body">
+        <div class="col-sm-3 col-md-3 pull-left">
+            <form action="/searchbycategory" method="GET" class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="categoryDropDown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    Category
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu scrollable-menu" role="menu" aria-labelledby="categoryDropDown">
+                    @for((key, value) <- categories) {
+                        <li class="dropdown-header">@key</li>
+                        @for(element <- value) {
+                            <li><a href="/searchbycategory">@element</a></li>
+                        }
+                    }
+                </ul>
+            </form>
+        </div>
         <div class="col-sm-3 col-md-3 pull-right">
-            <form class="navbar-form" role="search">
+            <form action="/searchproducts" method="GET" class="navbar-form" role="search">
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search Products" name="search-term" id="search-term">
+                    <input type="text" class="form-control" placeholder="Search Products" name="search-term" id="search-term" value="">
                     <div class="input-group-btn">
                         <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
                     </div>
@@ -39,13 +55,12 @@
                                 </a>
                             </tr>
                         }
-                    
+                    </form>
                 </div>
             </tbody>
         </table>
         <div class="form-group" >
             <button type="submit" class="btn btn-primary"> Add items to cart </button>
         </div>
-        </form>
     </div>
 }

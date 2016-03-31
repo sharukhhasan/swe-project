@@ -21,6 +21,8 @@ public class ProductForm {
     @Constraints.Required
     public String productDescription;
     @Constraints.Required
+    public String productCategory;
+    @Constraints.Required
     public int productQuantity;
     @Constraints.Required
     public String productManufacturer;
@@ -47,6 +49,7 @@ public class ProductForm {
 
         product.productName = productForm.productName;
         product.productDescription = productForm.productDescription;
+        product.productCategory = productForm.productCategory;
         product.productQuantity = productForm.productQuantity;
         product.productManufacturer = productForm.productManufacturer;
         product.productPrice = productForm.productPrice;

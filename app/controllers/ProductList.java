@@ -1,9 +1,14 @@
 package controllers;
 
+import Util.Constants;
+import com.avaje.ebean.Ebean;
 import models.Product;
+import play.data.DynamicForm;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
+
+import java.util.List;
 
 /**
  * Created by Sharukh on 3/22/16.
@@ -13,7 +18,7 @@ public class ProductList extends Controller {
 
     public Result products()
     {
-        return ok(views.html.viewproducts.render(Product.all()));
+        return ok(views.html.viewproducts.render(Product.all(), Constants.categories));
     }
 
     public Result singleproduct(Long id)
@@ -21,8 +26,29 @@ public class ProductList extends Controller {
         return ok(views.html.singleproduct.render((Product.single(id))));
     }
 
-    /*public Result searchProducts()
+    public Result searchProducts()
     {
-        return ok(views.html.searchproducts.render(Product.searchProducts());
-    }*/
+        DynamicForm searchForm = DynamicForm.form().bindFromRequest();
+        String searchBy = searchForm.get("search-term");
+        List<Product> queryList = Ebean.find(Product.class)
+                .select("*")
+                .where()
+                .contains("product_name", searchBy)
+                .findList();
+
+        return ok(views.html.viewproducts.render(queryList, Constants.categories));
+    }
+
+    public Result searchByCategory()
+    {
+        DynamicForm searchForm = DynamicForm.form().bindFromRequest();
+        String searchBy = searchForm.get("category-term");
+        List<Product> queryList = Ebean.find(Product.class)
+                .select("*")
+                .where()
+                .contains("product_category", searchBy)
+                .findList();
+
+        return ok(views.html.viewproducts.render(queryList, Constants.categories));
+    }
 }

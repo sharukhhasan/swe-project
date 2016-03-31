@@ -20,6 +20,7 @@ public class Product extends Model {
 
     public String productName;
     public String productDescription;
+    public String productCategory;
     public int productQuantity;
     public String productManufacturer;
     public Double productPrice;
@@ -42,8 +43,4 @@ public class Product extends Model {
         return find.byId(id);
     }
 
-    /*public static List<Product> searchProducts()
-    {
-        return DatabaseHelper.getSearchResults(search);
-    }*/
 }

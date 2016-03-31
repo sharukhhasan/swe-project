@@ -47,6 +47,7 @@ create table products (
   id                        bigserial not null,
   product_name              varchar(255),
   product_description       varchar(255),
+  product_category          varchar(255),
   product_quantity          integer,
   product_manufacturer      varchar(255),
   product_price             float,
