@@ -35,7 +35,11 @@ public class ProductList extends Controller {
         List<Product> queryList = Ebean.find(Product.class)
                 .select("*")
                 .where()
-                .icontains("product_name", searchBy)
+                .disjunction()
+                .icontains("product_name", "%" + searchBy + "%")
+                .icontains("product_manufacturer", "%" + searchBy + "%")
+                .icontains("product_description", "%" + searchBy + "%")
+                .endJunction()
                 .findList();
         Map<String, List<String>> categories = getCategories();
         return ok(views.html.viewproducts.render(queryList, categories));

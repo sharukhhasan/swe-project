@@ -30,6 +30,7 @@
                 </div>
             </form>
         </div>
+
         <table class="table table-striped table-bordered">
             <tbody>
                 <tr>
@@ -62,7 +63,24 @@
         </table>
         <button type="submit" form="addItems" class="btn btn-primary"> Add items to cart </button>
         <div class="form-group" >
+        <div style="margin-top:5px"></div>
+        <button class="btn btn-default" id="clear" type="submit">Clear Search Term</button>
             
         </div>
     </div>
+
+    <script>
+    $( document ).ready(function() {
+        var search = location.search.split('search-term=')[1];
+        if(search == null || search == "") {
+            $("#clear").hide();
+        } else {
+            $("#clear").text("Clear search term:" + search);
+        }
+        $("#clear").click(function() {
+            window.location.replace("/viewproducts");
+        });
+    });
+
+    </script>
 }
