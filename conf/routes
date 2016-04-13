@@ -20,7 +20,7 @@ GET		/register					controllers.Registration.register()
 GET		/home/						controllers.Home.home()
 GET     /viewproducts               controllers.ProductList.products()
 GET     /searchproducts             controllers.ProductList.searchProducts()
-GET     /searchbycategory           controllers.ProductList.searchByCategory()
+GET     /searchbycategory/:element  controllers.ProductList.searchByCategory(element: String)
 
 GET     /singleproduct/:id          controllers.ProductList.singleproduct(id: Long)
 
@@ -33,11 +33,14 @@ POST    /products                   controllers.AddProduct.addProduct()
 #Test page
 GET		/test						controllers.Test.test()
 
+GET 	/purchase					controllers.ShoppingCart.purchaseItems()
+
 # Error page
 GET		/error/:error				controllers.Error.error(error: String)
 GET		/activateaccount/:token		controllers.ActivateAccount.ActivateAccount(token: String)
 GET		/passwordreset				controllers.PasswordReset.Lander
 GET		/passwordreset/:token		controllers.PasswordReset.PasswordResetRedirect(token: String)
+GET		/genericLander/:msg			controllers.Application.genericLander(msg: String)
 
 POST	/sendpasswordemail			controllers.PasswordReset.SendPasswordEmail
 POST	/passwordreset/				controllers.PasswordReset.PasswordReset(email: String)

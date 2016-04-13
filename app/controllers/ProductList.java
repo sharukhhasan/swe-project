@@ -7,6 +7,7 @@ import play.data.DynamicForm;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
+import java.util.*;
 
 import java.util.List;
 
@@ -18,7 +19,8 @@ public class ProductList extends Controller {
 
     public Result products()
     {
-        return ok(views.html.viewproducts.render(Product.all(), Constants.categories));
+        Map<String, List<String>> categories = getCategories();
+        return ok(views.html.viewproducts.render(Product.all(), categories));//Constants.categories));
     }
 
     public Result singleproduct(Long id)
@@ -33,25 +35,40 @@ public class ProductList extends Controller {
         List<Product> queryList = Ebean.find(Product.class)
                 .select("*")
                 .where()
-                .contains("product_name", searchBy)
+                .icontains("product_name", searchBy)
                 .findList();
-
-        return ok(views.html.viewproducts.render(queryList, Constants.categories));
+        Map<String, List<String>> categories = getCategories();
+        return ok(views.html.viewproducts.render(queryList, categories));
     }
 
-    public Result searchByCategory()
+    public Map<String, List<String>> getCategories() {
+        Map<String, List<String>> categoryMap = new HashMap<>();
+        List<Product> products = Product.all();
+        List<String> categories = new ArrayList();
+        for(Product p : products) {
+            if(!categories.contains(p.productCategory)){
+                categories.add(p.productCategory);
+            }
+            
+        }
+        categoryMap.put("Items", categories);
+        return categoryMap;
+    }
+
+    public Result searchByCategory(String element)
     {
+        /*
         DynamicForm searchForm = DynamicForm.form().bindFromRequest();
         String searchBy = searchForm.get("categoryDropDown");
         String searchItem = searchForm.get("category-item");
         System.out.println(searchBy);
-        System.out.println(searchItem);
+        System.out.println(searchItem);*/
         List<Product> queryList = Ebean.find(Product.class)
                 .select("*")
                 .where()
-                .contains("product_category", searchBy)
+                .icontains("product_category", element)
                 .findList();
-
-        return ok(views.html.viewproducts.render(queryList, Constants.categories));
+        Map<String, List<String>> categories = getCategories();
+        return ok(views.html.viewproducts.render(queryList, categories));
     }
 }

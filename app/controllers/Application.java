@@ -36,6 +36,10 @@ public class Application extends Controller {
     public Result index() {
         return ok(index.render());
     }
+
+    public Result genericLander(String message) {
+        return ok(genericLander.render("Lander", message));
+    }
     
     
     public Result logout() {

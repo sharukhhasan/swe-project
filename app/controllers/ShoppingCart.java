@@ -45,6 +45,41 @@ public class ShoppingCart extends Controller {
     	
         return ok(shoppingcart.render(cart.items, total));
     }
+
+    public Result purchaseItems() {
+        User user = SessionHandling.getUser();
+        if (user == null) {
+            return redirect(controllers.routes.Error.error("User is not logged in"));
+        }
+        Cart cart = getCurrentCart();
+        if (cart == null) {
+            return redirect(controllers.routes.Error.error("Could not get cart"));
+        }
+        cart = Ebean.find(Cart.class)
+                .select("*")
+                .fetch("items")
+                .fetch("items.product")
+                .where().eq("id", cart.id)
+                .findUnique();
+                
+        System.out.println("Succesfully got cart id: " + cart.id);
+        cart.purchased = true;
+        Double total = calculateTotal();
+        List<CartItem> items = cart.items;
+        if (items == null || items.size() == 0) {
+            return redirect(controllers.routes.Error.error("Could not get cart items"));
+        }
+        for(CartItem item : items) {
+            int qty = item.product.productQuantity - item.quantity;
+            System.out.println("Setting new qty for " + item.product.productName + " quantity: " + qty);
+            item.product.productQuantity = qty;
+            //Product p = Product.find.byId(item.product.id);
+            Ebean.save(item.product);
+        }
+        Ebean.save(cart);
+        return ok(genericLander.render("Purchase Success!", "Your purchase of $" + total + "has been made succesfully!"));
+
+    }
 	
 	public Double calculateTotal() {
 		Double total = 0.0;
