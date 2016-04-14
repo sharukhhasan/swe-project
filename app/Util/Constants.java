@@ -56,6 +56,7 @@ public class Constants {
                                                             "Industrial Supplies", "Lab & Scientific", "Janitorial", "Safety",
                                                             "Food Service", "Material Handling"};
 
+
     public static final Map<String, List<String>> categories = constructCategoriesMap();
 
     public static Map<String, List<String>> constructCategoriesMap()
@@ -78,6 +79,7 @@ public class Constants {
             returnMap.put(key, Arrays.asList(listSubCat.get(subCounter)));
             subCounter++;
         }
+
 
         return returnMap;
     }

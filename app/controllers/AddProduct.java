@@ -1,5 +1,6 @@
 package controllers;
 
+import Util.Constants;
 import com.avaje.ebean.Ebean;
 import models.User;
 import models.Product;
@@ -28,7 +29,7 @@ public class AddProduct extends Controller {
             return redirect(controllers.routes.Error.error("User not found, please log in and try again"));
        }
        if(user.role.equals("manager")  || user.role.equals("admin")) {
-            return ok(addproduct.render(Form.form(ProductForm.class)));
+            return ok(addproduct.render(Form.form(ProductForm.class), Constants.categories));
        } else {
             return redirect(controllers.routes.Error.error("User " + user.email + " does not have ability to add product!"));
        }

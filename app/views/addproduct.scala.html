@@ -1,6 +1,6 @@
 @import models._
 @import models.forms.ProductForm
-@(myForm: Form[ProductForm])
+@(myForm: Form[ProductForm], categories: Map[String, List[String]])
 @import b3.vertical.fieldConstructor
 
 @main("Add Product Screen") {
@@ -27,16 +27,21 @@
                 '_label -> "Product Description",
                 'placeholder -> "product description"
             )
-            @b3.text(
-                myForm("productCategory"),
-                '_label -> "Category",
-                'placeholder -> "product category"
-            )
-            @b3.number(
-                myForm("productQuantity"),
-                '_label -> "Quantity",
-                'placeholder -> "product quantity"
-            )
+            <div class="form-group"  id="productCategory_field">
+                <label class="control-label" for="productCategory">
+                    Product Category
+                </label>
+                <div class="selectContainer">
+                    <select name="productCategory" class="form-control">
+                        @for((key, value) <- categories) {
+                            <label>@key</label>
+                            @for(element <- value) {
+                                <option>@element</option>
+                            }
+                        }
+                    </select>
+                </div>
+            </div>
             @b3.text(
                 myForm("productManufacturer"),
                 '_label -> "Manufacturer Name",
