@@ -6,13 +6,12 @@ import java.util.*;
 
 import play.mvc.*;
 import models.*;
-import models.CartItem;
-
 import play.data.Form;
 import play.data.DynamicForm;
-import com.avaje.ebean.*;
-import Util.SessionHandling;
 
+import com.avaje.ebean.*;
+
+import Util.SessionHandling;
 import views.html.*;
 
 public class ShoppingCart extends Controller {
@@ -64,6 +63,8 @@ public class ShoppingCart extends Controller {
                 
         System.out.println("Succesfully got cart id: " + cart.id);
         cart.purchased = true;
+        Date date = new Date();
+        cart.purchaseDate = date;
         Double total = calculateTotal();
         List<CartItem> items = cart.items;
         if (items == null || items.size() == 0) {
@@ -80,6 +81,38 @@ public class ShoppingCart extends Controller {
         return ok(genericLander.render("Purchase Success!", "Your purchase of $" + total + "has been made succesfully!"));
 
     }
+    
+    public Result showOrderPage() {
+    	List<Cart> orders = getPastOrders();
+    	
+    	List <Cart> ordersToRemove = new ArrayList<Cart>(); 
+    	for(Cart c : orders) {
+    		if(c.items.size() == 0) {
+    			ordersToRemove.add(c);
+    		} else {
+    			List<CartItem> itemsToRemove = new ArrayList<CartItem>();
+    			for(CartItem item : c.items){
+    				if(item.quantity == 0) {
+    					itemsToRemove.add(item);
+    				}
+    			}
+    			for(CartItem item : itemsToRemove) {
+    				c.items.remove(item);
+    				if(c.items.size() == 0) {
+						ordersToRemove.add(c);
+					}
+    			}
+    		}
+    	}
+    	for (Cart c : ordersToRemove) {
+    		orders.remove(c);
+    	}
+    	
+    	if(orders.size() == 0 ) {
+            return ok(genericLander.render("No orders", "No orders have been made by user!"));
+    	}
+    	return ok(vieworders.render(orders));
+    }
 	
 	public Double calculateTotal() {
 		Double total = 0.0;
@@ -94,6 +127,22 @@ public class ShoppingCart extends Controller {
 			total = total + item.product.productPrice * item.quantity;
 		}
 		return total;
+	}
+	
+	
+	public List<Cart> getPastOrders() {
+		User user = SessionHandling.getUser();
+		List<Cart> carts = Ebean.find(Cart.class)
+				.select("*")
+    			.fetch("items")
+    			.fetch("items.product")
+				.where()
+				.conjunction()
+					.eq("userId", user.id)
+					.eq("purchased", true)
+				.endJunction()
+				.findList();
+		return carts;
 	}
 
     public Cart getCurrentCart() {

@@ -19,8 +19,18 @@ public class ProductList extends Controller {
 
     public Result products()
     {
+    	if(Product.all().size() == 0) {
+    		return redirect(controllers.routes.Error.error("No products are currently available!"));
+    	}
+    	List<Product> products = Product.all();
+    	for(Product p : products) {
+    		if (p.productQuantity == 0) {
+    			products.remove(p);
+    		}
+    	}
+    	
         Map<String, List<String>> categories = getCategories();
-        return ok(views.html.viewproducts.render(Product.all(), categories));//Constants.categories));
+        return ok(views.html.viewproducts.render(products, categories));//Constants.categories));
     }
 
     public Result singleproduct(Long id)

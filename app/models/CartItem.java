@@ -22,6 +22,10 @@ public class CartItem extends Model {
     public Product product;
 
     public int quantity;
+    
+    public int returnedQuantity = 0;
+    
+    public Boolean returned = false;
      
     public static Finder<Long,CartItem> find = new Finder<Long,CartItem>(Long.class, CartItem.class); 
 

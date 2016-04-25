@@ -2,6 +2,7 @@ package controllers;
 
 import Util.SessionHandling;
 import models.Product;
+import models.User;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
@@ -13,8 +14,9 @@ public class Home extends Controller {
 
     public Result home() {
    	 if (SessionHandling.isLoggedIn()) {
-         String user = SessionHandling.getUserEmail();
-         return ok(home.render(user));
+         User user = SessionHandling.getUser();
+         
+         return ok(home.render(user.firstName + " " + user.lastName));
         }
         else {
             return redirect(controllers.routes.Login.login());

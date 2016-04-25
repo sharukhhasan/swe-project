@@ -24,6 +24,8 @@ create table cart_item (
   cart_id                   bigint,
   product_id                bigint,
   quantity                  integer,
+  returned_quantity         integer,
+  returned                  boolean,
   constraint pk_cart_item primary key (id))
 ;
 
