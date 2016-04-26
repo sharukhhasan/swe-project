@@ -38,6 +38,7 @@ public class ProductForm {
     public int productWeight;
     @Constraints.Required
     public String productColor;
+    public int productShipping;
     public String datePosted;
 
     public Product formToProduct(ProductForm productForm)
@@ -59,6 +60,7 @@ public class ProductForm {
         product.productLength = productForm.productLength;
         product.productWeight = productForm.productWeight;
         product.productColor = productForm.productColor;
+        product.productShipping = productForm.productShipping;
         return product;
     }
 

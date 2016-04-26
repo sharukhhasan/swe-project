@@ -57,6 +57,7 @@ create table products (
   product_height            integer,
   product_length            integer,
   product_weight            integer,
+  product_shipping          integer,
   product_color             varchar(255),
   date_posted               varchar(255),
   constraint pk_products primary key (id))

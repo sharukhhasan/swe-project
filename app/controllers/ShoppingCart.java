@@ -15,6 +15,10 @@ import Util.SessionHandling;
 import views.html.*;
 
 public class ShoppingCart extends Controller {
+	
+	public Result shippingLander(List<CartItem> items, String title, String message) {
+		return ok(shippingLander.render(items, title, message));
+	}
 
 	public Result shoppingCart()
     {
@@ -78,7 +82,7 @@ public class ShoppingCart extends Controller {
             Ebean.save(item.product);
         }
         Ebean.save(cart);
-        return ok(genericLander.render("Purchase Success!", "Your purchase of $" + total + "has been made succesfully!"));
+        return shippingLander(items, "Purchase Success!", "Your purchase of $" + total + "has been made succesfully!");
 
     }
     

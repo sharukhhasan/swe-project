@@ -77,6 +77,11 @@
                 '_label -> "Product Weight",
                 'placeholder -> "product weight"
             )
+            @b3.radio(
+                myForm("shipping"),
+                options = Seq("0"->"Small","1"->"Medium","2"->"Large"),
+                '_label -> "Shipping size"
+            )            
             @b3.text(
                 myForm("productColor"),
                 '_label -> "Product Color",

@@ -28,6 +28,7 @@ public class Product extends Model {
     public int productHeight;
     public int productLength;
     public int productWeight;
+    public int productShipping;
     public String productColor;
     public String datePosted;
 
