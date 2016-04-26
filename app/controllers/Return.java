@@ -91,9 +91,9 @@ public class Return extends Controller {
 		Double balance = exchangeCredit - total;
 		
 		if (balance == 0) {
-			return ok(genericLander.render("Exchange Success!", "Your exchange is complete!"));
+			return ok(shippingLander.render(c.items, "Exchange Success!", "Your exchange is complete!"));
 		}
-		return ok(genericLander.render("Exchange Success!", "A balance of $" + balance + " has been credited to your account."));
+		return ok(shippingLander.render(c.items, "Exchange Success!", "A balance of $" + balance + " has been credited to your account."));
 	}
 	
 	public Result returnItem(Long itemId) {
