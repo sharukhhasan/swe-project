@@ -15,23 +15,23 @@
           @b3.email(
             userForm("email"),
             '_label -> "Email",
-            'placeholder -> userToEdit.email
+            'value -> userToEdit.email
           )
           @b3.text(
             userForm("firstName"),
             '_label -> "First Name",
-            'placeholder -> userToEdit.firstName
+            'value -> userToEdit.firstName
           )
           @b3.text(
             userForm("lastName"),
             '_label -> "Last Name",
-            'placeholder -> userToEdit.lastName
+            'value -> userToEdit.lastName
           )
           @b3.radio(
             userForm("role"),
             options = Seq("admin"->"Admin","manager"->"Manager","user"->"Normal"),
             '_label -> "Role",
-            'placeholder -> userToEdit.role
+            'value -> userToEdit.role
           )
           @b3.submit('class -> "btn btn-primary"){ Finalize Edits }
         }

@@ -45,6 +45,7 @@ public class Admin extends Controller {
 
     public Result getEditingUser(Long user_id)
     {
+        System.out.println(user_id);
         User user = Ebean.find(User.class)
                 .select("*")
                 .where()
