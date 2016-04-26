@@ -53,30 +53,32 @@
                 'placeholder -> "product price"
             )
             @b3.number(
-                myForm("productWidth"),
-                '_label -> "Product Width",
-                'placeholder -> "product width"
-            )
-            @b3.number(
                  myForm("productQuantity"),
                  '_label -> "Quantity",
                  'placeholder -> "product quantity"
-             )
+             )            
+            @b3.number(
+                myForm("productWidth"),
+                '_label -> "Product Width (In inches)",
+                'placeholder -> "product width"
+            )
+
             @b3.number(
                 myForm("productHeight"),
-                '_label -> "Product Height",
+                '_label -> "Product Height (In inches)",
                 'placeholder -> "product height"
             )
             @b3.number(
                 myForm("productLength"),
-                '_label -> "Product Length",
+                '_label -> "Product Length (In inches)",
                 'placeholder -> "product length"
             )
             @b3.number(
                 myForm("productWeight"),
-                '_label -> "Product Weight",
+                '_label -> "Product Weight (In pounds)",
                 'placeholder -> "product weight"
             )
+            <span id="recommended"></span>
             @b3.radio(
                 myForm("shipping"),
                 options = Seq("0"->"Small","1"->"Medium","2"->"Large"),
@@ -95,5 +97,17 @@
       </div>
     </div>
   </div>
-
+	<script>
+    $( document ).ready(function() {
+    	$("#productWeight_field").change( function() {
+    		if(parseInt($("#productWeight").val()) > 10) {
+    			$("#recommended").text("Recommended ship size: Large");
+    		} else if (parseInt($("#productWeight").val()) > 5) {
+    			$("#recommended").text("Recommended ship size: Medium");
+    		} else {
+    			$("#recommended").text("Recommended ship size: Small");
+    		}
+    	});
+    })
+	</script>
 }
