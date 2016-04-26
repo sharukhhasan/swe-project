@@ -15,8 +15,9 @@ public class Home extends Controller {
     public Result home() {
    	 if (SessionHandling.isLoggedIn()) {
          User user = SessionHandling.getUser();
-         
-         return ok(home.render(user.firstName + " " + user.lastName));
+
+         return ok(home.render(user));
+         //return ok(home.render(user.firstName + " " + user.lastName));
         }
         else {
             return redirect(controllers.routes.Login.login());

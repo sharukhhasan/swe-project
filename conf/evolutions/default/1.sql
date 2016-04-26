@@ -73,6 +73,7 @@ create table users (
   birth_date                timestamp,
   password                  varchar(255),
   activated                 boolean,
+  confirm_role              boolean,
   constraint pk_users primary key (id))
 ;
 

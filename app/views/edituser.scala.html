@@ -1,0 +1,43 @@
+@import models._
+@import models.forms.UserForm
+@(userForm: Form[UserForm], userToEdit: User)
+@import b3.vertical.fieldConstructor
+
+@main("Edit User"){
+  <div class="row">
+    <div class="col-sm-12">
+      Edit User
+    </div>
+    <div class="col-sm-12">
+      <div class="panel panel-default">
+        <div class="panel-body">
+        @b3.form(routes.Admin.editUser(userToEdit.id)) {
+          @b3.email(
+            userForm("email"),
+            '_label -> "Email",
+            'placeholder -> userToEdit.email
+          )
+          @b3.text(
+            userForm("firstName"),
+            '_label -> "First Name",
+            'placeholder -> userToEdit.firstName
+          )
+          @b3.text(
+            userForm("lastName"),
+            '_label -> "Last Name",
+            'placeholder -> userToEdit.lastName
+          )
+          @b3.radio(
+            userForm("role"),
+            options = Seq("admin"->"Admin","manager"->"Manager","user"->"Normal"),
+            '_label -> "Role",
+            'placeholder -> userToEdit.role
+          )
+          @b3.submit('class -> "btn btn-primary"){ Finalize Edits }
+        }
+
+        </div>
+      </div>
+    </div>
+  </div>
+}

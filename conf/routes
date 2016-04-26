@@ -24,6 +24,13 @@ GET     /searchbycategory/:element  controllers.ProductList.searchByCategory(ele
 
 GET     /singleproduct/:id          controllers.ProductList.singleproduct(id: Long)
 
+GET     /editusers                  controllers.Admin.editUsersPage()
+GET     /edituser/:id               controllers.Admin.getEditingUser(id: Long)
+POST    /useredited                 controllers.Admin.editUser(id: Long)
+
+GET     /pendingroles               controllers.Admin.getPendingRoles()
+GET     /confirmrole/:id            controllers.Admin.confirmRole(id: Long)
+
 GET		/vieworders					controllers.ShoppingCart.showOrderPage()
 
 GET		/returnItem/:id				controllers.Return.returnScreen(id: Long)

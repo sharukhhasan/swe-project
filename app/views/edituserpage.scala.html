@@ -1,0 +1,34 @@
+@(users: List[User])
+
+@main("Edit Users"){
+  <div class="modal-body">
+    <table class="table table-striped table-bordered">
+      <tbody>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Role</th>
+          <th>Email</th>
+          <th>Edit</th>
+        </tr>
+        <div class="form-group">
+          @for(user <- users) {
+            <form action="/edituser/@user.id" method="GET" class="form-vertical" role="form" id="getEditingUser">
+              <tr class="clickable-row">
+                <a href="routes.Admin.getEditingUser(@user.id)">
+                  <td>@user.firstName</td>
+                  <td>@user.lastName</td>
+                  <td>@user.role</td>
+                  <td>@user.email</td>
+                  <td>
+                    <input type="submit" form="getEditingUser" value="Edit User">
+                  </td>
+                </a>
+              </tr>
+            </form>
+          }
+        </div>
+      </tbody>
+    </table>
+  </div>
+}

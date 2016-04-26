@@ -1,20 +1,29 @@
 @import models._
 @import b3.vertical.fieldConstructor
-@(User: String)
+@(user: User)
 
 @main("Welcome to Play") {
 
 
     <div class="row">
         <div class="col-sm-12">
-                Welcome @User
+                Welcome @user.firstName
         </div>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-3 col-md-2 sidebar">
                     <ul class="nav nav-sidebar">
+                        @if(user.role == "admin"){
+                            <li><a href="/editusers">Edit Users</a></li>
+                            <li><a href="/pendingroles">Pending Roles</a> </li>
+                            <li><a href="/addproduct">Add Product</a></li>
+                        }
+
+                        @if(user.role == "manager"){
+                            <li><a href="/addproduct">Add Product</a></li>
+                        }
+
                         <li class="active"><a href="/viewproducts">View Products <span class="sr-only">(current)</span></a></li>
-                        <li><a href="/addproduct">Add Product</a></li>
                         <li><a href="/vieworders">View Order History</a></li>
                     </ul>
                 </div>

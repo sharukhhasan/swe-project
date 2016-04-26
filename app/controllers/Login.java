@@ -29,7 +29,9 @@ public class Login extends Controller {
 	    	if (Encryption.checkPassword(user.password, userResult.get(0).password)) {
 		    	String userLoggedIn = userResult.get(0).email;
 		    	SessionHandling.login(userLoggedIn);
-		        return redirect(controllers.routes.Home.home());
+
+				return redirect(controllers.routes.Home.home());
+
 	    	}
 	    	else {
 	    		return redirect(controllers.routes.Error.error("Incorrect account or password"));

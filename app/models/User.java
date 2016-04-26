@@ -35,6 +35,8 @@ public class User extends Model{
 
     public Boolean activated = false;
 
+    public Boolean confirm_role = false;
+
     public static class Manager{
         public int managerid;
     }
