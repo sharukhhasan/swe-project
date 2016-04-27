@@ -37,6 +37,11 @@ GET		/returnItem/:id				controllers.Return.returnScreen(id: Long)
 POST	/returnItem/:id				controllers.Return.returnItem(id: Long)
 POST	/exchangeItem/:id			controllers.Return.exchangeItem(id:Long)
 
+GET		/updateuser					controllers.Registration.updateUser()
+POST	/updateuser					controllers.Registration.addAddress()
+
+POST	/requestRole				controllers.Registration.requestRole()
+
 
 #Add Product
 GET     /addproduct                 controllers.AddProduct.product()

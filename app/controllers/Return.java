@@ -89,11 +89,18 @@ public class Return extends Controller {
 		Ebean.save(c);
 		
 		Double balance = exchangeCredit - total;
+		User u = Ebean.find(User.class)
+    			.select("*")
+    			.fetch("address")
+    			.where().eq("id", SessionHandling.getUser().id)
+    			.findUnique();
+		Address address = u.address;
 		
 		if (balance == 0) {
-			return ok(shippingLander.render(c.items, "Exchange Success!", "Your exchange is complete!"));
+			return ok(shippingLander.render(c.items, "Exchange Success!", "Your exchange is complete!", address));
 		}
-		return ok(shippingLander.render(c.items, "Exchange Success!", "A balance of $" + balance + " has been credited to your account."));
+		
+		return ok(shippingLander.render(c.items, "Exchange Success!", "A balance of $" + balance + " has been credited to your account.", address));
 	}
 	
 	public Result returnItem(Long itemId) {

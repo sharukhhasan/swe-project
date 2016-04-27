@@ -5,14 +5,15 @@ import play.*;
 import java.util.*;
 
 import Util.Encryption;
-
 import play.mvc.*;
+import models.Cart;
 import models.User;
 import models.EmailActivation;
 import models.AccessCodes;
 import models.forms.UserForm;
+import models.Address;
 import play.data.validation.Constraints;
-
+import play.data.DynamicForm;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
@@ -38,8 +39,59 @@ public class Registration extends Controller {
 
 	public Result register()
     {
-        return ok(register.render(Form.form(UserForm.class)));
+        return ok(register.render(Form.form(UserForm.class)));        
     }
+	
+	public Result requestRole() {
+		DynamicForm requestData = DynamicForm.form().bindFromRequest();
+		Map<String, String> formEntries = requestData.data();
+		for(Map.Entry<String, String> entry : formEntries.entrySet()) {
+			String key = entry.getKey();
+			if(!key.equals("role")) {
+				return redirect(controllers.routes.Error.error("Invalid role selection, error 1" + key));
+			} else {
+				String role = entry.getValue();
+				if(!role.equals("manager") && !role.equals("admin") && role.equals("user")) {
+					return redirect(controllers.routes.Error.error("Invalid role selection, error 2" + role));
+				} else {
+					User u = SessionHandling.getUser();
+					if(role.equals(u.role)) {
+						return ok(genericLander.render("Unable to update role", "You already have this role!"));
+					}
+					u.role = role;
+					u.confirm_role = false;
+					Ebean.save(u);
+					return ok(genericLander.render("New role!", "New role " + role + " has been requested!"));
+				}
+			}
+		}
+		return redirect(controllers.routes.Error.error("Unable to update role"));
+	}
+	
+	public Result updateUser() {
+		User u = SessionHandling.getUser();
+		User user = Ebean.find(User.class)
+    			.select("*")
+    			.fetch("address")
+    			.where().eq("id", u.id)
+    			.findUnique();
+		Boolean hasAddress = false;
+		if(user.address != null) {
+			hasAddress = true;
+		}
+		return ok(address.render(Form.form(Address.class), user, hasAddress));
+	}
+	
+	public Result addAddress() {
+		Form<Address> form = Form.form(Address.class).bindFromRequest();
+        Address address = form.get();
+        User user = SessionHandling.getUser();
+        address.user = user;
+        user.address = address;
+        Ebean.save(user);
+        Ebean.save(address);
+        return ok(genericLander.render("Address Updated!", "Your address has been updated!"));
+	}
 
     public Result addUser()
     {

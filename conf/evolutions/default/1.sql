@@ -10,6 +10,17 @@ create table access_codes (
   constraint pk_access_codes primary key (id))
 ;
 
+create table address (
+  id                        bigserial not null,
+  address                   varchar(255),
+  city                      varchar(255),
+  state                     varchar(255),
+  zip                       integer,
+  user_id                   bigint,
+  constraint uq_address_user_id unique (user_id),
+  constraint pk_address primary key (id))
+;
+
 create table cart (
   id                        bigserial not null,
   user_id                   bigint,
@@ -77,16 +88,20 @@ create table users (
   constraint pk_users primary key (id))
 ;
 
-alter table cart_item add constraint fk_cart_item_cart_1 foreign key (cart_id) references cart (id);
-create index ix_cart_item_cart_1 on cart_item (cart_id);
-alter table cart_item add constraint fk_cart_item_product_2 foreign key (product_id) references products (id);
-create index ix_cart_item_product_2 on cart_item (product_id);
+alter table address add constraint fk_address_user_1 foreign key (user_id) references users (id);
+create index ix_address_user_1 on address (user_id);
+alter table cart_item add constraint fk_cart_item_cart_2 foreign key (cart_id) references cart (id);
+create index ix_cart_item_cart_2 on cart_item (cart_id);
+alter table cart_item add constraint fk_cart_item_product_3 foreign key (product_id) references products (id);
+create index ix_cart_item_product_3 on cart_item (product_id);
 
 
 
 # --- !Downs
 
 drop table if exists access_codes cascade;
+
+drop table if exists address cascade;
 
 drop table if exists cart cascade;
 

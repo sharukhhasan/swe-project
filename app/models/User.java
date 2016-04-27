@@ -3,11 +3,14 @@ package models;
 import com.avaje.ebean.Model;
 import play.data.format.Formats;
 
+import javax.persistence.*;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.util.Date;
+import com.avaje.ebean.*;
+
 
 
 @Entity
@@ -36,6 +39,9 @@ public class User extends Model{
     public Boolean activated = false;
 
     public Boolean confirm_role = false;
+    
+    @OneToOne(mappedBy = "user")
+    public Address address;
 
     public static class Manager{
         public int managerid;

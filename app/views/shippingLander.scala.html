@@ -1,6 +1,6 @@
 @import models._
 @import b3.vertical.fieldConstructor
-@(items: List[CartItem], title:String, message: String )
+@(items: List[CartItem], title:String, message: String, address: Address)
 
 @main(title) {
 
@@ -10,6 +10,9 @@
   					@message
   					<table class="table table-striped table-bordered">
 	  					<tbody>
+	  						@if(address != null) {
+	  							Shipping to @address.address, @address.city, @address.state, @address.zip
+	  						}
 							<tr>
 								<th>Product Name</th>
 								<th>Product Quantity</th>

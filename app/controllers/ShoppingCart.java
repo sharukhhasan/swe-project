@@ -16,8 +16,9 @@ import views.html.*;
 
 public class ShoppingCart extends Controller {
 	
-	public Result shippingLander(List<CartItem> items, String title, String message) {
-		return ok(shippingLander.render(items, title, message));
+	public Result shippingLander(List<CartItem> items, String title, String message, Address address) {
+
+		return ok(shippingLander.render(items, title, message, address));
 	}
 
 	public Result shoppingCart()
@@ -40,7 +41,7 @@ public class ShoppingCart extends Controller {
     	System.out.println("Succesfully got cart id: " + cart.id);
     	List<CartItem> items = cart.items;
     	if (items == null || items.size() == 0) {
-    		return redirect(controllers.routes.Error.error("Could not get cart items"));
+    		return redirect(controllers.routes.Error.error("There are no items currently in cart"));
     	}
     	System.out.println("Succesfully got cart items ");
     	Double total = calculateTotal();
@@ -82,7 +83,13 @@ public class ShoppingCart extends Controller {
             Ebean.save(item.product);
         }
         Ebean.save(cart);
-        return shippingLander(items, "Purchase Success!", "Your purchase of $" + total + "has been made succesfully!");
+        User u = Ebean.find(User.class)
+    			.select("*")
+    			.fetch("address")
+    			.where().eq("id", user.id)
+    			.findUnique();
+		Address address = u.address;
+        return shippingLander(items, "Purchase Success!", "Your purchase of $" + total + "has been made succesfully!", address);
 
     }
     
