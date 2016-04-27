@@ -2,10 +2,11 @@
 @(myForm: Form[Address], user: User, hasAddress: Boolean)
     @import b3.vertical.fieldConstructor
 
-    @main("Registration Screen") {
+    @main("SWE-Project - Update Information") {
 
         <script type="text/javascript" src="@routes.Assets.at("javascripts/requiredAsterisk.js")"></script>
 
+        <h2>Update Information</h2>
         <div class="row">
             <div class="col-sm-12">
             </div>
@@ -69,14 +70,14 @@
 										User
 									</label>
 								</div>
-								<button type="submit" form="roleForm" class="btn btn-primary"> Request new role </button>
+								<button type="submit" form="roleForm" class="btn btn-primary"> Request Role </button>
 			                </div>
 		          	</form>
 	          	</div>
           	</div>
           	<div id="controlButtons">
-          		<button id="update" type="button" class="btn btn-primary"> Update Address </button>
-          		<button id="role" type="button" class="btn btn-primary"> Request new role </button>
+          		<button id="update" type="button" class="btn btn-primary"> Edit Contact Information </button>
+          		<button id="role" type="button" class="btn btn-primary"> Request a New Role </button>
           	</div>
         </div>
         

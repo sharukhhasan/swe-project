@@ -27,7 +27,7 @@ public class ActivateAccount extends Controller {
             emailRecord.used = true;
             Ebean.save(user);
             Ebean.save(emailRecord);
-            return ok(activation.render("The account for " + user.firstName + " " + user.lastName + " is activated!"));
+            return ok(activation.render("The account for " + user.firstName + " " + user.lastName + " has been activated."));
         }
 
 

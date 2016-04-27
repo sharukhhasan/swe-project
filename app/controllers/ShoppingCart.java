@@ -41,7 +41,7 @@ public class ShoppingCart extends Controller {
     	System.out.println("Succesfully got cart id: " + cart.id);
     	List<CartItem> items = cart.items;
     	if (items == null || items.size() == 0) {
-    		return redirect(controllers.routes.Error.error("There are no items currently in cart"));
+    		return ok(genericLander.render("SWE-Project - My Cart", "It looks like you haven't added any items to your cart!"));
     	}
     	System.out.println("Succesfully got cart items ");
     	Double total = calculateTotal();
@@ -89,7 +89,7 @@ public class ShoppingCart extends Controller {
     			.where().eq("id", user.id)
     			.findUnique();
 		Address address = u.address;
-        return shippingLander(items, "Purchase Success!", "Your purchase of $" + total + "has been made succesfully!", address);
+        return shippingLander(items, "SWE-Project - Purchase Success!", "Your purchase of $" + total + " has been made succesfully!", address);
 
     }
     
