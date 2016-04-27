@@ -27,6 +27,8 @@ public class Address extends Model{
 
     public int zip;
     
+    public int phone;
+    
     @OneToOne
     public User user;
 

@@ -1,0 +1,101 @@
+@import models._
+@(myForm: Form[Address], user: User, hasAddress: Boolean)
+    @import b3.vertical.fieldConstructor
+
+    @main("Registration Screen") {
+
+        <script type="text/javascript" src="@routes.Assets.at("javascripts/requiredAsterisk.js")"></script>
+
+        <div class="row">
+            <div class="col-sm-12">
+            </div>
+            <div class="col-sm-12">
+                <div id="updateAddress" class="panel panel-default">
+                    <div class="panel-body">
+                    	@if(hasAddress){
+                    	Current address: @user.address.address, @user.address.city, @user.address.state, @user.address.zip
+                    	}
+	                    @b3.form(routes.Registration.addAddress()) {
+	                        @b3.text(
+	                            myForm("address"),
+	                            '_label -> "Address",
+	                            'placeholder -> "123 Foo St."
+	                        )
+	                        @b3.text(
+	                            myForm("city"),
+	                            '_label -> "City",
+	                            'placeholder -> "Iowa City"
+	                        )
+	   						@b3.text(
+	                            myForm("state"),
+	                            '_label -> "State",
+	                            'placeholder -> "Iowa"
+	                        )
+	                        @b3.number(
+	                            myForm("zip"),
+	                            '_label -> "Zip",
+	                            'placeholder -> "12345"
+	                        )
+	                        @b3.number(
+	                            myForm("phone"),
+	                            '_label -> "Phone",
+	                            'placeholder -> "123-456-7890"
+	                        )	                        
+	                        @b3.submit('class -> "btn btn-primary"){ Update Address }
+	                    }
+                    </div>
+                </div>
+                <div id="updateRole" class="panel panel-default">
+                	<div class="panel-body">
+		                <form id="roleForm" action="/requestRole" method="POST" class="form-vertical " role="form">
+			                 Current role: @user.role, request new privileges: 
+			                 <div class="form-group  " id="role_field">
+								<label class="control-label">Role</label>
+								<div class="radio">
+									<label class="" for="role_admin">
+										<input type="radio" id="role_admin" name="role" value="admin" required="true">
+										Admin
+									</label>
+								</div>
+								<div class="radio">
+									<label class="" for="role_manager">
+										<input type="radio" id="role_manager" name="role" value="manager" required="true">
+										Manager
+									</label>
+								</div>
+								<div class="radio">	
+									<label class="" for="role_user">
+										<input type="radio" id="role_user" name="role" value="user" required="true">
+										User
+									</label>
+								</div>
+								<button type="submit" form="roleForm" class="btn btn-primary"> Request new role </button>
+			                </div>
+		          	</form>
+	          	</div>
+          	</div>
+          	<div id="controlButtons">
+          		<button id="update" type="button" class="btn btn-primary"> Update Address </button>
+          		<button id="role" type="button" class="btn btn-primary"> Request new role </button>
+          	</div>
+        </div>
+        
+        <script>
+        $( document ).ready(function() {
+        	$('#updateRole').hide();
+        	$('#updateAddress').hide();
+        	$('#update').click(function() {
+        		$('#updateAddress').show();
+        		$('#controlButtons').hide();
+        	});
+        	$('#role').click(function() {
+        		$('#controlButtons').hide();
+        		$('#updateRole').show();
+        	});
+        	
+        })
+        </script>
+
+    }
+
+

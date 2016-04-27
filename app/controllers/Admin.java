@@ -68,14 +68,22 @@ public class Admin extends Controller {
 
     public Result confirmRole(Long user_id)
     {
+    	System.out.println("Confirm role for user_id: " + user_id);
         User user = Ebean.find(User.class)
                 .select("*")
                 .where()
                 .eq("id", user_id)
                 .findUnique();
-
+        System.out.println("Found user : " + user.firstName);
         user.confirm_role = true;
-        Ebean.save(user);
+        System.out.println("User confirm status is:" + user.confirm_role);
+        Ebean.update(user);
+        user = Ebean.find(User.class)
+                .select("*")
+                .where()
+                .eq("id", user_id)
+                .findUnique();
+        System.out.println("User confirm status is:" + user.confirm_role);
 
         return redirect(routes.Admin.getPendingRoles());
     }

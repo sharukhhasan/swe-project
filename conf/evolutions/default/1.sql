@@ -16,6 +16,7 @@ create table address (
   city                      varchar(255),
   state                     varchar(255),
   zip                       integer,
+  phone                     integer,
   user_id                   bigint,
   constraint uq_address_user_id unique (user_id),
   constraint pk_address primary key (id))
