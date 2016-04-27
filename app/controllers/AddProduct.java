@@ -22,18 +22,24 @@ public class AddProduct extends Controller {
     {
         String userEmail = SessionHandling.getUserEmail();
 
-       User user = Ebean.find(User.class)
-               .where().like("email", userEmail)
-               .findUnique();
-       if(user == null) {
+        User user = Ebean.find(User.class)
+                .where().like("email", userEmail)
+                .findUnique();
+
+        if((user.role.equals("user")) || (!user.confirm_role))
+        {
+            return ok(views.html.error.render("Request Denied: Access Not Permitted!"));
+        }
+
+        if(user == null) {
             return redirect(controllers.routes.Error.error("User not found, please log in and try again"));
-       }
-       if(user.role.equals("manager")  || user.role.equals("admin")) {
+        }
+
+        if(user.role.equals("manager")  || user.role.equals("admin")) {
             return ok(addproduct.render(Form.form(ProductForm.class), Constants.categories));
-       } else {
+        } else {
             return redirect(controllers.routes.Error.error("User " + user.email + " does not have ability to add product!"));
-       }
-       
+        }
     }
 
     public Result addProduct()

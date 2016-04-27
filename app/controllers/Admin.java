@@ -1,5 +1,6 @@
 package controllers;
 
+import Util.SessionHandling;
 import com.avaje.ebean.Ebean;
 import models.User;
 import models.forms.UserForm;
@@ -17,6 +18,13 @@ public class Admin extends Controller {
 
     public Result editUsersPage()
     {
+        User currentUser = SessionHandling.getUser();
+
+        if((!currentUser.role.equals("admin")) || (!currentUser.confirm_role))
+        {
+            return ok(views.html.error.render("Request Denied: Access Not Permitted!"));
+        }
+
         List<User> userList = Ebean.find(User.class)
                 .select("*")
                 .findList();
@@ -57,6 +65,13 @@ public class Admin extends Controller {
 
     public Result getPendingRoles()
     {
+        User currentUser = SessionHandling.getUser();
+
+        if((!currentUser.role.equals("admin")) || (!currentUser.confirm_role))
+        {
+            return ok(views.html.error.render("Request Denied: Access Not Permitted!"));
+        }
+
         List<User> pendingList = Ebean.find(User.class)
                 .select("*")
                 .where()
