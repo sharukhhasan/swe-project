@@ -20,7 +20,9 @@
                             <li><a href="/addproduct">Add Product</a></li>
                         }
 						<li><a href="/updateuser">Update user info</a></li>
-                        <li class="active"><a href="/viewproducts">View Products <span class="sr-only">(current)</span></a></li>
+						@if(user.role != "manager" || !user.confirm_role){
+                            <li class="active"><a href="/viewproducts">View Products <span class="sr-only">(current)</span></a></li>
+                        }
                         <li><a href="/vieworders">View Order History</a></li>
                     </ul>
                 </div>

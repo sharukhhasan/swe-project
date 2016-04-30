@@ -56,12 +56,12 @@ public class Registration extends Controller {
 				} else {
 					User u = SessionHandling.getUser();
 					if(role.equals(u.role)) {
-						return ok(genericLander.render("Unable to update role", "You already have this role!"));
+						return ok(genericLander.render("SWE-Project - Error", "You already have this role!"));
 					}
 					u.role = role;
 					u.confirm_role = false;
 					Ebean.save(u);
-					return ok(genericLander.render("New role!", "New role " + role + " has been requested!"));
+					return ok(genericLander.render("SWE-Project - Role Requested", "Your request to be a " + role + " has been sent!"));
 				}
 			}
 		}
@@ -90,7 +90,7 @@ public class Registration extends Controller {
         user.address = address;
         Ebean.save(user);
         Ebean.save(address);
-        return ok(genericLander.render("Address Updated!", "Your address has been updated!"));
+        return ok(genericLander.render("SWE-Project - Contact Information Updated", "Your contact information has been updated!"));
 	}
 
     public Result addUser()
