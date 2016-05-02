@@ -89,6 +89,13 @@ public class Registration extends Controller {
         address.user = user;
         user.address = address;
         Ebean.save(user);
+        Address oldAddress = Ebean.find(Address.class)
+                .select("*")
+                .where().eq("user_id", user.id)
+                .findUnique();
+        if (oldAddress != null) {
+            Ebean.delete(oldAddress);
+        }
         Ebean.save(address);
         return ok(genericLander.render("SWE-Project - Contact Information Updated", "Your contact information has been updated!"));
 	}
