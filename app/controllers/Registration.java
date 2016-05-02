@@ -124,11 +124,11 @@ public class Registration extends Controller {
 
         if(play.Play.isProd())
         {
-        	messageBody = "Hi " + user.firstName + " please activate your account at: swe-project.herokuapp.com/activateaccount/" + token.token;
+        	messageBody = "Hi " + user.firstName + ",\n\nThank you for registering for SWE-Project. Please activate your account at the following link:\n\nswe-project.herokuapp.com/activateaccount/" + token.token + "\n\nThe SWE-Project Team";
         }
         else
         {
-        	messageBody = "Hi " + user.firstName + " please activate your account at: localhost:9000/activateaccount/" + token.token;
+        	messageBody = "Hi " + user.firstName + ",\n\nThank you for registering for SWE-Project. Please activate your account at the following link:\n\nlocalhost:9000/activateaccount/" + token.token + "\n\nThe SWE-Project Team";
         }
         
         String messageTitle = "Please activate your account";
