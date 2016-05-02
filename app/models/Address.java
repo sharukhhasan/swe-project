@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.util.Date;
+import java.math.BigInteger;
 
 
 @Entity
@@ -27,7 +28,7 @@ public class Address extends Model{
 
     public int zip;
     
-    public int phone;
+    public BigInteger phone;
     
     @OneToOne
     public User user;
