@@ -1,19 +1,8 @@
 package controllers;
 
-import play.*;
-
-import java.util.*;
-
-import play.mvc.*;
-import models.User;
-
-import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
 
-import com.avaje.ebean.*;
-
-import Util.GenerateAccessCodes;
 import Util.SessionHandling;
 import views.html.*;
 
@@ -22,7 +11,6 @@ public class Application extends Controller {
 
     public Result sessionRedirect() {
 
-        GenerateAccessCodes.generateAccessCodes();
         if (SessionHandling.isLoggedIn()) {
             String user = SessionHandling.getUserEmail();
             return redirect(controllers.routes.Home.home());

@@ -1,38 +1,10 @@
-@(products: List[Product], categories: Map[String, List[String]])
+@(supplies: List[Supply])
 
-@main("SWE-Project - Products"){
+@main("SWE-Project - Supplies"){
 
     <h2>Products</h2>
 
     <div class="modal-body">
-        <div class="col-sm-3 col-md-3 pull-left">
-<!--             <form action="/searchbycategory" method="GET" class="dropdown"> -->
-                <button class="btn btn-default dropdown-toggle" type="button" id="categoryDropDown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    Category
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu scrollable-menu" role="menu" aria-labelledby="categoryDropDown">
-                    @for((key, value) <- categories) {
-                        <li class="dropdown-header">@key</li>
-                        @for(element <- value) {
-                            <li><a href="/searchbycategory/@element">@element</a></li>
-                        }
-                        <li role="separator" class="divider"></li>
-                    }
-                </ul>
-<!--             </form> -->
-        </div>
-        <div class="col-sm-3 col-md-3 pull-right">
-            <form action="/searchproducts" method="GET" class="navbar-form" role="search">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search Products" name="search-term" id="search-term" value="">
-                    <div class="input-group-btn">
-                        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-                    </div>
-                </div>
-            </form>
-        </div>
-
         <table class="table table-striped table-bordered">
             <tbody>
                 <tr>
@@ -46,16 +18,12 @@
                 </tr>
                 <div class="form-group"> 
                     <form action="/cart" method="POST" class="form-vertical " role="form" id="addItems">
-                        @for(product <- products) {
+                        @for(supply <- supplies) {
                             <tr class="clickable-row">
-                                <a href="routes.ProductList.singleproduct(@product.id)">
-                                    <td>@product.productName</td>
-                                    <td>@product.productDescription</td>
-                                    <td>@product.productQuantity</td>
-                                    <td>@product.productManufacturer</td>
-                                    <td>$@product.productPrice</td>
-                                    <td>@product.datePosted</td>
-                                    <td><input type="number" max="@product.productQuantity" id="@product.id" name="@product.id" value="" class="form-control" placeholder="qty"></td>
+                                <a href="routes.ProductList.singleproduct(@supply.id)">
+                                    <td>@supply.supply_name</td>
+                                    <td>@supply.supply_stock</td>
+                                    <td>@supply.supply_restock</td>
                                 </a>
                             </tr>
                         }
@@ -63,12 +31,6 @@
                 </div>
             </tbody>
         </table>
-        <button type="submit" form="addItems" class="btn btn-primary"> Add items to cart </button>
-        <div class="form-group" >
-        <div style="margin-top:5px"></div>
-        <button class="btn btn-default" id="clear" type="submit">Clear Search Term</button>
-            
-        </div>
     </div>
 
     <script>

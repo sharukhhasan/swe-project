@@ -8,12 +8,11 @@
         <tr>
           <th>First Name</th>
           <th>Last Name</th>
-          <th>Requested Role</th>
+          <th>Role</th>
           <th>Confirm</th>
         </tr>
         <div class="form-group">
           @for(user <- users) {
-            @if(user.role != "user"){
             <form action="/confirmrole/@user.id" method="GET" class="form-vertical" role="form" id="confirmUserRole">
               <tr class="clickable-row">
                 <a href="routes.Admin.confirmUser(@user.id)">
@@ -26,8 +25,7 @@
                 </a>
               </tr>
             </form>
-              }
-            }
+          }
         </div>
       </tbody>
     </table>

@@ -22,7 +22,7 @@ public class SendEmail
         props.put("mail.smtps.auth","true");
         Session session = Session.getInstance(props, null);
         Message msg = new MimeMessage(session);
-        msg.setFrom(new InternetAddress("postmaster@sandboxfee5fbdcc44b40e5812ba6dc72fed87b.mailgun.org", "SWE-Project Team"));
+        msg.setFrom(new InternetAddress("postmaster@sandboxfee5fbdcc44b40e5812ba6dc72fed87b.mailgun.org"));
         msg.setRecipients(Message.RecipientType.TO,
         InternetAddress.parse(email, false));
         msg.setSubject(title);

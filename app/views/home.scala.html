@@ -1,8 +1,8 @@
 @import models._
 @import b3.vertical.fieldConstructor
-@(user: User)
+@(user: User, rooms: List[Room], currentGuests: List[Guest])
 
-@main("SWE-Project - Home") {
+@main("Crest Motel - Home") {
 
     <div class="row">
         <h2>Welcome @user.firstName @user.lastName</h2>
@@ -10,23 +10,67 @@
             <div class="row">
                 <div class="col-sm-3 col-md-2 sidebar">
                     <ul class="nav nav-sidebar">
-                        @if(user.role == "admin" && user.confirm_role){
-                            <li><a href="/editusers">Edit Users</a></li>
-                            <li><a href="/pendingroles">Pending Roles</a> </li>
-                            <li><a href="/addproduct">Add Product</a></li>
+                        @if(user.role == "admin"){
+                            <li><a href="/viewguests">View Guests</a> </li>
+                            <li><a href="/weekearnings">Week Earnings</a></li>
+                            <li><a href="/addsupply">Add Supply</a> </li>
                         }
+<<<<<<< HEAD
+                        <li><a href="/newguest">Add New Guest</a> </li>
+                        <li><a href="/supplyinventory">Supply Inventory</a> </li>
+=======
 
                         @if(user.role == "manager" && user.confirm_role){
                             <li><a href="/addproduct">Add Product</a></li>
                         }
 						<li><a href="/updateuser">Update user info</a></li>
-						@if(user.role != "manager" || !user.confirm_role){
-                            <li class="active"><a href="/viewproducts">View Products <span class="sr-only">(current)</span></a></li>
-                        }
+                        <li class="active"><a href="/viewproducts">View Products <span class="sr-only">(current)</span></a></li>
                         <li><a href="/vieworders">View Order History</a></li>
+>>>>>>> parent of b48b893... managers unable to buy items, users not in pending roles, ui changes
                     </ul>
                 </div>
             </div>
+        </div>
+        <div class="modal-body">
+            <table class="table table-striped table-bordered">
+                <tbody>
+                    <tr>
+                        <th>Room</th>
+                        <th>Available</th>
+                        <th>Guest's Name</th>
+                        <th>Checked In</th>
+                        <th>Number of Nights</th>
+                        <th>Check Out</th>
+                    </tr>
+                    <div class="form-group">
+                        @for(room <- rooms){
+                            <form class="form-vertical" role="form" id="roomGuestInfo">
+                                <tr>
+                                    <td>@room.id</td>
+                                    <td>@room.isOccupied</td>
+
+                                    @for(guest <- currentGuests){
+                                        @if(guest.room_number == room.id){
+                                            <td>@guest.guest_first_name @guest.guest_last_name</td>
+                                            <td>@guest.guest_checkin</td>
+                                            <td>@guest.num_nights</td>
+                                            <td>
+                                                <input type="submit" value="Check Out">
+                                            </td>
+                                        }
+                                        @if(!room.isOccupied){
+                                            <td>N/A</td>
+                                            <td>N/A</td>
+                                            <td>N/A</td>
+                                            <td>N/A</td>
+                                        }
+                                    }
+                                </tr>
+                            </form>
+                        }
+                    </div>
+                </tbody>
+            </table>
         </div>
     </div>
 

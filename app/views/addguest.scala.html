@@ -1,9 +1,10 @@
 @import models._
 @import models.forms.UserForm
-@(myForm: Form[UserForm])
+@import models.forms.GuestForm
+@(myForm: Form[GuestForm])
 @import b3.vertical.fieldConstructor
 
-@main("SWE-Project - Register") {
+@main("Crest Motel - Add Guest") {
 
   <script type="text/javascript" src="@routes.Assets.at("javascripts/requiredAsterisk.js")"></script>
   <script type="text/javascript" src="@routes.Assets.at("javascripts/managercodes.js")"></script>
@@ -16,46 +17,46 @@
     <div class="col-sm-12">
       <div class="panel panel-default">
         <div class="panel-body">
-        @b3.form(routes.Registration.addUser()) {
-          @b3.email(
-            myForm("email"),
-            '_label -> "Email",
-            'placeholder -> "example@mail.com"
-          )
+        @b3.form(routes.GuestController.addGuest()) {
           @b3.text(
-            myForm("firstName"),
+            myForm("guest_first_name"),
             '_label -> "First Name",
             'placeholder -> "first name"
           )
           @b3.text(
-            myForm("lastName"),
+            myForm("guest_last_name"),
             '_label -> "Last Name",
             'placeholder -> "last name"
           )
           @b3.radio(
-            myForm("gender"),
+            myForm("guest_gender"),
             options = Seq("male"->"Male","female"->"Female"),
             '_label -> "Gender"
           )
-          @b3.radio(
-            myForm("role"),
-            options = Seq("admin"->"Admin","manager"->"Manager","user"->"Normal"),
-            '_label -> "Role"
+          @b3.text(
+            myForm("guest_platenum"),
+            '_label -> "Plate No.",
+            'placeholder -> "plate num"
           )
           @b3.date(
-            myForm("birthDate"),
+            myForm("guest_birthdate"),
             '_label -> "Birthdate",
             'placeholder -> "birth date"
           )
-          @b3.password(
-            myForm("password"),
-            '_label -> "Password",
-            'placeholder -> "password"
+          @b3.date(
+            myForm("guest_checkin"),
+            '_label -> "Check-In",
+            'placeholder -> "check in"
           )
-          @b3.password(
-            myForm("confirmPassword"),
-            '_label -> "Confirm Password",
-            'placeholder -> "confirm password"
+          @b3.number(
+            myForm("room_number"),
+            '_label -> "Room Number",
+            'placeholder -> "room number"
+          )
+          @b3.number(
+            myForm("num_nights"),
+            '_label -> "Number of Nights Stay",
+            'placeholder -> "number of nights"
           )
           @b3.submit('class -> "btn btn-primary"){ Register }
         }

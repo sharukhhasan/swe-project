@@ -1,22 +1,24 @@
 package controllers;
 
 import Util.SessionHandling;
-import models.Product;
+import models.Guest;
+import models.Room;
 import models.User;
-import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
 import views.html.home;
 
-public class Home extends Controller {
+import java.util.List;
 
-    static Form<Product> productForm = Form.form(Product.class);
+public class Home extends Controller {
 
     public Result home() {
    	 if (SessionHandling.isLoggedIn()) {
          User user = SessionHandling.getUser();
+         List<Room> listRooms = RoomController.getRooms();
+         List<Guest> listGuests = GuestController.getGuests();
 
-         return ok(home.render(user));
+         return ok(home.render(user, listRooms, listGuests));
          //return ok(home.render(user.firstName + " " + user.lastName));
         }
         else {

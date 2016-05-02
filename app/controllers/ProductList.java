@@ -8,9 +8,6 @@ import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
 import java.util.*;
-import Util.SessionHandling;
-import models.User;
-
 
 import java.util.List;
 
@@ -22,15 +19,6 @@ public class ProductList extends Controller {
 
     public Result products()
     {
-        String userEmail = SessionHandling.getUserEmail();
-
-        User user = Ebean.find(User.class)
-                .where().like("email", userEmail)
-                .findUnique();
-        if(user.role.equals("manager"))
-        {
-            return ok(views.html.error.render("Request Denied: Access Not Permitted!"));
-        }
     	if(Product.all().size() == 0) {
     		return redirect(controllers.routes.Error.error("No products are currently available!"));
     	}

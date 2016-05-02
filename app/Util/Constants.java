@@ -56,6 +56,8 @@ public class Constants {
                                                             "Industrial Supplies", "Lab & Scientific", "Janitorial", "Safety",
                                                             "Food Service", "Material Handling"};
 
+    public static final int maxRoomSize = 12;
+
 
     public static final Map<String, List<String>> categories = constructCategoriesMap();
 

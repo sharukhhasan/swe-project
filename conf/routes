@@ -10,52 +10,23 @@ GET		/index						controllers.Application.index()
 GET		/login						controllers.Login.login()
 GET		/logout						controllers.Application.logout()
 
-GET 	/cart						controllers.ShoppingCart.shoppingCart()
-POST	/cart						controllers.ShoppingCart.addItems()
-
-#Registration
-GET		/register					controllers.Registration.register()
+GET     /register                   controllers.Registration.register()
 
 #Home
 GET		/home/						controllers.Home.home()
-GET     /viewproducts               controllers.ProductList.products()
-GET     /searchproducts             controllers.ProductList.searchProducts()
-GET     /searchbycategory/:element  controllers.ProductList.searchByCategory(element: String)
+GET     /viewsupplies               controllers.SupplyList.supplies()
 
-GET     /singleproduct/:id          controllers.ProductList.singleproduct(id: Long)
-
-GET     /editusers                  controllers.Admin.editUsersPage()
-GET     /edituser/:id               controllers.Admin.getEditingUser(id: Long)
-POST    /useredited                 controllers.Admin.editUser(id: Long)
-
-GET     /pendingroles               controllers.Admin.getPendingRoles()
-GET     /confirmrole/:id            controllers.Admin.confirmRole(id: Long)
-
-GET		/vieworders					controllers.ShoppingCart.showOrderPage()
-
-GET		/returnItem/:id				controllers.Return.returnScreen(id: Long)
-POST	/returnItem/:id				controllers.Return.returnItem(id: Long)
-POST	/exchangeItem/:id			controllers.Return.exchangeItem(id:Long)
-
-GET		/updateuser					controllers.Registration.updateUser()
-POST	/updateuser					controllers.Registration.addAddress()
-
-POST	/requestRole				controllers.Registration.requestRole()
+GET     /newguest                   controllers.GuestController.guest()
+POST    /addguest                   controllers.GuestController.addGuest()
 
 
 #Add Product
-GET     /addproduct                 controllers.AddProduct.product()
-POST    /products                   controllers.AddProduct.addProduct()
+GET     /addsupply                  controllers.SupplyController.supply()
+POST    /supplies                   controllers.SupplyController.addSupply()
 
-
-#Test page
-GET		/test						controllers.Test.test()
-
-GET 	/purchase					controllers.ShoppingCart.purchaseItems()
 
 # Error page
 GET		/error/:error				controllers.Error.error(error: String)
-GET		/activateaccount/:token		controllers.ActivateAccount.ActivateAccount(token: String)
 GET		/passwordreset				controllers.PasswordReset.Lander
 GET		/passwordreset/:token		controllers.PasswordReset.PasswordResetRedirect(token: String)
 GET		/genericLander/:msg			controllers.Application.genericLander(msg: String)
@@ -64,8 +35,8 @@ POST	/sendpasswordemail			controllers.PasswordReset.SendPasswordEmail
 POST	/passwordreset/				controllers.PasswordReset.PasswordReset(email: String)
 
 
-
 POST	/users						controllers.Registration.addUser()
+POST	/guests						controllers.GuestController.addGuest()
 POST	/validateLogin				controllers.Login.validateLogin()
 
 # Map static resources from the /public folder to the /assets URL path
